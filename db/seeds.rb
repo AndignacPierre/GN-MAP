@@ -26,25 +26,23 @@ user18 = User.create(username: "SpellCaster", first_name: "Amelia", last_name: "
 user19 = User.create(username: "SamuraiSword", first_name: "Logan", last_name: "Young", email: "logan.young@feudaljapan.org", level: 690, password: "azerty")
 user20 = User.create(username: "SpaceMarine", first_name: "Abigail", last_name: "Clark", email: "abigail.clark@scifirealm.com", level: 850, password: "azerty")
 user21 = User.create(username: "PhoenixMage", first_name: "Jack", last_name: "Evans", email: "jack.evans@phoenixorder.com", level: 810, password: "azerty")
-user22 = User.create(username: "CosmicSorcerer", first_name: "Ella", last_name: "Green", email: "ella.green@cosmicmagic.net", level: 920, password: "azerty")
-user23 = User.create(username: "BattleBard", first_name: "Henry", last_name: "Wright", email: "henry.wright@bardstale.com", level: 550, password: "azerty")
-user24 = User.create(username: "SteampunkAlchemist", first_name: "Grace", last_name: "Mitchell", email: "grace.mitchell@steampunkalchemy.org", level: 630, password: "azerty")
-user25 = User.create(username: "GalacticRanger", first_name: "Samuel", last_name: "Perez", email: "samuel.perez@galacticquest.com", level: 780, password: "azerty")
-user26 = User.create(username: "ArcaneScholar", first_name: "Lily", last_name: "Rivera", email: "lily.rivera@arcanemystic.com", level: 880, password: "azerty")
-user27 = User.create(username: "DarkElfAssassin", first_name: "Daniel", last_name: "Hughes", email: "daniel.hughes@darkelves.com", level: 750, password: "azerty")
-user28 = User.create(username: "StarshipCaptain", first_name: "Chloe", last_name: "Reed", email: "chloe.reed@starfleetcommand.net", level: 940, password: "azerty")
-user29 = User.create(username: "WastelandNomad", first_name: "Michael", last_name: "Long", email: "michael.long@wastelandsurvivor.com", level: 670, password: "azerty")
-user30 = User.create(username: "DemonHunter", first_name: "Zoe", last_name: "Ross", email: "zoe.ross@hellgate.org", level: 860, password: "azerty")
-user31 = User.create(username: "SamuraiRonin", first_name: "David", last_name: "Foster", email: "david.foster@roninwarrior.com", level: 720, password: "azerty")
-user32 = User.create(username: "MoonlightSorceress", first_name: "Emily", last_name: "Morgan", email: "emily.morgan@moonlightspell.com", level: 910, password: "azerty")
-user33 = User.create(username: "TechnoWizard", first_name: "Joshua", last_name: "Collins", email: "joshua.collins@techrealm.net", level: 800, password: "azerty")
-user34 = User.create(username: "VampireSlayer", first_name: "Madison", last_name: "Gray", email: "madison.gray@vampirehunter.com", level: 890, password: "azerty")
-user35 = User.create(username: "CyberSamurai", first_name: "Jacob", last_name: "Brooks", email: "jacob.brooks@cybersamurai.com", level: 730, password: "azerty")
-user36 = User.create(username: "MysticDruid", first_name: "Avery", last_name: "Fisher", email: "avery.fisher@druidcircle.net", level: 620, password: "azerty")
-user37 = User.create(username: "QuantumRogue", first_name: "Matthew", last_name: "Sullivan", email: "matthew.sullivan@quantumrealm.org", level: 800, password: "azerty")
-user38 = User.create(username: "WitchDoctor", first_name: "Scarlett", last_name: "Bennett", email: "scarlett.bennett@voodoomagic.com", level: 790, password: "azerty")
-user39 = User.create(username: "DragonKnight", first_name: "Nathan", last_name: "Simmons", email: "nathan.simmons@dragonorder.com", level: 870, password: "azerty")
-user40 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_name: "Rogers", email: "aubrey.rogers@celestialorder.net", level: 920, password: "azerty")
+user22 = User.create(username: "SteampunkAlchemist", first_name: "Grace", last_name: "Mitchell", email: "grace.mitchell@steampunkalchemy.org", level: 630, password: "azerty")
+user23 = User.create(username: "GalacticRanger", first_name: "Samuel", last_name: "Perez", email: "samuel.perez@galacticquest.com", level: 780, password: "azerty")
+user24 = User.create(username: "ArcaneScholar", first_name: "Lily", last_name: "Rivera", email: "lily.rivera@arcanemystic.com", level: 880, password: "azerty")
+user25 = User.create(username: "DarkElfAssassin", first_name: "Daniel", last_name: "Hughes", email: "daniel.hughes@darkelves.com", level: 750, password: "azerty")
+user26 = User.create(username: "StarshipCaptain", first_name: "Chloe", last_name: "Reed", email: "chloe.reed@starfleetcommand.net", level: 940, password: "azerty")
+user27 = User.create(username: "WastelandNomad", first_name: "Michael", last_name: "Long", email: "michael.long@wastelandsurvivor.com", level: 670, password: "azerty")
+user28 = User.create(username: "DemonHunter", first_name: "Zoe", last_name: "Ross", email: "zoe.ross@hellgate.org", level: 860, password: "azerty")
+user29 = User.create(username: "SamuraiRonin", first_name: "David", last_name: "Foster", email: "david.foster@roninwarrior.com", level: 720, password: "azerty")
+user30 = User.create(username: "MoonlightSorceress", first_name: "Emily", last_name: "Morgan", email: "emily.morgan@moonlightspell.com", level: 910, password: "azerty")
+user31 = User.create(username: "TechnoWizard", first_name: "Joshua", last_name: "Collins", email: "joshua.collins@techrealm.net", level: 800, password: "azerty")
+user32 = User.create(username: "VampireSlayer", first_name: "Madison", last_name: "Gray", email: "madison.gray@vampirehunter.com", level: 890, password: "azerty")
+user33 = User.create(username: "CyberSamurai", first_name: "Jacob", last_name: "Brooks", email: "jacob.brooks@cybersamurai.com", level: 730, password: "azerty")
+user34 = User.create(username: "MysticDruid", first_name: "Avery", last_name: "Fisher", email: "avery.fisher@druidcircle.net", level: 620, password: "azerty")
+user35 = User.create(username: "QuantumRogue", first_name: "Matthew", last_name: "Sullivan", email: "matthew.sullivan@quantumrealm.org", level: 800, password: "azerty")
+user36 = User.create(username: "WitchDoctor", first_name: "Scarlett", last_name: "Bennett", email: "scarlett.bennett@voodoomagic.com", level: 790, password: "azerty")
+user37 = User.create(username: "DragonKnight", first_name: "Nathan", last_name: "Simmons", email: "nathan.simmons@dragonorder.com", level: 870, password: "azerty")
+user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_name: "Rogers", email: "aubrey.rogers@celestialorder.net", level: 920, password: "azerty")
 
 #events
 puts("creating some awesomes events...")
@@ -59,12 +57,14 @@ event1 = Event.create(
   price: 35,
   participants_min: 15,
   participants_max: 50,
-  date_sub: '2024-09-10', # Assure-toi que la colonne est de type date ou datetime
-  date_event: '2024-09-15', # Assure-toi que la colonne est de type date ou datetime
+  date_sub: '2024-09-10',
+  date_event: '2024-09-15',
   status: "Open",
   latitude: 55.9533,
   longitude: -3.1883
 )
+
+puts("putting some images... FOR THE STYLE BABY")
 event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
                       description: "Siege the Castle Join a medieval siege and experience the clash of armies. Wear period armor and prepare for battle!",
                       category: "Combat", theme: "Medieval", address: "22 Castle Road, Edinburgh, Scotland", price: 45, participants_min: 30, participants_max: 70, date_sub: '2024-09-05', date_event: '2024-09-12', status: "Open", latitude: 55.9533, longitude: -3.1883)
@@ -143,4 +143,150 @@ event25 = Event.create(user: user5, name: "Post-Apocalyptic Survival Camp",
                       description: "Survival Camp Survive in a post-apocalyptic setting. Bring survival gear and be prepared for a challenging experience.",
                       category: "Survival", theme: "Post-Apocalyptic", address: "66 Apocalypse Street, Los Angeles, USA", price: 50, participants_min: 25, participants_max: 50, date_sub: '2024-08-05', date_event: '2024-08-15', status: "Closed")
 
+#attach image to user
+[user1, user2, user3, user4, user5, user6, user7, user8].each do |user|
+  user.avatar.attach(
+    io: URI.open('https://i.pinimg.com/736x/5d/79/82/5d7982eda4896fe8fd1074b76498cfbd--unicorn-costume-unicorn-outfit.jpg'),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+  user.save
+end
+
+[user9, user10, user11, user12, user13, user14, user15, user16].each do |user|
+  user.avatar.attach(
+    io: URI.open('https://i.pinimg.com/564x/bf/75/b5/bf75b5aa60095f44c3a9c6880b2b3085.jpg'),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+  user.save
+end
+
+[user17, user18, user19, user20, user21, user22, user23, user24].each do |user|
+  user.avatar.attach(
+    io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+  user.save
+end
+
+[user25, user26, user27, user28, user29, user30, user31, user32].each do |user|
+  user.avatar.attach(
+    io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+  user.save
+end
+
+user36.avatar.attach(
+  io: URI.open('https://i.pinimg.com/564x/7c/df/f6/7cdff6354df92986ebae200e96aa2bc6.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+user36.save
+
+# Attach image to event
+['https://i.pinimg.com/564x/ba/e2/7d/bae27de3f31616110bcfc8c06f728df9.jpg', 'https://i.pinimg.com/564x/34/eb/1d/34eb1d4f946edf9399d9e3247bb096da.jpg', 'https://i.pinimg.com/736x/01/f3/6e/01f36eb0410e3866bb085d565aa94371.jpg'].each do |url|
+  event1.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event1.save
+
+['https://i.pinimg.com/564x/40/e4/12/40e412bd1c81fe0dca7e20ad8a46f38d.jpg', 'https://i.pinimg.com/564x/88/cc/16/88cc1658d8cba1701ad9aa74886a522b.jpg', 'https://i.pinimg.com/564x/64/53/0a/64530a1bbe76599303ccaa3d119047aa.jpg'].each do |url|
+  event3.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event3.save
+
+
+['https://i.pinimg.com/564x/e1/5e/08/e15e0878c6efb1fcced215fba4f4ecf6.jpg', 'https://i.pinimg.com/564x/7a/0c/42/7a0c422553144c3b6aed55f24fb96b8a.jpg', 'https://i.pinimg.com/564x/ba/6e/ab/ba6eab7e3e3d85fc0d6d6d9dd8e27785.jpg'].each do |url|
+  event8.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event8.save
+
+['https://i.pinimg.com/564x/fe/83/a5/fe83a560562c80b41a5cc2a378118259.jpg', 'https://i.pinimg.com/564x/11/18/eb/1118eb067208e0d69483f9deaa2351dd.jpg', 'https://i.pinimg.com/564x/f3/67/7a/f3677a2277fe9a9ba5c017e767d4f4fe.jpg'].each do |url|
+  event12.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event12.save
+
+['https://i.pinimg.com/564x/ff/e5/cd/ffe5cd9b82b064a0c7df541ecb83725c.jpg', 'https://i.pinimg.com/736x/f7/e7/18/f7e7181ff54b9394952f4f20df75e578.jpg'].each do |url|
+  event23.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event23.save
+
+['https://i.pinimg.com/564x/d6/a3/87/d6a3878dac7993577091952fff51110f.jpg', 'https://i.pinimg.com/564x/5c/46/09/5c46090b9328bc94d7b69f4f564c8cad.jpg', 'https://i.pinimg.com/736x/ee/ae/98/eeae9890188aa2e12586efd4e293cb2a.jpg'].each do |url|
+  event13.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event13.save
+
+['https://i.pinimg.com/564x/93/59/ea/9359eaf60f94295beee047fb20855a2e.jpg', 'https://i.pinimg.com/564x/df/b8/bb/dfb8bb4d5bc849d1c34164cee5c55f47.jpg', 'https://i.pinimg.com/564x/f2/a6/95/f2a695edf5b838b5abe6a586196c24a1.jpg'].each do |url|
+  event14.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event14.save
+
+['https://i.pinimg.com/564x/24/c1/b2/24c1b279ceeca842d74f8a0e2fe529ae.jpg', 'https://i.pinimg.com/564x/59/97/be/5997be68efeb7da223b71dff22a64123.jpg', 'https://i.pinimg.com/564x/0a/e6/93/0ae693acb8507a862e239cbc585b99a3.jpg'].each do |url|
+  event6.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event6.save
+
+['https://i.pinimg.com/736x/96/88/7a/96887a7faa850c4dbf0e8cc21e7ebec5.jpg', 'https://i.pinimg.com/564x/fb/c1/0d/fbc10dfefbf762c78e4476150059a751.jpg'].each do |url|
+  event9.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event9.save
+
+['https://i.pinimg.com/564x/5d/e8/6c/5de86cfe8490477d15229444ab1b02ea.jpg', 'https://i.pinimg.com/736x/7e/4b/a6/7e4ba6aa72a93347e197f2a7e6c7832a.jpg'].each do |url|
+  event10.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event10.save
+
+['https://i.pinimg.com/564x/ee/ec/3f/eeec3fe407623f108b8473812c65b5c8.jpg', 'https://i.pinimg.com/564x/55/71/d6/5571d61be43d515249e4fa99154a6fc5.jpg', 'https://i.pinimg.com/564x/0b/5e/f8/0b5ef85628c372e1bcef6b4904476c36.jpg'].each do |url|
+  event7.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event7.save
+
+puts("yahouuuuuuuuu!")
 puts "LES EVENEMENTS ONT ETE CREES ET C'EST VRAIMENT TROP COOL"
