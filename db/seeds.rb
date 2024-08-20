@@ -198,13 +198,13 @@ end
 event1.save
 
 ['https://i.pinimg.com/564x/40/e4/12/40e412bd1c81fe0dca7e20ad8a46f38d.jpg', 'https://i.pinimg.com/564x/88/cc/16/88cc1658d8cba1701ad9aa74886a522b.jpg', 'https://i.pinimg.com/564x/64/53/0a/64530a1bbe76599303ccaa3d119047aa.jpg'].each do |url|
-  event2.photos.attach(
+  event3.photos.attach(
     io: URI.open(url),
     filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
     content_type: 'image/jpg' # use the mime type of the attached file here
   )
 end
-event2.save
+event3.save
 
 
 ['https://i.pinimg.com/564x/e1/5e/08/e15e0878c6efb1fcced215fba4f4ecf6.jpg', 'https://i.pinimg.com/564x/7a/0c/42/7a0c422553144c3b6aed55f24fb96b8a.jpg', 'https://i.pinimg.com/564x/ba/6e/ab/ba6eab7e3e3d85fc0d6d6d9dd8e27785.jpg'].each do |url|
@@ -269,6 +269,24 @@ event6.save
   )
 end
 event9.save
+
+['https://i.pinimg.com/564x/5d/e8/6c/5de86cfe8490477d15229444ab1b02ea.jpg', 'https://i.pinimg.com/736x/7e/4b/a6/7e4ba6aa72a93347e197f2a7e6c7832a.jpg'].each do |url|
+  event10.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event10.save
+
+['https://i.pinimg.com/564x/ee/ec/3f/eeec3fe407623f108b8473812c65b5c8.jpg', 'https://i.pinimg.com/564x/55/71/d6/5571d61be43d515249e4fa99154a6fc5.jpg', 'https://i.pinimg.com/564x/0b/5e/f8/0b5ef85628c372e1bcef6b4904476c36.jpg'].each do |url|
+  event7.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event7.save
 
 puts("yahouuuuuuuuu!")
 puts "LES EVENEMENTS ONT ETE CREES ET C'EST VRAIMENT TROP COOL"
