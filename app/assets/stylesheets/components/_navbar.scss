@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #f0eae8 !important;
+  background: $primary !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,4 +23,13 @@
 
 .navbar {
   margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Ensures the logo is vertically centered */
+}
+
+.container-fluid {
+  margin: 0 150px; /* 0px margin top and bottom, 150px margin left and right */
 }
