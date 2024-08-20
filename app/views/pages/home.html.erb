@@ -1,6 +1,10 @@
-<div class= "container mt-4">
-  <h1>Pages#home</h1>
-  <p>BELLE IMAGE D'ACCUEIL</p>
+<div class="video-container">
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="<%= asset_path('Home-video.mp4') %>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-  <%= link_to "GO TO Index", events_path, class: "btn btn-primary"  %>
+  <div class="overlay-content">
+    <%= link_to "Entrer dans GN Map", events_path, class: "btn btn-primary btn-lg" %>
+  </div>
 </div>
