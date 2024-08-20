@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/searchbar' %>
+    <div style="min-height: 90vh;"><%= yield %></div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
