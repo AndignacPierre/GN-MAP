@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :follows, dependent: :destroy
   has_many :subs, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :events, dependent: :destroy
   has_many :events_follow, through: :follow, source: :event
   has_many :events_sub, through: :sub, source: :event
   has_many :events_review, through: :review, source: :event
-  has_many :events, dependent: :destroy
 
   #validations
   validates :username, presence: true, uniqueness: true
