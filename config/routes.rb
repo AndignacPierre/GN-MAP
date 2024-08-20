@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  get "/myevents", to: "pages#myevents", as: "myevents"
+  get "myevents", to: "pages#myevents"
 
   resources :events do
     resources :subs, only: [:create, :destroy]
