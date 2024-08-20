@@ -16,13 +16,14 @@
               </div>
             </div>
             <div>
-              <% image_url = if event.image.attached?
+              <%# <% image_url = if event.image.attached?
                               cl_image_path(event.image.key)
                             elsif event.url_image.present?
                               event.url_image.strip
                             else
                               'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
                             end %>
+              <% image_url = asset_path('no_image.png') %>
               <img src="<%= image_url %>" class="card-img-top" alt="<%= event.name %>" style="height: 200px;">
             </div>
           </div>
