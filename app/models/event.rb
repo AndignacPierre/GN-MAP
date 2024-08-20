@@ -16,8 +16,8 @@ class Event < ApplicationRecord
   validates :price, presence: true
   validates :category, presence: true
   validates :theme, presence: true
-  validates :participants_min, presence: true
-  validates :participants_max, presence: true
-  validates :date_sub, presence: true
+  validates :participants_min
+  validates :participants_max
+  validates :date_sub
   validates :date_event, presence: true
 end
