@@ -1,17 +1,19 @@
-<h1 class="backgroundfont mb-4">Mes réservations imaginaires</h1>
-<div class="d-flex flex-wrap">
-  <% current_user.subs.each do |sub| %>
-    <div class="card m-3" style="width: 18rem; border-radius: 15px">
-          <%= link_to event_path(sub.event) do %>
-          <img src="<%= if sub.event.image.attached?
-                        cl_image_path(sub.event.image.key)
-                      elsif sub.event.url_image.nil?
-                        'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-                      else
-                        sub.event.url_image.strip
-                      end %>" class="card-img-top" alt="<%= sub.event.name %>"  style="height: 200px; object-fit: cover; width: 100%;" >
-          <% end %>
-    </div>
-  <% end %>
+<div class= "container mt-4">
+  <h1 class="backgroundfont mb-4">Mes réservations imaginaires</h1>
+  <div class="d-flex flex-wrap">
+    <% current_user.subs.each do |sub| %>
+      <div class="card m-3" style="width: 18rem; border-radius: 15px">
+            <%= link_to event_path(sub.event) do %>
+            <img src="<%= if sub.event.image.attached?
+                          cl_image_path(sub.event.image.key)
+                        elsif sub.event.url_image.nil?
+                          'https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                        else
+                          sub.event.url_image.strip
+                        end %>" class="card-img-top" alt="<%= sub.event.name %>"  style="height: 200px; object-fit: cover; width: 100%;" >
+            <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Back to Index", events_path, class: "btn btn-primary"  %>
 </div>
-<%= link_to "Back to Index", events_path, class: "btn btn-primary"  %>
