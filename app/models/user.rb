@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  #cloudinary
+  has_one_attached :avatar
+
   #associations
   has_many :follows, dependent: :destroy
   has_many :subs, dependent: :destroy

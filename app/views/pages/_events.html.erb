@@ -1,0 +1,9 @@
+<div class="d-flex flex-wrap">
+  <% @events.each do |event| %>
+    <div class="card m-3" style="width: 18rem; border-radius: 15px">
+      <%= link_to event_path(event) do %>
+        <img src="<%= event.image_url %>" class="card-img-top" alt="<%= event.name %>" style="height: 200px; object-fit: cover; width: 100%;">
+      <% end %>
+    </div>
+  <% end %>
+</div>

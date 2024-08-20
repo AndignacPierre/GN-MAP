@@ -1,0 +1,38 @@
+/* Myevents menu button selected */
+.btn-custom-selected {
+  font-size: 0.875em; /* Smaller font size, you can adjust this value */
+  border-radius: 10px; /* More rounded corners, adjust as needed */
+  padding: 0.5rem 1rem; /* Adjust padding to maintain good appearance with smaller font */
+  color: $primary; /* Text color */
+  background-color: white; /* Primary background color */
+  border: 1px solid white; /* Match border to background */
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+//-------------------------------\\
+
+/* Myevents menu button not selected */
+.btn-custom-not-selected {
+  font-size: 0.875em; /* Smaller font size, you can adjust this value */
+  border-radius: 10px; /* More rounded corners, adjust as needed */
+  padding: 0.5rem 1rem; /* Adjust padding to maintain good appearance with smaller font */
+  color: #fff; /* Text color */
+  background-color: $primary; /* Primary background color */
+  border: 1px solid $primary; /* Match border to background */
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Hover and focus states */
+.btn-custom-not-selected:hover,
+.btn-custom-not-selected:focus {
+  background-color: #31463b; /* Darker shade for hover */
+  border-color: #31463b; /* Darker border on hover */
+}
