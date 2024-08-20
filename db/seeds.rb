@@ -50,7 +50,7 @@ puts("creating some awesomes events...")
 event1 = Event.create(
   user: user1, # Assure-toi que user1 est un objet utilisateur valide et que tu utilises user1.id si c'est un objet.
   name: "The Dark Forest Mystery",
-  description: "<h1>Welcome to the Dark Forest</h1><p>Explore the haunted woods, solve puzzles, and survive the night. Essential gear: flashlight, sturdy shoes.",
+  description: "Welcome to the Dark Forest Explore the haunted woods, solve puzzles, and survive the night. Essential gear: flashlight, sturdy shoes.",
   category: "Adventure",
   theme: "Fantasy",
   address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",
@@ -271,3 +271,4 @@ end
 event9.save
 
 puts("yahouuuuuuuuu!")
+puts "LES EVENEMENTS ONT ETE CREES ET C'EST VRAIMENT TROP COOL"
