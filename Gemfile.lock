@@ -130,7 +130,6 @@ GEM
     execjs (2.9.1)
     ffi (1.17.0)
     ffi (1.17.0-arm64-darwin)
-    ffi (1.17.0-x86_64-darwin)
     font-awesome-sass (6.5.2)
       sassc (~> 2.0)
     geocoder (1.8.3)
@@ -140,7 +139,7 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
-    importmap-rails (2.0.1)
+    importmap-rails (1.2.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -177,8 +176,6 @@ GEM
       net-protocol
     nio4r (2.7.3)
     nokogiri (1.16.7-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.7-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
@@ -297,7 +294,7 @@ GEM
 
 PLATFORMS
   arm64-darwin
-  x86_64-darwin-23
+  arm64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
@@ -311,7 +308,7 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
   geocoder
-  importmap-rails
+  importmap-rails (~> 1.2.3)
   jbuilder
   pg (~> 1.1)
   pg_search
