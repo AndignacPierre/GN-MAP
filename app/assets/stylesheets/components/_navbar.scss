@@ -1,3 +1,8 @@
+/* Navbar adjustments */
+.navbar {
+  margin-bottom: 0; /* Remove the bottom margin to avoid gaps */
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $primary !important;
@@ -21,15 +26,14 @@
   margin: 0;
 }
 
-.navbar {
-  margin-bottom: 20px;
-}
-
 .logo-container {
   display: flex;
   align-items: center; /* Ensures the logo is vertically centered */
 }
 
+/* Adjusting or removing margin from container-fluid */
 .container-fluid {
-  margin: 0 150px; /* 0px margin top and bottom, 150px margin left and right */
+  padding-left: 150px; /* Apply padding instead of margin to avoid pushing the video */
+  padding-right: 150px;
+  margin: 0; /* Remove margin to avoid creating gaps */
 }
