@@ -1,12 +1,15 @@
-/* Conteneur de la vidéo */
+
+/* Video container */
 .video-container {
-  position: relative; /* Ensure the container is positioned relative */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh; /* Full viewport height */
   overflow: hidden;
 }
 
-/* Vidéo en arrière-plan */
+/* Video settings */
 .background-video {
   position: absolute;
   top: 50%;
@@ -20,7 +23,7 @@
   z-index: 0; /* Ensure video is behind the content */
 }
 
-/* Contenu superposé (bouton, texte) */
+/* Overlay content */
 .overlay-content {
   position: absolute; /* Absolute positioning to overlay on video */
   top: 50%;
