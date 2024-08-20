@@ -37,3 +37,17 @@
   padding-right: 150px;
   margin: 0; /* Remove margin to avoid creating gaps */
 }
+
+.welcome-message {
+  display: flex;
+  align-items: center;
+}
+
+.welcome-icon {
+  height: 2em; /* This sets the icon's height to match the font size */
+  margin-left: 0.5em; /* Adds some space between the text and the icon */
+}
+
+.my-events-link {
+  margin-right: 20px; /* Adjust this value as needed */
+}
