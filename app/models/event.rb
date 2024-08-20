@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  #cloudinary
+  has_many_attached :photos
   #associations
   belongs_to :user
   has_many :follows, dependent: :destroy
