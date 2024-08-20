@@ -6,8 +6,8 @@
     <% end %>
 
     <% if user_signed_in? %>
-      <div class="navbar-text-center-custom">
-        <h4>Bienvenue <%= current_user.username %></h4>
+      <div class="navbar-text-center-custom text-white">
+        <h4>Bienvenue <%= current_user.username %><%= image_tag 'Castle.png' %></h4>
       </div>
     <%end%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +18,10 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "My events", myevents_path, class: "nav-link" %>
+            <%= link_to "My events", myevents_path, class: "nav-link text-white" %>
           </li>
           <li class="nav-item dropdown">
-            <%= render 'layouts/set_vava', vava: current_user %>
+            <%# <%= render 'layouts/set_vava', vava: current_user %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
