@@ -1,9 +1,11 @@
-<div class="d-flex flex-wrap">
-  <% @follows.each do |follow| %>
-    <div class="card m-3" style="width: 18rem; border-radius: 15px">
-      <%= link_to event_path(follow.event) do %>
-        <img src="<%= follow.event.image_url %>" class="card-img-top" alt="<%= follow.event.name %>" style="height: 200px; object-fit: cover; width: 100%;">
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<%= turbo_frame_tag :events_frame do %>
+  <div class="d-flex flex-wrap">
+    <% @follows.each do |follow| %>
+      <div class="card m-3" style="width: 18rem; border-radius: 15px">
+        <%= link_to event_path(follow.event) do %>
+          <img src="<%= follow.event.image_url %>" class="card-img-top" alt="<%= follow.event.name %>" style="height: 200px; object-fit: cover; width: 100%;">
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
