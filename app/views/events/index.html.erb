@@ -1,11 +1,13 @@
 <div class="container mt-4">
-  <div style="width: 100%; height: 500px;">
-    <p>Ici la MAP</p>
+  <div style="width: 100%; height: 500px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap justify-content-center">
     <% if @events.present? %>
       <% @events.each do |event| %>
-        <%= link_to event_path(event), class: "card m-3", style: "width: 30rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
+        <%= link_to event_path(event), class: "card m-2", style: "width: 25rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
           <div class="d-flex">
             <div class="card-body col-9">
               <h5 class="card-title"><strong><%= event.name %></strong></h5>
@@ -17,26 +19,26 @@
                 <i><img src="/icons/Profile.png" alt="Profile Icon" class="icon-class"></i>
                 <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
               </div>
-              <div class="d-flex justify-content-between">
                 <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
                   <i><img src="/icons/Locationpin.png" alt="Locationpin Icon" class="icon-class"></i>
                   <p class="card-text"><%= event.address %></p>
                 </div>
-                <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-class"></i>
-                  <p class="card-text"><%= 5 %></p>
-                </div>
               </div>
-              <div class="d-flex justify-content-between mt-3">
-                <p class="card-text"><i class="fa-solid fa-house-user icon-blue-green"></i> <%= event.user.username %></p>
-              </div>
-            </div>
             <div>
               <% if event.photos.attached? %>
-                <%= cl_image_tag(event.photos.first.key, class: 'card-img-top', alt: event.name, style: 'height: 200px;') %>
+                <%= cl_image_tag(event.photos.first.key, class: 'card-img-top', alt: event.name) %>
               <% else %>
-                <%= image_tag(asset_path('no_image.png'), class: 'card-img-top', alt: event.name, style: 'height: 200px;') %>
+                <%= image_tag(asset_path('no_image.png'), class: 'card-img-top', alt: event.name) %>
               <% end %>
+              <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
+                <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
+                  <p class="card-text mt-0 mb-1"><i class="fa-solid fa-house-user icon-blue-green"></i> <%= event.user.username %></p>
+                </div>
+                <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+                    <i><img src="/icons/Star.png" alt="Star Icon" class="icon-class"></i>
+                    <p class="card-text mt-0 mb-1"><%= 5 %></p>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
