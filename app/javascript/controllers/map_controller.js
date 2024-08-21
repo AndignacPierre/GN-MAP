@@ -9,17 +9,30 @@ export default class extends Controller {
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    console.log("connected");
+  }
+
+  showMap() {
+    console.log("in showmap")
+    document.getElementById('initial-view').style.display = 'none';
+
+    const mapView = document.getElementById('map-view');
+    mapView.style.display = 'block';
+
+    mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
-      container: this.element,
+      container: mapView,
       style: "mapbox://styles/mapbox/streets-v10"
-    })
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+    });
 
-    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                        mapboxgl: mapboxgl }))
+    this.#addMarkersToMap();
+    this.#fitMapToMarkers();
+
+    this.map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    }));
   }
 
   #addMarkersToMap() {
