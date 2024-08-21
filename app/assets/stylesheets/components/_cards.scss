@@ -72,6 +72,11 @@ background-color: #f0eae8;
   background-color: #f0eae8;
 }
 
+.profile-card {
+  max-width: 100%;
+  background: #f8f9fa;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
