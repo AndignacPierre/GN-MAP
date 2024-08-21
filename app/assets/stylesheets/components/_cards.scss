@@ -1,7 +1,7 @@
-.cards {
+.card-show {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .card {
@@ -70,6 +70,11 @@ background-color: #f0eae8;
 
 .sub-acceptation {
   background-color: #f0eae8;
+}
+
+.profile-card {
+  max-width: 100%;
+  background: #f8f9fa;
 }
 
 // Smallest device
