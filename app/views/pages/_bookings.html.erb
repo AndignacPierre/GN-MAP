@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :events_frame do %>
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap justify-content-center align-items-center">
     <% if @events.present? %>
       <% @subs.each do |sub| %>
         <div class="card m-3" style="width: 18rem; border-radius: 15px">
@@ -9,9 +9,10 @@
         </div>
       <% end %>
       <% else %>
-        <div>
-        No events
-        </div>
+      No events
     <% end %>
+  </div>
+  <div>
+    <p class="w-100"><%= link_to "Book New Event", events_path, data:{turbo_frame: "_top"}, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" %></p>
   </div>
 <% end %>
