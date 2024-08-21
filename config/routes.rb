@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "myevents", to: "pages#myevents"
-  get "profile", to: "users#show"
+
+  resources :users, only: :show
 
   resources :events do
     resources :subs, only: [:create, :destroy]
