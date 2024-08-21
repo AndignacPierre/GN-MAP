@@ -8,21 +8,14 @@ export default class extends Controller {
     markers: Array
   }
 
+  static targets = ["heading", "mapContainer"]
+
+
   connect() {
-    console.log("connected");
-  }
-
-  showMap() {
-    console.log("in showmap")
-    document.getElementById('initial-view').style.display = 'none';
-
-    const mapView = document.getElementById('map-view');
-    mapView.style.display = 'block';
-
-    mapboxgl.accessToken = this.apiKeyValue;
+    mapboxgl.accessToken =  this.apiKeyValue
 
     this.map = new mapboxgl.Map({
-      container: mapView,
+      container: this.mapContainerTarget,
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
@@ -33,6 +26,12 @@ export default class extends Controller {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
     }));
+  }
+
+  showMap() {
+    this.headingTarget.classList.add("d-none")
+    this.mapContainerTarget.style.visibility = "visible"
+    // this.map.resize();
   }
 
   #addMarkersToMap() {
