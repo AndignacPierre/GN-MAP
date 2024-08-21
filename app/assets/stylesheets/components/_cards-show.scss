@@ -1,7 +1,17 @@
-.show-card {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  background-color: #f0eae8;
-  padding: 30px;
-  border-radius: 4px;
-  border: 1px solid black;
-  }
+// .cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   grid-gap: 16px;
+// }
+
+.card-image{
+  width: 50%; /* ou une largeur spécifique */
+  height: 300px; /* ou une hauteur spécifique */
+  position: relative;
+}
+
+.default-image-show {
+  width: 100%; /* ou une largeur spécifique */
+  height: 300px; /* ou une hauteur spécifique */
+  position: relative;
+}
