@@ -16,6 +16,5 @@ class PagesController < ApplicationController
         render partial: "bookings"
       end
     end
-
   end
 end

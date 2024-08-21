@@ -3,12 +3,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.where('date_event >= ?', Date.today).order(:date_event)
+
     if params[:search].present? && params[:search][:query].present?
-      @events = Event.search_by_name_and_description(params[:search][:query])
-    else
-      @events = Event.all
+      @events = @events.search_by_name_and_description(params[:search][:query])
     end
+
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,

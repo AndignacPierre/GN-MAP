@@ -1,0 +1,64 @@
+<!-- app/views/users/show.html.erb -->
+<div class="container mt-4">
+  <div class="row">
+    <!-- Profile Card -->
+    <div class="col-md-4">
+      <div class="profile-card border rounded p-3 bg-light" style="width: 100%; position: fixed; top: 0; left: 0;">
+        <div class="text-center mb-3">
+          <!-- Profile Picture -->
+          <div>
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar, class: 'avatar-my-profile', alt: @user.username %>
+            <% else %>
+              <%= image_tag 'no_image.png', class: 'avatar-my-profile', alt: 'Default avatar' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="text-center mb-3">
+          <h4><%= @user.first_name %></h4>
+          <h5><%= @user.username %></h5>
+          <p><%= @user.email %></p>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <div class="text-center">
+            <p><strong><%= @events_count %></strong></p>
+            <p>Events</p>
+          </div>
+          <div class="text-center">
+            <p><strong><%= @level %></strong></p>
+            <p>Level</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+          <%= button_to "Chat with #{@user.username}", class: "btn btn-primary" %>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><%= link_to 'Report', report_user_path(@user), method: :post, class: 'dropdown-item' %></li>
+              <li><%= link_to 'Block', block_user_path(@user), method: :post, class: 'dropdown-item' %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mb-3">
+          <h6>About Me</h6>
+          <p><%= @user.bio || 'No bio available.' %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- User's Bookings -->
+    <div class="col-md-8">
+      <div class="list-group">
+        <% @subs.each do |sub| %>
+          <a href="<%= sub_path(sub) %>" class="list-group-item list-group-item-action">
+            <h5 class="mb-1"><%= sub.title %></h5>
+            <p class="mb-1">Date: <%= sub.date.strftime('%B %d, %Y') %></p>
+            <small>Status: <%= sub.status %></small>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

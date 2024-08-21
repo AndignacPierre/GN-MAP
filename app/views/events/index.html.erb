@@ -1,50 +1,30 @@
-<div class="container mt-4">
-  <div style="width: 100%; height: 500px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <div class="d-flex flex-wrap justify-content-center">
+<div id="initial-view" class="d-flex justify-content-between">
+  <!-- Colonne de gauche : deux premières cartes -->
+  <div class="col-6 d-flex flex-column gap-3">
     <% if @events.present? %>
-      <% @events.each do |event| %>
-        <%= link_to event_path(event), class: "card m-2", style: "width: 25rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
-          <div class="d-flex">
-            <div class="card-body col-9">
-              <h5 class="card-title"><strong><%= event.name %></strong></h5>
-              <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-                <i><img src="/icons/Calendar.png" alt="Calendar Icon" class="icon-class"></i>
-                <p class="card-text"><%= event.date_event %></p>
-              </div>
-              <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-                <i><img src="/icons/Profile.png" alt="Profile Icon" class="icon-class"></i>
-                <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
-              </div>
-                <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-                  <i><img src="/icons/Locationpin.png" alt="Locationpin Icon" class="icon-class"></i>
-                  <p class="card-text"><%= event.address %></p>
-                </div>
-              </div>
-            <div>
-              <% if event.photos.attached? %>
-                <%= cl_image_tag(event.photos.first.key, class: 'card-img-top', alt: event.name) %>
-              <% else %>
-                <%= image_tag(asset_path('no_image.png'), class: 'card-img-top', alt: event.name) %>
-              <% end %>
-              <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
-                <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
-                  <p class="card-text mt-0 mb-1"><i class="fa-solid fa-house-user icon-blue-green"></i> <%= event.user.username %></p>
-                </div>
-                <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-                    <i><img src="/icons/Star.png" alt="Star Icon" class="icon-class"></i>
-                    <p class="card-text mt-0 mb-1"><%= 5 %></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <% else %>
-      <p>No events available.</p>
+      <%= render partial: "events/index_card", locals: { event: @events.first } %>
+      <%= render partial: "events/index_card", locals: { event: @events.second } %>
     <% end %>
   </div>
+
+  <!-- Colonne de droite : Image statique de la map avec le bouton voir la map -->
+  <div class="col-6 position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <%= image_tag(asset_path('static_map.jpg'), class: 'img-fluid mb-3', alt: "static map to open") %>
+    <button class="btn btn-primary position-absolute" style="bottom: 20px; left: 50%; transform: translateX(-50%);" data-action="click->map#showMap">See Map</button>
+  </div>
+</div>
+
+<!-- Map cachée au départ -->
+<div id="map-view" style="width: 100%; height: 500px; display: none;"></div>
+
+<!-- Cards restantes (après les deux premières) -->
+<div id="cards-view" class="d-flex flex-wrap justify-content-around">
+  <% if @events.drop(2).present? %>
+    <% @events.drop(2).each do |event| %>
+      <%= render partial: "events/index_card", locals: { event: event } %>
+    <% end %>
+  <% else %>
+    <p>No events available.</p>
+  <% end %>
 </div>
