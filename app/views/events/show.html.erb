@@ -1,4 +1,26 @@
-<div class= "container mt-4">
-  <p><%=  @event.name %></p>
-  <%= link_to "Back to Index", events_path, class: "btn btn-primary"  %>
+<div class="container d-flex mt-4">
+  <div class="row">
+    <div class="col-6">
+      <%= render 'layouts/carousel' %>
+    </div>
+    <div class="col-6 show-card">
+    <div class="">
+      <h2 class="fw-bold"><%= @event.name %></h2>
+      <div class="d-flex text">
+        <i class="fa-regular fa-clock"></i><p><%= @event.date_event %></p>
+      </div>
+        <div class="show-organizer">
+          <p>Organisé par <%= @event.user.username %></p>
+          <p><%= @event.price %> euros</p>
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class= "btn">
+            Participate now
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+    <%= link_to "Retour à l'index", events_path, class: "btn btn-primary" %>
+
 </div>
