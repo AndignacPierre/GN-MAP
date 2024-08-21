@@ -25,7 +25,6 @@ class Event < ApplicationRecord
   #validations
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
-  validates :content, presence: true
   validates :user_id, presence: true
   validates :price, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES, message: "%{value} is not a valid status" }

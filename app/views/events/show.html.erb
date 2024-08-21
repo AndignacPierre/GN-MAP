@@ -40,7 +40,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">About this event</h5>
-      <%=  @event.content, class: "card-text" %>
+      <%= content_tag :div, @event.content, class: "card-text" %>
     </div>
   </div>
 </div>
