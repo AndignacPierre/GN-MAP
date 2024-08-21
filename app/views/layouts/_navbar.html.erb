@@ -5,15 +5,6 @@
       <%= image_tag 'Logo_GN.png' %>
     <% end %>
 
-    <% if user_signed_in? %>
-      <div class="navbar-text-center-custom text-white">
-        <h4 class="welcome-message">
-          Bienvenue <%= current_user.username %> !
-          <%= image_tag 'Welcome-icon.png', class: 'welcome-icon' %>
-        </h4>
-      </div>
-    <%end%>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
