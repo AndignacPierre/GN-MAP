@@ -21,6 +21,11 @@ class EventsController < ApplicationController
   def show
     @sub = Sub.new
     @event = Event.find(params[:id])
+    @markers = [{
+      lat: @event.latitude,
+      lng: @event.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: { event: @event })
+    }]
   end
 
   def new
