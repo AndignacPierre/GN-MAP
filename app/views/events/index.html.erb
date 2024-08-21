@@ -26,17 +26,17 @@
               </div>
             <div>
               <% if event.photos.attached? %>
-                <%= cl_image_tag(event.photos.first.key, class: 'card-img-top', alt: event.name, style: 'height: 200px;') %>
+                <%= cl_image_tag(event.photos.first.key, class: 'card-img-top', alt: event.name) %>
               <% else %>
-                <%= image_tag(asset_path('no_image.png'), class: 'card-img-top', alt: event.name, style: 'height: 200px;') %>
+                <%= image_tag(asset_path('no_image.png'), class: 'card-img-top', alt: event.name) %>
               <% end %>
-              <div class="d-flex justify-content-between">
-                <div class="d-flex justify-content-between mt-3">
-                  <p class="card-text"><i class="fa-solid fa-house-user icon-blue-green"></i> <%= event.user.username %></p>
+              <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
+                <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
+                  <p class="card-text mt-0 mb-1"><i class="fa-solid fa-house-user icon-blue-green"></i> <%= event.user.username %></p>
                 </div>
                 <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
                     <i><img src="/icons/Star.png" alt="Star Icon" class="icon-class"></i>
-                    <p class="card-text"><%= 5 %></p>
+                    <p class="card-text mt-0 mb-1"><%= 5 %></p>
                 </div>
               </div>
             </div>
