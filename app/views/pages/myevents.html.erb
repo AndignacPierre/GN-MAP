@@ -1,11 +1,21 @@
 <div class="container mt-4" data-controller="button-toggle">
-  <div class="myevents-menu d-flex justify-content-around">
-    <%= link_to "My Bookings", myevents_path(tab: "bookings"), class: "btn-custom-selected", data: { turbo_frame: "events_frame", action: "click->button-toggle#toggle", button_toggle_target: "button" } %>
-    <%= link_to "My Events", myevents_path(tab: "events"), class: "btn-custom-not-selected", data: { turbo_frame: "events_frame", action: "click->button-toggle#toggle", button_toggle_target: "button" } %>
-    <%= link_to "My Follows", myevents_path(tab: "follows"), class: "btn-custom-not-selected", data: { turbo_frame: "events_frame", action: "click->button-toggle#toggle", button_toggle_target: "button" } %>
+  <div class="myevents-menu d-flex justify-content-center myevents-menu-spaced">
+    <%= link_to "My Bookings", myevents_path(tab: "bookings"),
+        class: "mx-4 #{'btn-custom-selected' if params[:tab] == 'bookings'} btn-custom-not-selected",
+        data: { turbo_frame: "events_frame", action: "click->button-toggle#toggle", button_toggle_target: "button" } %>
+
+    <%= link_to "My Events", myevents_path(tab: "events"),
+        class: "mx-4 #{'btn-custom-selected' if params[:tab] == 'events'} btn-custom-not-selected",
+        data: { turbo_frame: "events_frame", action: "click->button-toggle#toggle", button_toggle_target: "button" } %>
+
+    <%= link_to "My Follows", myevents_path(tab: "follows"),
+        class: "mx-4 #{'btn-custom-selected' if params[:tab] == 'follows'} btn-custom-not-selected",
+        data: { turbo_frame: "events_frame", action: "click->button-toggle#toggle", button_toggle_target: "button" } %>
   </div>
 
-  <turbo-frame id="events_frame">
-    <%= render "bookings" %> <!-- Default to My Bookings -->
-  </turbo-frame>
+  <div class="container mt-4">
+    <turbo-frame id="events_frame">
+      <%= render "bookings" %>
+    </turbo-frame>
+  </div>
 </div>

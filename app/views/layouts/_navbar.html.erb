@@ -7,9 +7,13 @@
 
     <% if user_signed_in? %>
       <div class="navbar-text-center-custom text-white">
-        <h4>Bienvenue <%= current_user.username %><%= image_tag 'Castle.png' %></h4>
+        <h4 class="welcome-message">
+          Bienvenue <%= current_user.username %> !
+          <%= image_tag 'Welcome-icon.png', class: 'welcome-icon' %>
+        </h4>
       </div>
     <%end%>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,13 +22,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "My events", myevents_path, class: "nav-link text-white" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%# <%= render 'layouts/set_vava', vava: current_user %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
+            <%= link_to "My events", myevents_path, class: "nav-link text-white my-events-link" %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -35,6 +33,23 @@
           </li>
         <% end %>
       </ul>
+
+      <% if user_signed_in? %>
+        <div class="d-flex align-items-center">
+          <li class="nav-item dropdown d-flex align-items-center">
+            <%= render 'layouts/set_vava', vava: current_user %>
+            <div class="ms-3 text-white">
+              <div><%= current_user.username %></div>
+              <div class="user-level" style="font-size: 0.875rem;"><%= "Points: #{current_user.level}" %></div>
+            </div>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", profile_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
+            </div>
+          </li>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </div>
