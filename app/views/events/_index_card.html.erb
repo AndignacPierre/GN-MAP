@@ -2,16 +2,16 @@
   <div class="d-flex">
     <div class="card-body col-7">
       <h5 class="card-title"><strong><%= event.name %></strong></h5>
-      <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-        <i><img src="/icons/Calendar.png" alt="Calendar Icon" class="icon-class"></i>
-        <p class="card-text"><%= event.date_event %></p>
+      <div class="d-flex align-items-center mb-3">
+        <img src="<%= asset_path('calendar-icon.png') %>" alt="Calendar Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
+        <p class="card-text mt-0"><%= event.date_event %></p>
       </div>
       <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-        <i><img src="/icons/Profile.png" alt="Profile Icon" class="icon-class"></i>
+        <img src="<%= asset_path('participants-icon.png') %>" alt="Participants Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
         <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
       </div>
       <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-        <i><img src="/icons/Locationpin.png" alt="Locationpin Icon" class="icon-class"></i>
+        <img src="<%= asset_path('location-icon.png') %>" alt="Participants Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
         <p class="card-text"><%= event.address %></p>
       </div>
     </div>

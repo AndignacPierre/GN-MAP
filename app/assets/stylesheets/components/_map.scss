@@ -6,3 +6,22 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none !important;
+}
+
+.address-autocomplete-container {
+  width: 100%  !important;
+}
+
+/* Assurez-vous que l'élément de l'autocomplétion prend toute la largeur */
+.mapboxgl-ctrl-geocoder {
+  width: 100%;
+}
+
+/* Si le style par défaut de Mapbox ajoute un padding, vous devrez peut-être le supprimer */
+.mapboxgl-ctrl-geocoder input {
+  width: 100% !important;
+  box-sizing: border-box;
+}
