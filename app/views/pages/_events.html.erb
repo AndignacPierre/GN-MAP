@@ -6,5 +6,6 @@
   </div>
   <% @events.each do |event| %>
     <%= render "special_card_myevent_page", event: event %>
+    <%= render "special_followers_myevent_page", event: event %>
   <% end %>
 <% end %>
