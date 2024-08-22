@@ -11,10 +11,18 @@
 
 .card-text{
   margin: 10px 0 0 0;
+  font-size: 0.875rem; /* Adjust font size */
+}
+
+.card-text-address {
+  white-space: nowrap;      /* Prevent text from wrapping to the next line */
+  overflow: hidden;         /* Hide any overflow text */
+  text-overflow: ellipsis;  /* Add ellipsis (...) for overflow text */
+  max-width: 100%;          /* Ensure it fits within the container */
 }
 
 .card-img-top {
-  height: 180px;
+  height: 210px;
   width: 100%;
   object-fit: cover;
   padding: 10px;
@@ -62,6 +70,15 @@
 /* Ensure the card does not overlap with the content below */
 .container.mt-4 {
   margin-top: 120px; /* Adjust this based on the expected stop point */
+}
+.card-booking {
+  position:relative /* S'assure que la carte prend toute la hauteur disponible */
+}
+
+.card-booking .button-cancel-bookingcard {
+  position:absolute;
+  top: 0px;
+  left: 95%;
 }
 
 // Smallest device
