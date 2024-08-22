@@ -1,27 +1,22 @@
-<div id="initial-view" class="d-flex justify-content-between">
-  <!-- Colonne de gauche : deux premières cartes -->
-  <div class="col-6 d-flex flex-column gap-3">
-    <% if @events.present? %>
-      <%= render partial: "events/index_card", locals: { event: @events.first } %>
-      <%= render partial: "events/index_card", locals: { event: @events.second } %>
-    <% end %>
+<div data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" style="width: 80%; height: 500px;">
+  <div class="row h-100 justify-content-center" data-map-target="heading">
+    <div class="d-flex justify-content-center align-items-center col-6">
+      <h1 class="backgroundfont">Vivez l'aventure, <br>Grandeur Nature.</h1>
+    </div>
+    <div class="col-6 d-flex justify-content-center align-items-center " style="background-size: cover; background-image: url(<%= asset_path('static_map.jpg') %>)">
+      <button class="btn btn-primary" data-action="click->map#showMap">See Map</button>
+    </div>
   </div>
 
-  <!-- Colonne de droite : Image statique de la map avec le bouton voir la map -->
-  <div class="col-6 position-relative" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <%= image_tag(asset_path('static_map.jpg'), class: 'img-fluid mb-3', alt: "static map to open") %>
-    <button class="btn btn-primary position-absolute" style="bottom: 20px; left: 50%; transform: translateX(-50%);" data-action="click->map#showMap">See Map</button>
-  </div>
+  <div data-map-target="mapContainer" style="height: 100%; width: 100%; visibility: hidden;"></div>
 </div>
 
-<!-- Map cachée au départ -->
-<div id="map-view" style="width: 100%; height: 500px; display: none;"></div>
+<%= render partial: "layouts/searchbar" %>
 
 <!-- Cards restantes (après les deux premières) -->
 <div id="cards-view" class="d-flex flex-wrap justify-content-around">
-  <% if @events.drop(2).present? %>
-    <% @events.drop(2).each do |event| %>
+  <% if @events.present? %>
+    <% @events.each do |event| %>
       <%= render partial: "events/index_card", locals: { event: event } %>
     <% end %>
   <% else %>

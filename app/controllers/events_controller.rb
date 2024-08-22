@@ -35,6 +35,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    @event.status = 'Open'
     if @event.save!
       redirect_to event_path(@event)
     else
@@ -65,6 +66,8 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :address, :price, :description, :category, :theme, :participants_min, :participants_max, :date_sub, :date_event, :status, :image)
+    params.require(:event).permit(:name, :address, :price,
+                                  :content, :category, :theme, :participants_min, :participants_max,
+                                  :deadline, :date_event, photos: [])
   end
 end
