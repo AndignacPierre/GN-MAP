@@ -1,5 +1,11 @@
 <div class = "container mt-4">
   <h1 class="backgroundfont">Rentrez votre nouvelle offre</h1>
-
-  <%= render "form", event: @event %>
+  <div class="row form-group mt-4">
+      <div class="col-md-8">
+        <%= render "form", event: @event %>
+      </div>
+      <div class="col-md-4">
+        <%= render "explications" %>
+      </div>
+  </div>
 </div>
