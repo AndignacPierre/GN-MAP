@@ -1,0 +1,19 @@
+<div class="participants-container-request">
+  <div class="d-flex">
+    <h4 class="text-dark-green"><strong>Participations request for <%= event.name %></strong></h4>
+    <p class="text-dark-green">Pending : </p>
+    <button class="btn btn-secondary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#followers-<%= event.id %>" aria-expanded="false" aria-controls="followers-<%= event.id %>">
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+  </div>
+  <%Sub.where(event_id: event.id).each do |sub|%>
+    <%user = User.find_by_id(sub.user_id) %>
+    <div class="collapse mt-2" id="followers-<%= event.id %>">
+      <%= render 'layouts/set_vava', vava: user %>
+      <%= user.username %>
+      <%= link_to 'Open profile', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-secondary' %>
+      <%= link_to 'Accept', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-success' %>
+      <%= link_to 'Refuse', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-danger' %>
+    </div>
+  <% end %>
+</div>
