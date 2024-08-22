@@ -1,4 +1,4 @@
-<%= link_to event_path(event), class: "card card-shadow m-2", style: "width: 35rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
+<%= link_to event_path(event), class: "card m-2", style: "width: 35rem; text-decoration: none; color: inherit;" do %>
   <div class="d-flex">
     <div class="card-body col-7">
       <h5 style="font-weight: 900;" class="text-dark-green ps-1"><%= event.name %></h5>
@@ -17,12 +17,12 @@
       <hr>
       <div class="d-flex flex-column align-items-start">
         <div class="d-flex align-items-center">
-          <%= render 'layouts/set_vava', vava: event.user %>
-          <div class="ms-2 d-flex flex-column justify-content-center"> <!-- Added justify-content-center -->
-            <p class="card-text mb-1">Organised by <%= event.user.username %></p> <!-- Adjusted margin-bottom -->
+          <div class="ms-2 d-flex justify-content-center align-items-end">
+            <%= render 'layouts/set_vava', vava: event.user %>
+            <p class="card-text m-2"><%= event.user.username %></p>
             <div class="d-flex align-items-center rating-container">
               <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-2"></i>
-              <p class="card-text mb-0"><%= 5 %> (<%= rand(1..100) %>)</p>
+              <p class="card-text mb-2"><%= 5 %> (<%= rand(1..100) %>)</p>
             </div>
           </div>
         </div>
