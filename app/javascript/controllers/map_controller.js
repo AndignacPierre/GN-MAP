@@ -12,32 +12,21 @@ export default class extends Controller {
 
 
   connect() {
-    mapboxgl.accessToken =  this.apiKeyValue
+    mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
-      container: this.mapContainerTarget,
+      container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
-    });
+    })
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
 
-    this.#addMarkersToMap();
-    this.#fitMapToMarkers();
-
-    this.map.addControl(new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
-    }));
-  }
-
-  showMap() {
-    this.headingTarget.classList.add("d-none")
-    this.mapContainerTarget.style.visibility = "visible"
-    // this.map.resize();
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                        mapboxgl: mapboxgl }))
   }
 
   #addMarkersToMap() {
-    console.log("coucou")
     this.markersValue.forEach((marker) => {
-      console.log(marker)
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])

@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @events = Event.where('date_event >= ?', Date.today).order(:date_event)
 
     if params[:search].present? && params[:search][:query].present?
-      @events = @events.search_by_name_and_description(params[:search][:query])
+      @events = @events.search_by_name(params[:search][:query])
     end
 
     @markers = @events.geocoded.map do |event|
