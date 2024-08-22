@@ -9,7 +9,7 @@
       <%= link_to event_path(event), class: "card m-2", style: "width: 35rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
         <div class="d-flex">
           <div class="card-body col-7">
-            <h5 class="text-dark-green"><strong><%= event.name %></strong></h5>
+            <h5 style="font-weight: 900;" class="text-dark-green"><%= event.name %></h5>
             <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
               <i><img src="/icons/Calendar.png" alt="Calendar Icon" class="icon-class"></i>
               <p class="card-text"><%= event.date_event %></p>

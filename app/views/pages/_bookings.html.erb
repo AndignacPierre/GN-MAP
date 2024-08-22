@@ -4,7 +4,7 @@
       <% @subs.each do |sub| %>
         <div class="card m-3" style="width: 18rem; border-radius: 15px">
           <div class="card-body">
-            <h5 class="card-title"><strong><%= sub.event.name %></strong></h5>
+            <h5 style="font-weight: 900;" class="text-dark-green"><%= sub.event.name %></h5>
             <div class="text-end mt-auto">
               <%= button_to 'Delete', event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-outline-danger rounded-pill' %>
             </div>
