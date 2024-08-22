@@ -6,5 +6,5 @@ class Sub < ApplicationRecord
   #validations
   validates :user_id, presence: true
   validates :event_id, presence: true
-  validates :status, presence: true
+  # validates :status, presence: true
 end

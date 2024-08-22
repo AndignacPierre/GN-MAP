@@ -36,8 +36,8 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   # pg_search
-  pg_search_scope :search_by_name_and_description,
-    against: [ :name, :description ],
+  pg_search_scope :search_by_name,
+    against: [ :name ],
     associated_against: {
       user: [:username]
     },
