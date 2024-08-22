@@ -1,16 +1,16 @@
 <%= turbo_frame_tag :events_frame do %>
   <% if @subs.present? %>
-    <div class="d-flex flex-wrap"> <!-- Ce div contiendra toutes les cartes -->
+    <div class="d-flex flex-wrap justify-content-center"> <!-- Ce div contiendra toutes les cartes -->
       <% @subs.each do |sub| %>
         <div class="card-booking"> <!-- Carte pour chaque abonnement -->
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
-          <div class="button-cancel-bookingcard mt-auto"> <!-- Bouton "Cancel" en bas à gauche -->
-            <%= button_to '-', event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-outline-danger rounded-circle' %>
+          <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à gauche -->
+            <%= button_to '-', event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button' %>
           </div>
         </div>
       <% end %>
     </div>
   <% else %>
-    <p>No subscription found.</p>
   <% end %>
+<%= link_to "Back to events", events_path, class: "btn btn-primary mt-3 rounded-pill" %>
 <% end %>
