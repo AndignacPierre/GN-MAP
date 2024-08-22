@@ -14,3 +14,19 @@
 @import "components/index";
 @import "pages/index";
 @import "components/cards";
+
+.text-dark-green {
+  color: $dark-green;
+}
+
+.text-green {
+  color: $green;
+}
+
+.text-red {
+  color: $red;
+}
+
+.text-grey {
+  color: $light-grey;
+}

@@ -1,22 +1,17 @@
-.card-show {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+.card {
+  margin: 2rem;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 0;
 }
 
-.card {
-margin: 2rem;
-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-margin-bottom: 20px;
-background-color: white;
+.card-shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
 }
 
 .card-text{
   margin: 10px 0 0 0;
-}
-
-.card-title {
-  color: $dark-green;
 }
 
 .card-img-top {
@@ -27,7 +22,7 @@ background-color: white;
   border-radius: 20px;
 }
 
-.event-card {
+.card-event {
   width: 100%;
   position: relative;
   margin: .5rem 0 1rem 0;
@@ -36,45 +31,21 @@ background-color: white;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.30), 0 1px 5px 0 rgba(0,0,0,0.2), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
 
-.event-card-image {
+.card-event-image {
   height: 180px;
   background-position: center;
   background-size: cover;
 }
 
-.event-card-content {
-  padding: 24px;
-  background-color: white;
-}
-
-.event-card-actions {
+.default-image-show {
+  width: 100%; /* ou une largeur spécifique */
+  height: 300px; /* ou une hauteur spécifique */
   position: relative;
-  background-color: inherit;
-  border-top: 1px solid rgba(160,160,160,0.2);
-  padding: 16px 24px;
 }
 
-.event-form {
-  background-color: white;
-  padding: 24px;
-  border-radius: 3px;
-}
-
-.event-show-card {
-  background: white;
-  padding: 20px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  height: 100%;
-}
-
-.sub-acceptation {
-  background-color: white;
-}
-
-.profile-card {
-  max-width: 100%;
-  background: white;
+.sticky-top-mod {
+  position: sticky;
+  top: 80px;
 }
 
 // Smallest device
