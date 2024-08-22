@@ -1,20 +1,15 @@
-<div data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" style="width: 80%; height: 500px;">
-  <div class="row h-100 justify-content-center" data-map-target="heading">
-    <div class="d-flex justify-content-center align-items-center col-6">
-      <h1 class="backgroundfont">Vivez l'aventure, <br>Grandeur Nature.</h1>
-    </div>
-    <div class="col-6 d-flex justify-content-center align-items-center " style="background-size: cover; background-image: url(<%= asset_path('static_map.jpg') %>)">
-      <button class="btn btn-primary" data-action="click->map#showMap">See Map</button>
-    </div>
-  </div>
+<h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2" data-controller="title">Vivez l'aventure, Grandeur Nature.</h1>
 
-  <div data-map-target="mapContainer" style="height: 100%; width: 100%; visibility: hidden;"></div>
+<div class="container justify-content-center align-items-center"style="width: 80%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
 <%= render partial: "layouts/searchbar" %>
 
-<!-- Cards restantes (après les deux premières) -->
-<div id="cards-view" class="d-flex flex-wrap justify-content-around">
+<!-- Cards restantes -->
+<div id="cards-view" class="d-flex flex-wrap justify-content-center">
   <% if @events.present? %>
     <% @events.each do |event| %>
       <%= render partial: "events/index_card", locals: { event: event } %>
