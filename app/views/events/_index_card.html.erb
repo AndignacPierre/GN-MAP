@@ -1,26 +1,29 @@
-<%= link_to event_path(event), class: "card m-2", style: "width: 35rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
+<%= link_to event_path(event), class: "card card-shadow m-2", style: "width: 35rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
   <div class="d-flex">
     <div class="card-body col-7">
-      <h5 style="font-weight: 900;" class="text-dark-green"><%= event.name %></h5>
+      <h5 style="font-weight: 900;" class="text-dark-green ps-1"><%= event.name %></h5>
       <div class="d-flex align-items-center">
         <img src="<%= asset_path('calendar-icon.png') %>" alt="Calendar Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
         <p class="card-text mt-0"><%= event.date_event %></p>
       </div>
-      <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-        <img src="<%= asset_path('participants-icon.png') %>" alt="Participants Icon" class="me-2 ms-1 mt-1" style="width: 24px; height: 24px;">
+      <div class="d-flex align-items-center">
+        <img src="<%= asset_path('participants-icon.png') %>" alt="Participants Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
         <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
       </div>
-      <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-        <img src="<%= asset_path('location-icon.png') %>" alt="Participants Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
-        <p class="card-text"><%= event.address %></p>
+      <div class="d-flex align-items-center">
+        <img src="<%= asset_path('location-icon.png') %>" alt="Location Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
+        <p class="card-text card-text-address"><%= event.address %></p>
       </div>
-      <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium mt-1">
-        <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
-          <p class="card-text overflow-hidden"><u><%= event.user.username %></u></p>
-        </div>
-        <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-          <i><img src="/icons/Star.png" alt="Star Icon" class="icon-class"></i>
-          <p class="card-text"><%= 5 %> (<%= rand(1..100) %>)</p>
+      <div class="d-flex flex-column align-items-start mt-2">
+        <div class="d-flex align-items-center">
+          <%= render 'layouts/set_vava', vava: event.user %>
+          <div class="ms-2 d-flex flex-column justify-content-center"> <!-- Added justify-content-center -->
+            <p class="card-text mb-1">Organised by <%= event.user.username %></p> <!-- Adjusted margin-bottom -->
+            <div class="d-flex align-items-center rating-container">
+              <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-2"></i>
+              <p class="card-text mb-0"><%= 5 %> (<%= rand(1..100) %>)</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

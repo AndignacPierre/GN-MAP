@@ -14,6 +14,13 @@
   font-size: 0.875rem; /* Adjust font size */
 }
 
+.card-text-address {
+  white-space: nowrap;      /* Prevent text from wrapping to the next line */
+  overflow: hidden;         /* Hide any overflow text */
+  text-overflow: ellipsis;  /* Add ellipsis (...) for overflow text */
+  max-width: 100%;          /* Ensure it fits within the container */
+}
+
 .card-img-top {
   height: 180px;
   width: 100%;
