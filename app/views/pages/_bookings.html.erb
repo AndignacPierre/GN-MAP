@@ -5,7 +5,7 @@
         <div class="card-booking"> <!-- Carte pour chaque abonnement -->
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
           <div class="button-cancel-bookingcard mt-auto"> <!-- Bouton "Cancel" en bas à gauche -->
-            <%= button_to '-', event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-outline-danger rounded-pill' %>
+            <%= button_to '-', event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Vous êtes sûr?' }, class: 'btn btn-outline-danger rounded-circle' %>
           </div>
         </div>
       <% end %>
