@@ -1,19 +1,46 @@
 <%= turbo_frame_tag :events_frame do %>
-  <div>
-    <p class="w-100"><%= link_to "Add New Event", events_path, class: "btn btn-secondary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" %></p>
+  <div class="mb-4">
+    <p class="w-100">
+      <%= link_to "Add New Event", new_event_path, class: "btn btn-secondary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" %>
+    </p>
   </div>
-  <div class="d-flex flex-wrap">
+  <div class="d-flex flex-wrap" style="justify-content: <%= @events.count == 1 ? 'flex-start' : 'space-between' %>;">
     <% @events.each do |event| %>
-      <div class="card m-3" style="width: 18rem; border-radius: 15px">
-        <%= link_to event_path(event) do %>
-          <% if event.photos.attached? %>
-            <%= image_tag event.photos.first, class: "card-img-top", alt: event.name, style: "height: 200px; object-fit: cover; width: 100%;" %>
-          <% else %>
-            <%= image_tag 'no_image.png', class: "card-img-top", alt: "Placeholder", style: "height: 200px; object-fit: cover; width: 100%;" %>
-          <% end %>
-        NEED TO ADD THE CARD HERE
-        <% end %>
-      </div>
+      <%= link_to event_path(event), class: "card m-2", style: "width: 35rem; border-radius: 15px; text-decoration: none; color: inherit;" do %>
+        <div class="d-flex">
+          <div class="card-body col-7">
+            <h5 class="card-title"><strong><%= event.name %></strong></h5>
+            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+              <i><img src="/icons/Calendar.png" alt="Calendar Icon" class="icon-class"></i>
+              <p class="card-text"><%= event.date_event %></p>
+            </div>
+            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+              <i><img src="/icons/Profile.png" alt="Profile Icon" class="icon-class"></i>
+              <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
+            </div>
+            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+              <i><img src="/icons/Locationpin.png" alt="Locationpin Icon" class="icon-class"></i>
+              <p class="card-text"><%= event.address %></p>
+            </div>
+          </div>
+          <div class="card-body col-5">
+            <% if event.photos.attached? %>
+              <%= cl_image_tag(event.photos.first.key, class: 'card-img-top p-0', alt: event.name) %>
+            <% else %>
+              <%= image_tag('no_image.png', class: 'card-img-top p-0', alt: 'Default avatar') %>
+            <% end %>
+            <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium mt-1">
+              <div class="d-flex justify-content-between modal-dialog modal-dialog-centered fw-medium">
+                <p class="card-text overflow-hidden"><u><%= event.user.username %></u></p>
+              </div>
+              <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+                <i><img src="/icons/Star.png" alt="Star Icon" class="icon-class"></i>
+                <p class="card-text"><%= 5 %> (<%= rand(1..100) %>)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>
