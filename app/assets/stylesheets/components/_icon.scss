@@ -1,7 +1,12 @@
-.fa-heart{
+.fa-heart {
   color: $red;
 }
 
-.icon-class{
+.icon-class {
 object-position: center;
+}
+
+.icon-size {
+  width: 16px; /* Adjust icon size */
+  height: 16px; /* Adjust icon size */
 }
