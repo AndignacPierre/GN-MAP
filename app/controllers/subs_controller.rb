@@ -3,15 +3,25 @@ class SubsController < ApplicationController
 
   def create
     @user = current_user
-    @offer = Offer.find(params[:offer_id])
+    @event = Event.find(params[:event_id])
+    @sub = Sub.new
+    @sub.user = @user
+    @sub.event = @event
+    if @sub.save
+      redirect_to myevents_path, notice: "Votre demande de réservation a été envoyée."
+    else
+      redirect_to events_path(@event), status: :unprocessable_entity
+    end
   end
+
+
 
   def new
   end
 
   def destroy
     @sub.destroy
-    redirect_to mysubs_path, status: :see_other
+    redirect_to myevents_path, status: :see_other
   end
 
   private
