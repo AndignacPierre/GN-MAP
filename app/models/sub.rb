@@ -6,5 +6,6 @@ class Sub < ApplicationRecord
   #validations
   validates :user_id, presence: true
   validates :event_id, presence: true
+  validates :event_id, uniqueness: { scope: :user_id, message: "Vous avez déjà réservé cet événement." }
   # validates :status, presence: true
 end
