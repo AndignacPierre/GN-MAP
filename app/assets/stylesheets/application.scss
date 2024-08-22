@@ -34,10 +34,14 @@
   color: $light-grey;
 }
 
+.text-yellow {
+  color: $yellow;
+}
+
 .custom-hr {
   border: 0; /* Supprime la bordure par défaut */
   height: 1px; /* Hauteur de la ligne */
   background: $light-grey; /* Couleur de fond de la ligne */
-  margin-bottom: 10px; /* Espacement au-dessus et en-dessous de la ligne */
+  margin-bottom: 5px; /* Espacement au-dessus et en-dessous de la ligne */
   border-radius: 5px; /* Bordures arrondies */
 }
