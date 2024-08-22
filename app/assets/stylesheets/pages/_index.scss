@@ -38,3 +38,18 @@
   // -webkit-text-stroke: 0.5px white;
   text-shadow: $dark-green 2px 0 4px;
 }
+
+#index-title {
+  display: inline-block;
+  font-size: 5rem;
+  font-family: "MedievalSharp", Times, serif;
+  font-weight: bold;
+  color: $dark-green;
+  white-space: pre;
+}
+
+#index-title span {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.5s ease;
+}
