@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
     resources :follows, only: [:create, :destroy]
   end
+
   resources :subs, only: [] do
     member do
       patch 'accept'

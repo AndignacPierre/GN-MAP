@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_21_132037) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_23_105319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_132037) do
     t.integer "participants_max"
     t.date "deadline"
     t.date "date_event"
-    t.string "status"
+    t.string "status", default: "Open"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
@@ -94,7 +94,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_21_132037) do
   create_table "subs", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.bigint "user_id", null: false
-    t.string "status"
+    t.string "status", default: "Pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_subs_on_event_id"
