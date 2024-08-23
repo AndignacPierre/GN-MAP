@@ -27,10 +27,12 @@ class SubsController < ApplicationController
 
   def accept
     @sub.update(status: 'Accepted')
+    redirect_to myevents_path
   end
 
   def reject
     @sub.update(status: 'Refused')
+    redirect_to myevents_path
   end
 
   private
