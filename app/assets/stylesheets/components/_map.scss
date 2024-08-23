@@ -26,3 +26,22 @@
   width: 100% !important;
   box-sizing: border-box;
 }
+
+.marker {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  cursor: pointer !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-size: contain !important;
+  animation: pulseOpacity 2s infinite;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

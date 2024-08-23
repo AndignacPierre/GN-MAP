@@ -10,7 +10,7 @@ export default class extends Controller {
     text.split("").forEach((letter, index) => {
       const span = document.createElement("span");
       span.innerText = letter;
-      span.style.transitionDelay = `${index * 0.1}s`; // Délai progressif pour chaque lettre
+      span.style.transitionDelay = `${index * 0.05}s`; // Délai progressif pour chaque lettre
       title.appendChild(span);
     });
 
