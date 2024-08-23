@@ -11,7 +11,7 @@
     <div class="mb-2 d-flex align-items-center">
       <%= render 'layouts/set_vava', vava: User.find_by_id(event.user_id) %>
       <span class="ms-2"><%= User.find_by_id(event.user_id).username %></span>
-      <i class="fa-solid fa-crown ms-2"></i>
+      <i class="fa-solid fa-crown text-yellow ms-2"></i>
     </div>
   <% end %>
 
