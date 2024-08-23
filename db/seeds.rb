@@ -507,7 +507,7 @@ event19_content = "
   <p>Don’t miss your chance to be part of the \"Medieval Jousting Tournament.\" Reserve your spot and prepare for a legendary competition!</p>
 "
 
-event19.content = event19_content,
+event19.content = event19_content
 
 event19.save
 

@@ -1,5 +1,5 @@
 class SubsController < ApplicationController
-  before_action :set_sub, only: [:destroy]
+  before_action :set_sub, only: [:destroy, :accept, :reject]
 
   def create
     @user = current_user
@@ -24,6 +24,14 @@ class SubsController < ApplicationController
   def destroy
     @sub.destroy
     redirect_to myevents_path, status: :see_other
+  end
+
+  def accept
+    @sub.update(status: 'Accepted')
+  end
+
+  def reject
+    @sub.update(status: 'Refused')
   end
 
   private

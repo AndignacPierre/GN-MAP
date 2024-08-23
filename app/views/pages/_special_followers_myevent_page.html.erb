@@ -6,14 +6,18 @@
       <i class="fa-solid fa-chevron-down"></i>
     </button>
   </div>
-  <%Sub.where(event_id: event.id).each do |sub|%>
+  <%Sub.where(event_id: event.id, status: 'Pending').each do |sub|%>
     <%user = User.find_by_id(sub.user_id) %>
     <div class="collapse mt-2" id="followers-<%= event.id %>">
       <%= render 'layouts/set_vava', vava: user %>
       <%= user.username %>
       <%= link_to 'Open profile', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-secondary' %>
-      <%= link_to 'Accept', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-success' %>
-      <%= link_to 'Refuse', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-danger' %>
+      <%= button_to accept_sub_path(sub), data: {turbo_frame: "_top"}, method: :patch, class: "btn btn-success" do %>
+        Accept
+      <% end %>
+      <%= button_to reject_sub_path(sub), data: {turbo_frame: "_top"}, method: :patch, class: "btn btn-danger" do %>
+        Declined
+      <% end %>
     </div>
   <% end %>
 </div>
