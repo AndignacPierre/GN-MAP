@@ -5,6 +5,7 @@ class SubsController < ApplicationController
     @user = current_user
     @event = Event.find(params[:event_id])
     @sub = Sub.new
+    @sub.status = 'Pending'
     @sub.user = @user
     @sub.event = @event
     if @sub.save
