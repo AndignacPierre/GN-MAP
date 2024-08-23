@@ -6,7 +6,22 @@
         <%= render 'layouts/carousel' %>
         <!-- About this event -->
         <div class="mt-4">
-          <h5 style="font-weight: 900;">About this event</h5>
+          <h5 style="font-weight: 900;" class= "text-primary"><%= @event.name %></h5>
+          <hr style="width: 50%">
+          <div class="rounded-3 d-flex flex-column mb-2 align-items-start">
+            <div class="d-flex align-items-center">
+              <div class="avatar-container-show">
+                <%= render 'layouts/set_vava', vava: @event.user %>
+              </div>
+              <div class="ms-2 d-flex flex-column justify-content-center">
+                <p class="mb-1">Organised by <%= @event.user.username %></p>
+                <div class="d-flex align-items-center rating-container">
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-2"></i>
+                  <p class="card-text mb-0"><%= 5 %> (<%= rand(1..100) %>)</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <%= content_tag :div, @event.content, class: "card-text" %>
         </div>
         <div class="mt-4">
@@ -15,14 +30,17 @@
       </div>
     </div>
 
-    <div class="col-5">
+    <div class="card-body col-5">
       <div class="card border-0 sticky-top-mod" style="width: 90%;"> <!-- ajout de sticky-top -->
         <div>
-          <h1 class="text-dark-green mb-3"><strong><%= @event.name %></strong></h1>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-dark-green mb-0"><strong><%= @event.name %></strong></h1>
+            <i class="fa-regular fa-heart fs-1"></i>
+          </div>
           <div class="d-flex align-items-center mb-3">
             <img src="<%= asset_path('clock-icon.png') %>" alt="Clock Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
             <p class="card-text mt-0
-              <% if @days_left > 0 %> text-green
+              <% if @days_left > 0 %> text-dark-green
                 <% elsif @days_left == 0 %> text-red
                 <% else %> text-grey
               <% end %>">
@@ -39,35 +57,22 @@
             <img src="<%= asset_path('calendar-icon.png') %>" alt="Calendar Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
             <p class="card-text mt-0"><%= @event.date_event %></p>
           </div>
-          <div class="card-event rounded-3 d-flex flex-column mb-5 align-items-start">
-            <div class="d-flex align-items-center">
-              <div class="avatar-container-show">
-                <%= render 'layouts/set_vava', vava: @event.user %>
-              </div>
-              <div class="ms-2 d-flex flex-column justify-content-center"> <!-- Added justify-content-center -->
-                <p class="mb-1">Organised by <%= @event.user.username %></p> <!-- Adjusted margin-bottom -->
-                <div class="d-flex align-items-center rating-container">
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-2"></i>
-                  <p class="card-text mb-0"><%= 5 %> (<%= rand(1..100) %>)</p>
-                </div>
-              </div>
+          <div class="card card-shadow p-3 m-0">
+            <div class="d-flex justify-content-center">
+              <p><strong><%= @event.price %> €</strong> par participant</p>
             </div>
-          </div>
-          <div class="d-flex fs-1 justify-content-between">
-            <p><strong><%= @event.price %> €</strong></p>
-            <i class="fa-regular fa-heart"></i>
-          </div>
-          <% if current_user.subs.exists?(event: @event) %>
-            <%= link_to "#", class: "btn btn-success btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2 pt-2 pb-2 px-1 fs-4 text-light disabled" do %>
-              <i class="fa-solid fa-circle-check me-2"></i>
-              Booked
+            <% if current_user.subs.exists?(event: @event) %>
+              <%= link_to "#", class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2 pt-2 pb-2 px-1 fs-4 text-light disabled" do %>
+                <i class="fa-solid fa-circle-check me-2"></i>
+                Booked
+              <% end %>
+            <% else %>
+              <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" do %>
+                <i class="fa-solid fa-circle-arrow-right me-2"></i>
+                Participate now
+              <% end %>
             <% end %>
-          <% else %>
-            <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" do %>
-              <i class="fa-solid fa-circle-arrow-right me-2"></i>
-              Participate now
-            <% end %>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
