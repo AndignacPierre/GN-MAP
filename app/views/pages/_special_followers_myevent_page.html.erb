@@ -1,10 +1,11 @@
-<div class="participants-container-request">
-  <div class="d-flex">
-    <h4 class="text-dark-green"><strong>Participations request for <%= event.name %></strong></h4>
-    <p class="text-dark-green">Pending : </p>
-    <button class="btn btn-secondary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#followers-<%= event.id %>" aria-expanded="false" aria-controls="followers-<%= event.id %>">
-      <i class="fa-solid fa-chevron-down"></i>
-    </button>
-  </div>
+<div class="d-flex align-items-center">
+  <h4 class="text-dark-green me-2 mb-0">
+    <strong>Participants: <%= Sub.where(event_id: event.id).count+1 %>/<%= event.participants_max %></strong>
+  </h4>
+  <button class="btn btn-info p-1" type="button" data-bs-toggle="collapse" data-bs-target="#followers-<%= event.id %>" aria-expanded="false" aria-controls="followers-<%= event.id %>">
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
   <%= render "reject_accept_sub", event: event %>
 </div>
+
+
