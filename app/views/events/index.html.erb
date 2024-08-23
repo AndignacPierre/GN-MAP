@@ -11,13 +11,15 @@
 <%= render partial: "layouts/searchbar" %>
 
 <!-- Cards -->
-<div id="cards-view" class="d-flex flex-wrap justify-content-center">
-  <% if @events.present? %>
-    <% @events.each do |event| %>
-      <%= render partial: "events/index_card", locals: { event: event } %>
+<div class="container">
+  <div id="cards-view" class="d-flex flex-wrap justify-content-between">
+    <% if @events.present? %>
+      <% @events.each do |event| %>
+        <%= render partial: "events/index_card", locals: { event: event } %>
+      <% end %>
+    <% else %>
+      <p>No events available.</p>
     <% end %>
-  <% else %>
-    <p>No events available.</p>
-  <% end %>
+  </div>
 </div>
 <br>
