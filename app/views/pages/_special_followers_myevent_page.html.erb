@@ -12,10 +12,10 @@
       <%= render 'layouts/set_vava', vava: user %>
       <%= user.username %>
       <%= link_to 'Open profile', user_path(user), data: {turbo_frame: "_top"}, target: '_blank', class: 'btn btn-secondary' %>
-      <%= button_to accept_sub_path(sub), data: {turbo_frame: "_top"}, method: :patch, class: "btn btn-success" do %>
+      <%= button_to accept_sub_path(sub), method: :patch, class: "btn btn-success btn-sm rounded" do %>
         Accept
       <% end %>
-      <%= button_to reject_sub_path(sub), data: {turbo_frame: "_top"}, method: :patch, class: "btn btn-danger" do %>
+      <%= button_to reject_sub_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded" do %>
         Declined
       <% end %>
     </div>
