@@ -57,12 +57,15 @@
             <p><strong><%= @event.price %> €</strong></p>
             <i class="fa-regular fa-heart"></i>
           </div>
-          <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" do %>
-            <i class="fa-solid fa-circle-arrow-right me-2"></i>
-              <% if current_user.subs.exists?(event: @event) %>
-                Booked
-              <% else %>
-                Participate now
+          <% if current_user.subs.exists?(event: @event) %>
+            <%= link_to "#", class: "btn btn-success btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2 pt-2 pb-2 px-1 fs-4 text-light disabled" do %>
+              <i class="fa-solid fa-circle-check me-2"></i>
+              Booked
+            <% end %>
+          <% else %>
+            <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mb-3 mt-2" do %>
+              <i class="fa-solid fa-circle-arrow-right me-2"></i>
+              Participate now
             <% end %>
           <% end %>
         </div>
