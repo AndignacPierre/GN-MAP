@@ -57,6 +57,7 @@
 .img_myevents_cards_container {
   position: relative; /* Assure que le conteneur positionne l'image correctement */
   overflow: hidden; /* Masque les parties de l'image qui dépassent */
+  height: 100%;
 }
 
 .img_myevents_cards {
@@ -84,9 +85,9 @@
   position:relative /* S'assure que la carte prend toute la hauteur disponible */
 }
 
-.card-booking .button-cancel-bookingcard {
+.card-booking .button-cancel {
   position:absolute;
-  top: 0px;
+  top: 0%;
   left: 95%;
 }
 

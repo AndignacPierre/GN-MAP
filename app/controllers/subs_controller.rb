@@ -5,12 +5,14 @@ class SubsController < ApplicationController
     @user = current_user
     @event = Event.find(params[:event_id])
     @sub = Sub.new
+    @sub.status = 'Pending'
     @sub.user = @user
     @sub.event = @event
     if @sub.save
       redirect_to myevents_path, notice: "Votre demande de réservation a été envoyée."
     else
-      redirect_to events_path(@event), status: :unprocessable_entity
+      # redirect_to events_path(@event), status: :unprocessable_entity
+      redirect_to events_path(@event), alert: @sub.errors.full_messages.to_sentence
     end
   end
 

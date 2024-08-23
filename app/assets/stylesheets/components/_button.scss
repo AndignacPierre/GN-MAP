@@ -47,3 +47,14 @@
 .myevents-menu-spaced {
   margin-top: 50px; /* Adjust this value to increase or decrease space */
 }
+
+
+.round-button {
+  width: 25px; /* Ajustez selon vos besoins */
+  height: 25px; /* Assurez-vous que la hauteur est égale à la largeur */
+  border-radius: 50%; /* Assure une forme ronde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
