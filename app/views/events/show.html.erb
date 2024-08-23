@@ -24,6 +24,7 @@
           </div>
           <%= content_tag :div, @event.content, class: "card-text" %>
         </div>
+        <br>
         <div class="mt-4">
           <%= render "participants_show_event", event: @event %>
         </div>
@@ -91,5 +92,5 @@
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <%= link_to "Back to events", events_path, class: "btn btn-primary mb-3" %>
+<%= link_to "Back to events", events_path, class: "btn-custom-not-selected mt-1 mb-4"%>
 </div>
