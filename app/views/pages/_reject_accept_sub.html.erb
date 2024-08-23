@@ -1,0 +1,16 @@
+<%= turbo_frame_tag "followers-#{event.id}" do %>
+  <% Sub.where(event_id: event.id, status: 'Pending').each do |sub| %>
+    <% user = User.find_by_id(sub.user_id) %>
+    <div class="collapse mt-2" id="followers-<%= event.id %>">
+      <%= render 'layouts/set_vava', vava: user %>
+      <%= user.username %>
+      <%= link_to 'Open profile', user_path(user), data: { turbo_frame: "_top" }, target: '_blank', class: 'btn btn-secondary' %>
+      <%= button_to accept_sub_path(sub), method: :patch, class: "btn btn-success btn-sm rounded" do %>
+        Accept
+      <% end %>
+      <%= button_to reject_sub_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded" do %>
+        Decline
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
