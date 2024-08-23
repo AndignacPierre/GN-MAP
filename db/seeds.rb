@@ -469,7 +469,6 @@ event23.save
 puts "HARDCORE DESCRIPTIONS... ONLY THE BEST WILL SURVIVE"
 # Event 1
 event1_content = "
-  <h1>The Dark Forest Mystery</h1>
   <p>Welcome to \"The Dark Forest Mystery,\" an immersive <strong>Adventure</strong> LARP experience set in a magical <strong>Fantasy</strong> world. Located in the enchanting Edwinstowe, Mansfield, this event promises an unforgettable journey through a mystical forest where secrets and legends await.</p>
   <p>Participants will embark on a quest filled with challenges and discoveries, testing their wits and bravery. With a minimum of 15 and a maximum of 50 participants, this adventure is designed for those who seek excitement and a touch of the unknown.</p>
   <p>The event will be held on September 15, 2024, and the deadline to join is September 10, 2024. Tickets are priced at £35, ensuring a thrilling experience without breaking the bank.</p>
@@ -482,7 +481,6 @@ event1.save
 
 # Event 2
 event2_content = "
-  <h1>Cyberpunk City Escape</h1>
   <p>Step into the neon-lit streets of a futuristic metropolis with \"Cyberpunk City Escape,\" a thrilling <strong>Simulation</strong> event set in a dystopian <strong>Cyberpunk</strong> world. Taking place in Esboz-Brest, this event invites you to experience a high-stakes escape challenge unlike any other.</p>
   <p>Participants will navigate a city teeming with danger and intrigue, as they attempt to outwit their adversaries and uncover hidden truths. With a capacity for 20 to 40 participants, this event offers an intense and engaging experience for all.</p>
   <p>The event is scheduled for August 25, 2024, with the deadline for registration having passed on August 20, 2024. The ticket price of €50 reflects the exceptional experience and high-quality production values.</p>
@@ -495,7 +493,6 @@ event2.save
 
 # Event 3
 event3_content = "
-  <h1>Medieval Siege of Castle Black</h1>
   <p>Prepare for battle with \"Medieval Siege of Castle Black,\" an epic <strong>Combat</strong> LARP set in the turbulent times of <strong>Medieval</strong> warfare. Held at the historic Castle Road in Edinburgh, this event offers an intense and immersive combat experience.</p>
   <p>Participants will engage in a grand siege, with opportunities for both offensive and defensive roles. With a range of 30 to 70 participants, this event promises a dynamic and engaging combat experience.</p>
   <p>Scheduled for September 12, 2024, with a registration deadline of September 5, 2024, the event is priced at £45. This fee includes all necessary equipment and a full day of action-packed gameplay.</p>
@@ -508,7 +505,6 @@ event3.save
 
 # Event 4
 event4_content = "
-  <h1>Steampunk Airship Voyage</h1>
   <p>Embark on a fantastical journey with \"Steampunk Airship Voyage,\" a captivating <strong>Adventure</strong> LARP set in a world of <strong>Steampunk</strong> innovation. Located on Sky High Lane, London, this event takes you aboard a magnificent airship for a high-flying adventure.</p>
   <p>Experience the excitement of steampunk technology and explore an airship filled with mysteries and challenges. With space for 10 to 30 participants, this event is perfect for those who love adventure and mechanical wonders.</p>
   <p>The voyage is set for September 7, 2024, and the deadline to join is August 30, 2024. At £60, the ticket price reflects the unique experience and immersive environment provided.</p>
@@ -521,7 +517,6 @@ event4.save
 
 # Event 5
 event5_content = "
-  <h1>Zombie Apocalypse Survival</h1>
   <p>Enter a post-apocalyptic world with \"Zombie Apocalypse Survival,\" a gripping <strong>Survival</strong> LARP set in a world overrun by <strong>Zombies</strong>. Held on Dead End Road in Los Angeles, this event challenges you to survive against relentless undead foes.</p>
   <p>Participants will face various survival scenarios, from scavenging for supplies to defending against zombie hordes. With a range of 25 to 50 participants, this event ensures a heart-pounding experience for all involved.</p>
   <p>The event is set for September 8, 2024, with the registration deadline on September 1, 2024. At $40 per ticket, you’ll experience high-stakes survival gameplay and intense action.</p>
@@ -534,7 +529,6 @@ event5.save
 
 # Event 6
 event6_content = "
-  <h1>Vampire Masquerade Ball</h1>
   <p>Step into a world of gothic elegance with \"Vampire Masquerade Ball,\" a sophisticated <strong>Diplomacy</strong> LARP set in a mysterious <strong>Vampires</strong> theme. Hosted at Masquerade Place in Paris, this event invites you to an evening of intrigue and high society.</p>
   <p>Participants will immerse themselves in a world of dark glamour, engaging in political machinations and secretive interactions. With a range of 20 to 60 participants, this event provides a rich, social experience.</p>
   <p>The ball is scheduled for September 5, 2024, with a registration deadline of August 25, 2024. At €70 per ticket, enjoy a night of luxury and mystery in a beautifully crafted setting.</p>
@@ -547,7 +541,6 @@ event6.save
 
 # Event 7
 event7_content = "
-  <h1>Pirate Treasure Hunt</h1>
   <p>Set sail for adventure with \"Pirate Treasure Hunt,\" a thrilling <strong>Adventure</strong> LARP set in a world of <strong>Pirates</strong>. Held at Ocean Drive in Miami, this event invites you to embark on a quest for buried treasure.</p>
   <p>Participants will navigate treacherous waters, solve cryptic clues, and battle rival pirates in a quest to find hidden riches. With a minimum of 10 and a maximum of 35 participants, this event ensures an exciting and interactive experience.</p>
   <p>The hunt is scheduled for September 15, 2024, with the registration deadline of September 10, 2024. Tickets are priced at $45, reflecting the adventure and excitement that awaits.</p>
@@ -560,7 +553,6 @@ event7.save
 
 # Event 8
 event8_content = "
-  <h1>Space Station Escape</h1>
   <p>Experience the thrill of interstellar adventure with \"Space Station Escape,\" a dynamic <strong>Simulation</strong> LARP set in a <strong>Science Fiction</strong> universe. Hosted at Galactic Street in San Francisco, this event offers a high-stakes escape challenge aboard a futuristic space station.</p>
   <p>Participants will face various puzzles and challenges as they work to escape from a space station in distress. With a capacity of 15 to 45 participants, this event combines teamwork and problem-solving in a thrilling environment.</p>
   <p>The escape is scheduled for September 4, 2024, with a registration deadline of August 28, 2024. Tickets are priced at $55, providing a high-quality, immersive experience.</p>
@@ -573,7 +565,6 @@ event8.save
 
 # Event 9
 event9_content = "
-  <h1>Ancient Mythology Quest</h1>
   <p>Uncover the secrets of the ancient world with \"Ancient Mythology Quest,\" an enchanting <strong>Adventure</strong> LARP set in the realm of <strong>Ancient Mythology</strong>. Held at Mythic Way in Athens, Greece, this event promises a journey through legendary myths and epic quests.</p>
   <p>Participants will explore ancient temples, encounter mythical creatures, and solve riddles from bygone eras. With a range of 20 to 60 participants, this quest is designed for those who crave a deep and immersive experience.</p>
   <p>The quest is scheduled for September 6, 2024, with a registration deadline of August 29, 2024. At €40 per ticket, the event offers an affordable way to dive into the world of ancient myths and legends.</p>
@@ -586,7 +577,6 @@ event9.save
 
 # Event 10
 event10_content = "
-  <h1>Western Showdown</h1>
   <p>Step into the wild frontier with \"Western Showdown,\" an exhilarating <strong>Combat</strong> LARP set in the rugged world of the <strong>Western</strong> frontier. Located at Frontier Road in Denver, this event promises an action-packed experience in the Old West.</p>
   <p>Participants will engage in high-stakes duels, strategic gunfights, and intense standoffs. With a range of 20 to 50 participants, this event offers a thrilling combat experience that brings the Wild West to life.</p>
   <p>The showdown is set for September 22, 2024, with the registration deadline of September 15, 2024. At $35 per ticket, enjoy a day of Western adventure and combat in a beautifully recreated setting.</p>
@@ -600,7 +590,6 @@ event10.save
 
 # Event 16
 event16_content = "
-  <h1>Cyberpunk Heist</h1>
   <p>Experience a high-octane adventure with \"Cyberpunk Heist,\" a thrilling <strong>Simulation</strong> LARP set in a neon-soaked <strong>Cyberpunk</strong> future. Taking place on Neon Street in Los Angeles, this event puts you in the heart of a daring heist.</p>
   <p>Participants will plan and execute a high-stakes robbery in a city filled with danger and intrigue. With space for 15 to 40 participants, this event combines strategy, teamwork, and suspense.</p>
   <p>The heist is set for September 10, 2024, with the registration deadline of September 1, 2024. At $50 per ticket, enjoy a fully immersive experience in a world of high-tech crime.</p>
@@ -614,7 +603,6 @@ event16.save
 
 # Event 17
 event17_content = "
-  <h1>Arthurian Legends Battle</h1>
   <p>Delve into the world of chivalry and honor with \"Arthurian Legends Battle,\" an epic <strong>Combat</strong> LARP set in the realm of <strong>Arthurian Legend</strong>. Held at Camelot Lane in Winchester, this event offers a grand clash of knights and legends.</p>
   <p>Participants will engage in a series of battles and duels, reliving the legendary conflicts of King Arthur's court. With a range of 20 to 60 participants, this event promises a grand and immersive experience in a legendary setting.</p>
   <p>The battle is set for September 20, 2024, with a registration deadline of September 15, 2024. At £45 per ticket, enjoy a day of historic combat and knightly valor.</p>
@@ -628,7 +616,6 @@ event17.save
 
 # Event 18
 event18_content = "
-  <h1>Steampunk Invention Fair</h1>
   <p>Discover the marvels of invention with \"Steampunk Invention Fair,\" a captivating <strong>Simulation</strong> LARP set in a world of <strong>Steampunk</strong> innovation. Hosted on Gear Avenue in Edinburgh, this event showcases a fair filled with inventive creations and mechanical wonders.</p>
   <p>Participants will explore a range of fantastical inventions and engage with brilliant minds of the steampunk era. With a minimum of 10 and a maximum of 25 participants, this event provides a unique and interactive experience.</p>
   <p>The fair is scheduled for September 25, 2024, with a registration deadline of September 20, 2024. At £30 per ticket, enjoy a day of innovation and creativity in a beautifully designed steampunk world.</p>
@@ -642,7 +629,6 @@ event18.save
 
 # Event 19
 event19_content = "
-  <h1>Medieval Jousting Tournament</h1>
   <p>Experience the thrill of medieval combat with \"Medieval Jousting Tournament,\" an exhilarating <strong>Combat</strong> LARP set in the world of <strong>Medieval</strong> chivalry. Held at Jousting Field in York, this event brings the excitement of jousting to life.</p>
   <p>Participants will don armor and take part in grand jousting matches, showcasing their skills and bravery. With a range of 15 to 45 participants, this event promises an action-packed and immersive experience.</p>
   <p>The tournament is set for September 5, 2024, with a registration deadline of August 30, 2024. At £50 per ticket, enjoy a day of historic combat and medieval pageantry.</p>
@@ -656,7 +642,6 @@ event19.save
 
 # Event 20
 event20_content = "
-  <h1>Pirate Ship Battle</h1>
   <p>Join the high seas adventure with \"Pirate Ship Battle,\" an action-packed <strong>Combat</strong> LARP set in a world of <strong>Pirates</strong>. Hosted on Seafaring Blvd in Miami, this event pits you against rivals in an epic naval battle.</p>
   <p>Participants will engage in thrilling ship-to-ship combat, battling for supremacy on the open seas. With a minimum of 20 and a maximum of 50 participants, this event ensures an engaging and competitive experience.</p>
   <p>The battle is set for September 1, 2024, with a registration deadline of August 25, 2024. At $55 per ticket, enjoy a day of nautical combat and adventure.</p>
@@ -670,7 +655,6 @@ event20.save
 
 # Event 11
 event11_content = "
-  <h1>Medieval Festival</h1>
   <p>Step back in time with \"Medieval Festival,\" a grand <strong>Historical Reenactment</strong> LARP that brings the <strong>Medieval</strong> era to life. Set in York, UK, this event is a celebration of all things medieval, from jousting to feasting.</p>
   <p>Immerse yourself in the sights and sounds of the Middle Ages, with activities including crafts, period performances, and interactive combat. With a large capacity of 50 to 100 participants, this festival provides an authentic and engaging historical experience.</p>
   <p>The festival took place on August 1, 2024, with the registration deadline of July 15, 2024. At £25 per ticket, enjoy a full day of medieval merriment and adventure.</p>
@@ -684,7 +668,6 @@ event11.save
 
 # Event 12
 event12_content = "
-  <h1>Zombie Invasion</h1>
   <p>Survive the undead apocalypse with \"Zombie Invasion,\" an intense <strong>Survival</strong> LARP set in a world overrun by <strong>Zombies</strong>. Held in Chicago, this event throws you into a world where survival is key.</p>
   <p>Participants must navigate through a city plagued by zombies, scavenge for resources, and form alliances to survive. With a range of 30 to 60 participants, this event ensures a high level of challenge and excitement.</p>
   <p>The invasion took place on July 1, 2024, with the registration deadline of June 15, 2024. At $40 per ticket, experience a gripping and high-stakes survival scenario.</p>
@@ -698,7 +681,6 @@ event12.save
 
 # Event 13
 event13_content = "
-  <h1>Steampunk Mystery Dinner</h1>
   <p>Experience an evening of intrigue with \"Steampunk Mystery Dinner,\" a sophisticated <strong>Diplomacy</strong> LARP set in a <strong>Steampunk</strong> world. Held in Berlin, this event combines fine dining with a thrilling mystery.</p>
   <p>Participants will enjoy a sumptuous meal while engaging in a mysterious storyline filled with twists and turns. With space for 15 to 30 participants, this event offers a blend of high society and steampunk elegance.</p>
   <p>The dinner took place on July 20, 2024, with the registration deadline of July 10, 2024. At €70 per ticket, indulge in an evening of luxury and mystery.</p>
@@ -712,7 +694,6 @@ event13.save
 
 # Event 14
 event14_content = "
-  <h1>Fantasy Quest Adventure</h1>
   <p>Embark on an epic journey with \"Fantasy Quest Adventure,\" an immersive <strong>Adventure</strong> LARP set in a <strong>Fantasy</strong> world. Held in Vienna, Austria, this event promises a day of quests and mythical challenges.</p>
   <p>Participants will venture through enchanted forests, face mythical creatures, and solve ancient riddles. With a range of 20 to 50 participants, this event offers a grand adventure in a fantastical setting.</p>
   <p>The quest took place on June 15, 2024, with the registration deadline of June 1, 2024. At €40 per ticket, enjoy a full day of magical exploration and excitement.</p>
@@ -726,7 +707,6 @@ event14.save
 
 # Event 15
 event15_content = "
-  <h1>Victorian Era Ball</h1>
   <p>Experience the opulence of the Victorian era with \"Victorian Era Ball,\" a luxurious <strong>Diplomacy</strong> LARP set in the elegant world of the <strong>Victorian Era</strong>. Held in London, UK, this event features a grand ball filled with intrigue and sophistication.</p>
   <p>Participants will don their finest period attire and engage in social maneuvering and diplomatic conversations in a lavish ballroom setting. With a capacity of 20 to 50 participants, this event offers an immersive and refined experience.</p>
   <p>The ball took place on June 1, 2024, with the registration deadline of May 15, 2024. At £80 per ticket, enjoy an evening of high society and Victorian elegance.</p>
@@ -740,7 +720,6 @@ event15.save
 
 # Event 21
 event21_content = "
-  <h1>Victorian Era Mystery</h1>
   <p>Unveil the secrets of the past with \"Victorian Era Mystery,\" an engaging <strong>Diplomacy</strong> LARP set in the mysterious world of the <strong>Victorian Era</strong>. Hosted in London, this event combines intrigue with period drama.</p>
   <p>Participants will immerse themselves in a world of secrets and enigmas, navigating social and political intrigue in a Victorian setting. With space for 10 to 30 participants, this event promises a rich and interactive experience.</p>
   <p>The mystery took place on August 15, 2024, with the registration deadline of August 1, 2024. At £70 per ticket, enjoy an evening of historical drama and mystery.</p>
@@ -754,7 +733,6 @@ event21.save
 
 # Event 22
 event22_content = "
-  <h1>Zombie Apocalypse Training</h1>
   <p>Prepare for the end times with \"Zombie Apocalypse Training,\" a rigorous <strong>Survival</strong> LARP set in a world overrun by <strong>Zombies</strong>. Held in Chicago, this event provides intense training for surviving the zombie apocalypse.</p>
   <p>Participants will undergo a series of survival drills, from combat training to resource management. With a range of 20 to 40 participants, this event offers a realistic and challenging survival experience.</p>
   <p>The training took place on August 20, 2024, with the registration deadline of August 10, 2024. At $45 per ticket, equip yourself with the skills needed to survive a zombie outbreak.</p>
@@ -768,7 +746,6 @@ event22.save
 
 # Event 23
 event23_content = "
-  <h1>Fantasy Realm Quest</h1>
   <p>Embark on a mythical journey with \"Fantasy Realm Quest,\" an immersive <strong>Adventure</strong> LARP set in a captivating <strong>Fantasy</strong> world. Hosted in Vienna, this event invites you to explore a realm of magic and wonder.</p>
   <p>Participants will navigate through fantastical landscapes, encounter magical creatures, and solve ancient riddles. With a capacity of 15 to 35 participants, this event promises an engaging and magical experience.</p>
   <p>The quest took place on July 30, 2024, with the registration deadline of July 20, 2024. At €40 per ticket, enjoy a full day of fantasy adventure and exploration.</p>
@@ -782,7 +759,6 @@ event23.save
 
 # Event 24
 event24_content = "
-  <h1>Space Odyssey Challenge</h1>
   <p>Embark on a cosmic journey with \"Space Odyssey Challenge,\" a thrilling <strong>Simulation</strong> LARP set in the realm of <strong>Science Fiction</strong>. Hosted in San Francisco, this event offers a space adventure like no other.</p>
   <p>Participants will explore alien worlds, engage in interstellar missions, and face cosmic challenges. With a range of 10 to 30 participants, this event provides an immersive and futuristic experience.</p>
   <p>The challenge took place on August 5, 2024, with the registration deadline of July 25, 2024. At $55 per ticket, enjoy a day of space exploration and adventure.</p>
@@ -796,7 +772,6 @@ event24.save
 
 # Event 25
 event25_content = "
-  <h1>Post-Apocalyptic Survival Camp</h1>
   <p>Face the end of the world with \"Post-Apocalyptic Survival Camp,\" a gripping <strong>Survival</strong> LARP set in a <strong>Post-Apocalyptic</strong> world. Held in Los Angeles, this event challenges participants to survive in a dystopian future.</p>
   <p>Participants will engage in survival training, scavenging for resources, and facing various threats in a post-apocalyptic setting. With a range of 25 to 50 participants, this event provides a tough and realistic survival experience.</p>
   <p>The camp took place on August 15, 2024, with the registration deadline of August 5, 2024. At $50 per ticket, prepare for a day of survival challenges and dystopian drama.</p>
