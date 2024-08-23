@@ -1,21 +1,21 @@
 <div class="card card-shadow m-1 d-flex">
   <div class="img-card">
     <% if event.photos.attached? %>
-      <%= cl_image_tag(event.photos.first.key, class: 'p-0 m-1', alt: event.name) %>
+      <%= cl_image_tag(event.photos.first.key, class: 'p-1 m-0 img-fluid', alt: event.name) %>
     <% else %>
-      <%= image_tag(asset_path('no_image.png'), class: 'p-0 m-1', alt: event.name) %>
+      <%= image_tag(asset_path('no_image.png'), class: 'p-1 m-0 img-fluid', alt: event.name) %>
     <% end %>
   </div>
-  <div class="card-body" >
+  <div class="card-body p-2" >
     <p class="card-title m-0"><strong><%= event.name %></strong></p>
     <div class="d-flex align-items-center">
-      <img src="<%= asset_path('participants-icon.png') %>" alt="Participants Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
-      <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
+        <img src="<%= asset_path('location-icon.png') %>" alt="Location Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
+        <p class="card-text card-text-address"><%= event.address%></p>
     </div>
-    <div class="d-flex align-items-center mb-1">
+    <div class="d-flex align-items-center mb-2">
       <img src="<%= asset_path('calendar-icon.png') %>" alt="Calendar Icon" class="me-2 ms-1" style="width: 24px; height: 24px;">
       <p class="card-text mt-0"><%= event.date_event %></p>
     </div>
-    <%= link_to 'Voir cet évènement', event_path(event), class: 'btn btn-secondary' %>
+    <%= link_to 'See Event', event_path(event), class: 'btn btn-secondary' %>
   </div>
 </div>
