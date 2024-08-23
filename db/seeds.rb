@@ -620,7 +620,7 @@ event19_content = "
   <p>Participants will don armor and take part in grand jousting matches, showcasing their skills and bravery. With a range of 15 to 45 participants, this event promises an action-packed and immersive experience.</p>
   <p>The tournament is set for September 5, 2024, with a registration deadline of August 30, 2024. At £50 per ticket, enjoy a day of historic combat and medieval pageantry.</p>
   <p>Will you emerge as the champion of the tournament and earn the respect of your peers? Join us for a day of jousting and medieval excitement!</p>
-  <p>Don’t miss your chance to be part of the \"Medieval Jousting Tournament.\" Reserve your spot and prepare for a legendary competition!</p>
+  <p>Don't miss your chance to be part of the \"Medieval Jousting Tournament.\" Reserve your spot and prepare for a legendary competition!</p>
 "
 
 event19.content = event19_content,
