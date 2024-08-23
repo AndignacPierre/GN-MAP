@@ -182,7 +182,7 @@ event25 = Event.create(user: user5, name: "Post-Apocalyptic Survival Camp",
 puts("putting some images... FOR THE STYLE BABY")
 [user1, user2, user3, user4, user5, user6, user7, user8].each do |user|
   user.avatar.attach(
-    io: URI.open('https://i.pinimg.com/736x/5d/79/82/5d7982eda4896fe8fd1074b76498cfbd--unicorn-costume-unicorn-outfit.jpg'),
+    io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
     filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
     content_type: 'image/jpg' # use the mime type of the attached file here
   )
@@ -216,6 +216,13 @@ end
   user.save
 end
 
+user35.avatar.attach(
+  io: URI.open('https://i.pinimg.com/474x/48/bc/05/48bc05d7e019da8784b3df3233620fe8.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+user35.save
+
 user36.avatar.attach(
   io: URI.open('https://i.pinimg.com/564x/7c/df/f6/7cdff6354df92986ebae200e96aa2bc6.jpg'),
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
@@ -223,6 +230,7 @@ user36.avatar.attach(
 )
 user36.save
 
+#--------------------------------------------------#
 # Attach image to event
 ['https://i.pinimg.com/564x/ba/e2/7d/bae27de3f31616110bcfc8c06f728df9.jpg', 'https://i.pinimg.com/564x/34/eb/1d/34eb1d4f946edf9399d9e3247bb096da.jpg', 'https://i.pinimg.com/736x/01/f3/6e/01f36eb0410e3866bb085d565aa94371.jpg'].each do |url|
   event1.photos.attach(
@@ -233,6 +241,15 @@ user36.save
 end
 event1.save
 
+['https://i.pinimg.com/736x/6d/ab/87/6dab87844e2ff129d39ff034c7dbda61.jpg', 'https://i.pinimg.com/736x/84/b6/1a/84b61aebceebce98b471b16ca19e809c.jpg', 'https://i.pinimg.com/736x/65/4c/14/654c14d200513c82be1f74a3823927fb.jpg'].each do |url|
+  event2.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event2.save
+
 ['https://i.pinimg.com/564x/40/e4/12/40e412bd1c81fe0dca7e20ad8a46f38d.jpg', 'https://i.pinimg.com/564x/88/cc/16/88cc1658d8cba1701ad9aa74886a522b.jpg', 'https://i.pinimg.com/564x/64/53/0a/64530a1bbe76599303ccaa3d119047aa.jpg'].each do |url|
   event3.photos.attach(
     io: URI.open(url),
@@ -241,6 +258,24 @@ event1.save
   )
 end
 event3.save
+
+['https://i.pinimg.com/564x/a5/44/b7/a544b7fa40c18729c3951440fac88f4e.jpg', 'https://i.pinimg.com/474x/50/40/be/5040befda0d2ef64464da554ebc110a4.jpg', 'https://i.pinimg.com/474x/27/1e/34/271e343815d4b9aab9ad5da09e53abc5.jpg'].each do |url|
+  event4.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event4.save
+
+['https://i.pinimg.com/474x/26/64/45/266445c2d88168b9e391fddaa48e36f4.jpg', 'https://i.pinimg.com/474x/7a/33/8c/7a338c70b7ffa3e4115a20d43b8507cb.jpg', 'https://i.pinimg.com/474x/d7/8a/53/d78a5346ed7049d8aec092cf4af694cd.jpg'].each do |url|
+  event5.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event5.save
 
 ['https://i.pinimg.com/564x/24/c1/b2/24c1b279ceeca842d74f8a0e2fe529ae.jpg', 'https://i.pinimg.com/564x/59/97/be/5997be68efeb7da223b71dff22a64123.jpg', 'https://i.pinimg.com/564x/0a/e6/93/0ae693acb8507a862e239cbc585b99a3.jpg'].each do |url|
   event6.photos.attach(
@@ -287,6 +322,15 @@ event10.photos.attach(
 end
 event10.save
 
+['https://i.pinimg.com/474x/0e/33/56/0e335652c95891e2c5684e76d425a566.jpg', 'https://i.pinimg.com/474x/0e/56/63/0e5663c4e0b0b3db68efb4c8ab1306ce.jpg', 'https://i.pinimg.com/474x/fd/07/73/fd07733886964d0cf15099c5c55b98d3.jpg'].each do |url|
+  event11.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event11.save
+
 ['https://i.pinimg.com/564x/fe/83/a5/fe83a560562c80b41a5cc2a378118259.jpg', 'https://i.pinimg.com/564x/11/18/eb/1118eb067208e0d69483f9deaa2351dd.jpg', 'https://i.pinimg.com/564x/f3/67/7a/f3677a2277fe9a9ba5c017e767d4f4fe.jpg'].each do |url|
   event12.photos.attach(
     io: URI.open(url),
@@ -313,6 +357,78 @@ event13.save
   )
 end
 event14.save
+
+['https://i.pinimg.com/474x/5c/4c/79/5c4c7942f02143d3f3d0d58cbb7951c5.jpg', 'https://i.pinimg.com/474x/3e/76/ce/3e76cee41f3d498206e846576a7e9181.jpg', 'https://i.pinimg.com/474x/e4/e4/83/e4e483996aa2ca893c422113de65a8c9.jpg'].each do |url|
+  event15.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event15.save
+
+['https://i.pinimg.com/474x/2c/3c/2c/2c3c2c5227b1d807cd77da0fc0ec8254.jpg', 'https://i.pinimg.com/474x/4a/47/1f/4a471fee187e333b64a9d1fa0053f953.jpg', 'https://i.pinimg.com/474x/ca/72/00/ca7200fc3b0a368d6c7188e9294e49de.jpg'].each do |url|
+  event16.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event16.save
+
+['https://i.pinimg.com/474x/0b/7f/6c/0b7f6c0815a5ebe2564a9d65948bfc03.jpg', 'https://i.pinimg.com/474x/fa/98/5c/fa985c5c2e938bf3ccea1f7dcf4f4b74.jpg', 'https://i.pinimg.com/474x/30/8e/9d/308e9df9a2f039c56f84dd74fd525bf1.jpg'].each do |url|
+  event17.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event17.save
+
+['https://i.pinimg.com/474x/7e/8b/a7/7e8ba7b5c6125e9ba568881936e61282.jpg', 'https://i.pinimg.com/474x/16/42/6c/16426cd5b43afb2624f467a80eea8e6b.jpg', 'https://i.pinimg.com/474x/eb/cd/e4/ebcde483f05014fadaf07786f136776f.jpg'].each do |url|
+  event18.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event18.save
+
+['https://i.pinimg.com/564x/89/bf/e5/89bfe50ca19432aa4660370c3f225bcd.jpg', 'https://i.pinimg.com/474x/50/e4/66/50e4663284cb92fcf6232b6ec5d8b2ec.jpg', 'https://i.pinimg.com/474x/1c/3d/e9/1c3de93526f6212d5a3dbdc06074fb2e.jpg'].each do |url|
+  event19.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event19.save
+
+['https://i.pinimg.com/474x/36/7e/5d/367e5de976b3ecfba2b433348dd54e5c.jpg', 'https://i.pinimg.com/474x/0c/7e/5b/0c7e5bec64fc1c3131b1ec7818972d5a.jpg', 'https://i.pinimg.com/474x/45/a2/f8/45a2f892c668b865139c98a34db11318.jpg'].each do |url|
+  event20.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event20.save
+
+['https://i.pinimg.com/564x/1f/b4/76/1fb476d2476071c5542deb5caf7a6e69.jpg', 'https://i.pinimg.com/474x/d2/30/4b/d2304b8d7a868d57df1d0a4c27c63199.jpg', 'https://i.pinimg.com/474x/9e/be/e3/9ebee394474a3d26b4b714a35fbe6a28.jpg'].each do |url|
+  event21.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event21.save
+
+['https://i.pinimg.com/474x/44/f8/67/44f867a419fdd7f8a676cea0365a3175.jpg', 'https://i.pinimg.com/474x/a5/c0/55/a5c055e4d43b0df172f591e69c3a91fd.jpg', 'https://i.pinimg.com/474x/2b/c0/24/2bc024638686eafbc714dfb5188e6da9.jpg'].each do |url|
+  event22.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+    )
+end
+event22.save
 
 ['https://i.pinimg.com/564x/ff/e5/cd/ffe5cd9b82b064a0c7df541ecb83725c.jpg', 'https://i.pinimg.com/736x/f7/e7/18/f7e7181ff54b9394952f4f20df75e578.jpg'].each do |url|
   event23.photos.attach(
