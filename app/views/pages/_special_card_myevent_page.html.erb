@@ -22,6 +22,9 @@
         <p class="card-text"><%= event.address %></p>
       </div>
       <%= render "special_followers_myevent_page", event: event %>
+      <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à gauche -->
+        <%= button_to '-', event_path(event), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your event?' }, class: 'btn btn-outline-danger round-button' %>
+      </div>
     </div>
   </div>
 </div>
