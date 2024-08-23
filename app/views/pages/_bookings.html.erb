@@ -1,9 +1,20 @@
+
 <%= turbo_frame_tag :events_frame do %>
   <% if @subs.present? %>
-    <div class="d-flex flex-wrap justify-content-center"> <!-- Ce div contiendra toutes les cartes -->
+    <div class="d-flex flex-wrap"> <!-- Ce div contiendra toutes les cartes -->
       <% @subs.each do |sub| %>
         <div class="card-booking"> <!-- Carte pour chaque abonnement -->
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
+          <!-- Ajouter ici le statut de l'abonnement -->
+          <div class="sub-status w-25 text-center">
+            <% if sub.status == "Pending" %>
+              <p class="bg-white border-primary rounded-pill text-warning"><i class="fa-sharp fa-solid fa-hourglass-start "></i><span class="text-warning text-status"> Pending</span></p> <!-- Affiche le statut de l'abonnement -->
+            <% elsif sub.status == "Accepted" %>
+              <p class="bg-white border-primary rounded-pill text-green"><i class="fa-sharp fa-solid fa-hourglass-start"></i><span class="text-green text-status"> Accepted</span></p> <!-- Affiche le statut de l'abonnement -->
+             <% elsif sub.status == "Rejected" %>
+              <p class="bg-white border-primary rounded-pill text-danger"><i class="fa-sharp fa-solid fa-hourglass-start"></i><span class="text-danger text-status"> Rejected</span></p> <!-- Affiche le statut de l'abonnement -->
+            <% end %>
+          </div>
           <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à gauche -->
             <%= button_to '-', event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button' %>
           </div>
@@ -12,5 +23,5 @@
     </div>
   <% else %>
   <% end %>
-<%= link_to "Back to events", events_path, class: "btn-custom-not-selected mt-3 mb-4" %>
+<%= link_to "Back to events", events_path, class: "btn-custom-not-selected mt-3 mb-4",  data: {turbo_frame: "_top"} %>
 <% end %>
