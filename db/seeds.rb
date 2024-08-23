@@ -257,6 +257,13 @@ user36.avatar.attach(
 )
 user36.save
 
+titouan.avatar.attach(
+  io: URI.open('https://files.slack.com/files-pri/T02NE0241-F07J4T39TT7/file.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+)
+titouan.save
+
 #--------------------------------------------------#
 # Attach image to event
 ['https://i.pinimg.com/564x/ba/e2/7d/bae27de3f31616110bcfc8c06f728df9.jpg', 'https://i.pinimg.com/564x/34/eb/1d/34eb1d4f946edf9399d9e3247bb096da.jpg', 'https://i.pinimg.com/736x/01/f3/6e/01f36eb0410e3866bb085d565aa94371.jpg'].each do |url|
