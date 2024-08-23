@@ -1,5 +1,7 @@
-<h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2" data-controller="title">Vivez l'aventure, Grandeur Nature.</h1>
+<!-- Title -->
+<h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2" data-controller="title">Step into the Story, LARP Your Way.</h1>
 
+<!-- Map -->
 <div class="container justify-content-center align-items-center"style="width: 80%; height: 500px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
@@ -8,7 +10,7 @@
 
 <%= render partial: "layouts/searchbar" %>
 
-<!-- Cards restantes -->
+<!-- Cards -->
 <div id="cards-view" class="d-flex flex-wrap justify-content-center">
   <% if @events.present? %>
     <% @events.each do |event| %>
