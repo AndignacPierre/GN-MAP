@@ -18,7 +18,13 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <div style="min-height: 90vh;"><%= yield %></div>
+    <div style="min-height: 90vh;">
+      <% if content_for?(:tabs) %>
+        <%= yield(:tabs) %>
+      <% else %>
+        <%= yield %>
+      <% end %>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>

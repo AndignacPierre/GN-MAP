@@ -8,31 +8,29 @@ class SubsController < ApplicationController
     @sub.user = @user
     @sub.event = @event
     if @sub.save
-      redirect_to myevents_path, notice: "Votre demande de réservation a été envoyée."
+      redirect_to account_events_path, notice: "Votre demande de réservation a été envoyée."
     else
       # redirect_to events_path(@event), status: :unprocessable_entity
       redirect_to events_path(@event), alert: @sub.errors.full_messages.to_sentence
     end
   end
 
-
-
   def new
   end
 
   def destroy
     @sub.destroy
-    redirect_to myevents_path, status: :see_other
+    redirect_to account_events_path, status: :see_other
   end
 
   def accept
     @sub.update(status: 'Accepted')
-    redirect_to myevents_path
+    redirect_to account_events_path
   end
 
   def reject
     @sub.update(status: 'Refused')
-    redirect_to myevents_path
+    redirect_to account_events_path
   end
 
   private
