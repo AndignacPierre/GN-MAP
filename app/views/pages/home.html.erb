@@ -1,10 +1,11 @@
-<div class="video-container">
-  <video autoplay muted loop playsinline class="background-video">
-    <source src="<%= asset_path('Home-video.mp4') %>" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="overlay-content">
-    <%= link_to "Enter in GN Map", events_path, class: "btn btn-primary btn-lg" %>
+<div class="home-container">
+  <div class="title-container">
+    <h1 id="home-title">GN Map</h1>
+    <img src="<%= asset_path('home-picture.png') %>" alt="Overlay Image" class="overlay-image">
+  </div>
+  <div class="btn-container">
+    <%= link_to events_path, class: "btn btn-primary btn-lg" do %>
+      Live the adventure now <i class="fa-solid fa-arrow-right"></i>
+    <% end %>
   </div>
 </div>
