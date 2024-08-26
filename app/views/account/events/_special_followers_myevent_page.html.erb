@@ -8,7 +8,7 @@
 </div>
 
 <div class="collapse mt-2" id="followers-<%= event.id %>">
-  <% Sub.where(event_id: event.id, status: 'Pending').each do |sub| %>
+  <% Sub.where(event_id: event.id).each do |sub| %>
     <% user = User.find_by_id(sub.user_id) %>
     <div class="mb-2">
       <%= link_to user_path(user), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>

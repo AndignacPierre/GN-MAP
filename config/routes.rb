@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  get "myevents", to: "pages#myevents"
-
   resources :users, only: :show do
     member do
       post 'report'
@@ -11,17 +9,26 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :events do
     resources :subs, only: [:create, :destroy]
     resources :reviews, only: :create
     resources :follows, only: [:create, :destroy]
   end
 
-  resources :subs, only: [] do
-    member do
-      patch 'accept'
-      patch 'reject'
+  namespace :account do
+    resources :subscriptions, only: :index
+    resources :events, only: :index
+    resources :follows, only: :index
+
+    root controller: :subscriptions, action: :index
+  end
+
+  namespace :account do
+    resources :subscriptions, only: [] do
+      member do
+        patch 'accept'
+        patch 'reject'
+      end
     end
   end
 end

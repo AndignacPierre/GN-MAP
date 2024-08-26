@@ -16,15 +16,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&family=Karantina:wght@300;400;700&display=swap" rel="stylesheet">
 
-
-
   </head>
 
   <body>
     <% unless current_page?(root_path) %>
       <%= render 'layouts/navbar' %>
     <% end %>
-    <div style="min-height: 90vh;"><%= yield %></div>
+    <div style="min-height: 90vh;">
+      <% if content_for?(:tabs) %>
+        <%= yield(:tabs) %>
+      <% else %>
+        <%= yield %>
+      <% end %>
+    </div>
     <%= render 'layouts/footer' %>
   </body>
 </html>

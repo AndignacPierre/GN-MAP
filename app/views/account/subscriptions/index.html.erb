@@ -1,10 +1,9 @@
 <%= turbo_frame_tag :events_frame do %>
-  <% if @subs.present? %>
+  <% if @subscriptions.present? %>
     <div class="d-flex flex-wrap"> <!-- Ce div contiendra toutes les cartes -->
-      <% @subs.each do |sub| %>
+      <% @subscriptions.each do |sub| %>
         <div class="card-booking"> <!-- Carte pour chaque abonnement -->
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
-          <!-- Ajouter ici le statut de l'abonnement -->
           <div class="sub-status w-25 text-center">
             <% if sub.status == "Pending" %>
               <p class="bg-white border-primary rounded-pill text-warning"><i class="fa-sharp fa-solid fa-hourglass-start "></i><span class="text-warning text-status"> Pending</span></p> <!-- Affiche le statut de l'abonnement -->
