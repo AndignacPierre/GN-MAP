@@ -5,16 +5,22 @@
         <div>
           <!-- Carousel -->
           <%= render 'layouts/carousel' %>
-          <!-- About this event -->
+
+          <!-- About this event (left column) -->
           <div class="mt-4">
             <div class="rounded-3 d-flex flex-column mb-2 align-items-start">
               <div class="d-flex align-items-center">
+
+                <!-- Organiser : Avatar -->
                 <div class="avatar-container-show">
-                  <!-- Partial _set_vava -->
                   <%= render 'layouts/set_vava', vava: @event.user %>
                 </div>
+
+                <!-- Organiser : Name -->
                 <div class="ms-2 d-flex flex-column justify-content-center">
                   <p class="mb-1">Organised by <%= @event.user.username %></p>
+
+                  <!-- Organiser : Rating -->
                   <div class="d-flex align-items-center rating-container">
                     <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-2"></i>
                     <p class="card-text mb-0"><%= 5 %> (<%= rand(1..100) %>)</p>
@@ -22,11 +28,13 @@
                 </div>
               </div>
             </div>
+
             <hr class="subtle-divider" style="width: 50%">
-            <h5>
-              <%= @event.category %>
-              <%= render partial: 'category_icons' %>
-            </h5>
+
+            <!-- Category -->
+            <h5><%= @event.category %><%= render partial: 'category_icons' %></h5>
+
+            <!-- Description -->
             <div class="card-text" data-controller="text-clamp">
               <div id="event-content" class="text-clamp" data-text-clamp-target="text" >
                 <%= @event.content %>
@@ -37,7 +45,8 @@
           <br>
         </div>
       </div>
-      <!-- Sticky Card -->
+
+      <!-- Sticky Card (right column) -->
       <div class="card-body col-4">
         <%= render "sticky_card", event: @event %>
       </div>
