@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   namespace :account do
     resources :subscriptions, only: :index
     resources :events, only: :index
-    resources :follows, only: :index
+    resources :follows, only: [:index, :destroy]
 
     root controller: :subscriptions, action: :index
   end
