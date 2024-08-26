@@ -6,3 +6,11 @@
   display: flex;
   align-items: center;
 }
+
+.participants-hidden.collapse {
+  transition: all 0.3s ease;
+}
+
+.participants-hidden.show {
+  display: block !important;
+}
