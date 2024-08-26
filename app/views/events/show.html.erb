@@ -22,13 +22,14 @@
                 </div>
               </div>
             </div>
-            <hr class="subtle-divider", style="width: 50%">
-            <!-- Category & Theme -->
+            <hr class="subtle-divider" style="width: 50%">
+            <h5>
+              <%= @event.category %><%= render 'category_icons' %>
+            </h5>
 
-            <!-- Description -->
             <div class="card-text" data-controller="text-clamp">
               <div id="event-content" class="text-clamp" data-text-clamp-target="text" >
-                <%= @event.category %> <%= @event.content %>
+                <%= @event.content %>
               </div>
               <a href="javascript:void(0);" id="see-more-link" class="text-primary" data-action="click->text-clamp#seeMore">See more</a>
             </div>
@@ -36,7 +37,6 @@
           <br>
         </div>
       </div>
-
       <!-- Sticky Card -->
       <div class="card-body col-4">
         <%= render "sticky_card", event: @event %>
