@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   'Science Fiction','Pirates','Cyberpunk','Victorian Era','Western','Superheroes',
   'Vampires','Lovecraftian Horror','Ancient Mythology','Dystopian Future','Space Opera','Norse Mythology',
   'Arthurian Legend','WWII','Egyptian', 'Other']
-  CATEGORIES = ['Murder Party', 'Historical Reenactment', 'Adventure', 'Horror', 'Survival', 'Combat', 'Diplomacy', 'Other']
+  CATEGORIES = ['Murder', 'Historical', 'Fantasy', 'SF', 'Zombie', 'Other']
 
   #editor_text
   has_rich_text :content
