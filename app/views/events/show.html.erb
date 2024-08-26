@@ -24,9 +24,9 @@
             </div>
             <hr class="subtle-divider" style="width: 50%">
             <h5>
-              <%= @event.category %><%= render 'category_icons' %>
+              <%= @event.category %>
+              <%= render partial: 'category_icons' %>
             </h5>
-
             <div class="card-text" data-controller="text-clamp">
               <div id="event-content" class="text-clamp" data-text-clamp-target="text" >
                 <%= @event.content %>
