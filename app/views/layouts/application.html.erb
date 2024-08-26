@@ -29,6 +29,8 @@
         <%= yield %>
       <% end %>
     </div>
-    <%= render 'layouts/footer' %>
+    <% unless current_page?(root_path) %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>
