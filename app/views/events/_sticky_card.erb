@@ -1,55 +1,55 @@
-<div class="card border-0 sticky-top-mod" style="width: 90%;">
-  <div>
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h1 class="text-dark-green mb-0"><strong><%= @event.name %></strong></h1>
-      <div class="d-flex align-items-center">
-        <span class="me-2">
-          <%= Follow.where(event_id: @event.id).count %>
-        </span>
-        <div>
-          <% if Follow.exists?(event_id: @event.id, user: current_user) %>
-            <%= button_to event_follow_path(@event), method: :delete, class: "btn p-0 d-flex align-items-center" do %>
-              <i class="fa-solid fa-heart fs-3 text-danger"></i>
-            <% end %>
-          <% else %>
-            <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center" do %>
-              <i class="fa-regular fa-heart fs-3 text-danger"></i>
-            <% end %>
+<div class="card card-shadow sticky-top-mod" style="width: 90%; ; margin: 0px 50px; padding: 10px;">
+<div>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="text-dark-green mb-0"><strong><%= @event.name %></strong></h1>
+    <div class="d-flex align-items-center">
+      <span class="me-2">
+        <%= Follow.where(event_id: @event.id).count %>
+      </span>
+      <div>
+        <% if Follow.exists?(event_id: @event.id, user: current_user) %>
+          <%= button_to event_follow_path(@event), method: :delete, class: "btn p-0 d-flex align-items-center" do %>
+            <i class="fa-solid fa-heart fs-3 text-danger"></i>
           <% end %>
-        </div>
+        <% else %>
+          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center" do %>
+            <i class="fa-regular fa-heart fs-3 text-danger"></i>
+          <% end %>
+        <% end %>
       </div>
     </div>
-    <div class="d-flex align-items-center mb-3">
-      <i class="fa-solid fa-clock me-2 ms-1 text-dark-green"></i>
-      <p class="card-text mt-0
-        <% if @days_left > 0 %>
-          <% elsif @days_left == 0 %> text-red
-          <% else %> text-grey
-        <% end %>">
-        <% if @days_left > 0 %>
-          <%= pluralize(@days_left, 'day') %> left until the event!
-        <% elsif @days_left == 0 %>
-          The event closes today, hurry up!
-        <% else %>
-          Event has passed.
-        <% end %>
-      </p>
-    </div>
-    <div class="d-flex align-items-center mb-3">
-      <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
-      <p class="card-text mt-0"><%= @event.date_event %></p>
-    </div>
-    <div class="align-items-center">
-      <% if current_user.subs.exists?(event: @event) %>
-        <%= link_to event_path(@event), class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mt-2 pt-2 px-1 fs-4 text-light disabled", notice: "Event followed" do %>
-          <i class="fa-solid fa-circle-check me-2"></i>
-          Booked
-        <% end %>
-      <% else %>
-        <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
-          Join the event (<%= @event.price.to_i %> €)
-        <% end %>
-      <% end %>
-    </div>
   </div>
+  <div class="d-flex align-items-center mb-3">
+    <i class="fa-solid fa-clock me-2 ms-1 text-dark-green"></i>
+    <p class="card-text mt-0
+      <% if @days_left > 0 %>
+        <% elsif @days_left == 0 %> text-red
+        <% else %> text-grey
+      <% end %>">
+      <% if @days_left > 0 %>
+        <%= pluralize(@days_left, 'day') %> left until the event!
+      <% elsif @days_left == 0 %>
+        The event closes today, hurry up!
+      <% else %>
+        Event has passed.
+      <% end %>
+    </p>
+  </div>
+  <div class="d-flex align-items-center mb-3">
+    <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
+    <p class="card-text mt-0"><%= @event.date_event %></p>
+  </div>
+  <div class="align-items-center">
+    <% if current_user.subs.exists?(event: @event) %>
+      <%= link_to event_path(@event), class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mt-2 pt-2 px-1 fs-4 text-light disabled", notice: "Event followed" do %>
+        <i class="fa-solid fa-circle-check me-2"></i>
+        Booked
+      <% end %>
+    <% else %>
+      <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
+        Join the event (<%= @event.price.to_i %> €)
+      <% end %>
+    <% end %>
+  </div>
+</div>
 </div>
