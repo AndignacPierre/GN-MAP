@@ -1,20 +1,20 @@
-<!-- Title -->
-<div class="container mt-4">
-  <h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2" data-controller="title">Step into the Story, LARP Your Way.</h1>
-</div>
+<div class="container justify-content-center">
+  <!-- Title -->
+  <div class="container mt-2">
+    <h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2" data-controller="title">Step into the Story, LARP Your Way.</h1>
+  </div>
 
   <!-- Map -->
-<div class="container justify-content-center align-items-center"style="height: 500px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+  <div class="container justify-content-center align-items-center" style="height: 500px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 
-<%= render partial: "layouts/searchbar" %>
+  <%= render partial: "layouts/searchbar" %>
 
-<!-- Cards -->
-<div class="container">
-  <div id="cards-view" class="d-flex flex-wrap justify-content-between">
+  <!-- Cards -->
+  <div id="cards-view" class="d-flex flex-wrap justify-content-evenly">
     <% if @events.present? %>
       <% @events.each do |event| %>
         <%= render partial: "events/index_card", locals: { event: event } %>
@@ -23,5 +23,5 @@
       <p>No events available.</p>
     <% end %>
   </div>
+  <br>
 </div>
-<br>
