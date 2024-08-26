@@ -5,10 +5,6 @@ export default class extends Controller {
 
   static targets = ["text"]
 
-  connect() {
-    console.log("connecté!")
-  }
-
   seeMore(event) {
     if (this.textTarget.classList.contains("text-clamp")) {
       this.textTarget.classList.remove("text-clamp")
