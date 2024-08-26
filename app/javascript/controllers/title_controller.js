@@ -1,7 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
+  static values = {
+    delay: Number
+  }
+
   connect() {
+    console.log(this.delayValue)
+
     const title = this.element; // L'élément contrôlé est le <h1> ciblé
     const text = title.innerText;
     title.innerHTML = ""; // On vide le texte original
@@ -20,6 +26,7 @@ export default class extends Controller {
       spans.forEach(span => {
         span.style.opacity = 1; // Déclencher le fade-in
       });
-    }, 100); // Attendre un court instant avant de commencer
+    }, this.delayValue); // Attendre un court instant avant de commencer
+
   }
 }

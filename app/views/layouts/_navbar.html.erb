@@ -45,8 +45,7 @@
       <% if user_signed_in? %>
         <div class="d-flex align-items-center">
           <li class="nav-item dropdown d-flex align-items-center">
-            <%# <%= render 'layouts/set_vava', vava: current_user %>
-            <%=image_tag(asset_path('IMG_5942.PNG'), class: 'avatar dropdown-toggle', data: { bs_toggle: "dropdown" }, id: "navbarDropdown", alt: "Titouan", 'aria-haspopup': true, 'aria-expanded': false)%>
+            <%= render 'layouts/set_vava', vava: current_user %>
             <div class="ms-3 text-white">
               <div><%= current_user.username %></div>
               <div class="user-level" style="font-size: 0.875rem;"><%= "Points: #{current_user.level}" %></div>

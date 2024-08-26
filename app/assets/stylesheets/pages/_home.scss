@@ -1,10 +1,11 @@
 #home-title {
   font-size: 300px; /* Set the title size to 300px */
   color: white; /* Assuming white text on a dark background */
-  z-index: 2; /* Ensure the title stays above the image */
+  z-index: 1; /* Ensure the title stays above the image */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
   line-height: 1; /* Adjust line-height to prevent extra spacing */
+  position: relative;
 }
 
 .home-container {
@@ -20,17 +21,23 @@
 }
 
 .title-container {
-  position: relative;
+  // position: relative;
   margin-top: 5vh; /* Position the title slightly down from the top */
   z-index: 2; /* Ensure the title stays above the image */
+  > h2:nth-of-type(1) {
+    left: -300px;
+  }
+  > h2:nth-of-type(2) {
+    left: 410px;
+  }
 }
 
 .overlay-image {
   position: absolute;
-  bottom: -140%; /* Position the image at the bottom of the container */
+  bottom: 0; /* Position the image at the bottom of the container */
   left: 50%;
   transform: translateX(-50%);
-  max-width: 80%; /* Adjust the image size to cover the title partially */
+  max-width: 500px; /* Adjust the image size to cover the title partially */
   height: auto;
   z-index: 1; /* Ensure the image is behind the title */
 }

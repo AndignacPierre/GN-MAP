@@ -13,7 +13,7 @@
               <p class="bg-white border-primary rounded-pill text-danger"><i class="fa-sharp fa-solid fa-xmark"></i><span class="text-danger text-status"> Rejected</span></p> <!-- Affiche le statut de l'abonnement -->
             <% end %>
           </div>
-          <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à gauche -->
+          <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à droite -->
             <%= button_to event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button' do %>
               <i class="fa-solid fa-trash-can"></i>
             <% end %>
@@ -23,5 +23,9 @@
     </div>
   <% else %>
   <% end %>
-<%= link_to "Back to events", events_path, class: "btn-custom-not-selected mt-3 mb-4",  data: {turbo_frame: "_top"} %>
 <% end %>
+<div class="mt-4">
+  <%= link_to events_path, class: "mb-4 no-underline" do %>
+    <i class="fa-solid fa-turn-down rotated-left"></i> Back to events
+  <% end %>
+</div>
