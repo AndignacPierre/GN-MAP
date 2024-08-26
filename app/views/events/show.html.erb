@@ -10,6 +10,7 @@
             <div class="rounded-3 d-flex flex-column mb-2 align-items-start">
               <div class="d-flex align-items-center">
                 <div class="avatar-container-show">
+                  <!-- Partial _set_vava -->
                   <%= render 'layouts/set_vava', vava: @event.user %>
                 </div>
                 <div class="ms-2 d-flex flex-column justify-content-center">
@@ -22,18 +23,14 @@
               </div>
             </div>
             <hr style="width: 50%">
-            <div class="card-text">
-              <div id="event-content" class="text-clamp">
+            <div class="card-text" data-controller="text-clamp">
+              <div id="event-content" class="text-clamp" data-text-clamp-target="text" >
                 <%= @event.content %>
               </div>
-              <a href="javascript:void(0);" id="see-more-link" class="text-primary">See more</a>
+              <a href="javascript:void(0);" id="see-more-link" class="text-primary" data-action="click->text-clamp#seeMore">See more</a>
             </div>
           </div>
           <br>
-          <!-- Participant List -->
-          <div class="mt-2">
-            <%= render "participants_show_event", event: @event %>
-          </div>
         </div>
       </div>
       <!-- Sticky Card -->
@@ -43,11 +40,15 @@
     </div>
   </div>
 
-
   <hr>
 
-  <!-- Location container -->
   <div class="container mt-4">
+    <!-- Participant List -->
+    <div class="mt-2">
+      <%= render "participants_show_event", event: @event %>
+    </div>
+    <br>
+    <!-- Location container -->
     <div>
       <h5>Where the location will be:</h5>
       <p><%= @event.address %></p>

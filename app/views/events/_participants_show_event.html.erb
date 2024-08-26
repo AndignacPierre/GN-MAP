@@ -13,8 +13,7 @@
       <%= link_to user_path(User.find_by_id(event.user_id)), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>
         <div class="d-flex align-items-center">
           <%= render 'layouts/set_vava', vava: User.find_by_id(event.user_id) %>
-          <span class="ms-2"><%= User.find_by_id(event.user_id).username %></span>
-          <i class="fa-solid fa-crown text-yellow ms-2"></i>
+          <span class="ms-2"><%= User.find_by_id(event.user_id).username %><i class="fa-solid fa-crown text-yellow ms-2"></i></span>
         </div>
       <% end %>
     </div>
