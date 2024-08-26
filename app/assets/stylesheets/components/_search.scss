@@ -20,3 +20,24 @@
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+
+.rounded-pill {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+
+
+.btn-flat {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+
+.rounded-pill-input:focus {
+  border-style: none !important;
+}
