@@ -1,3 +1,93 @@
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-  <%= link_to "In construction 👷‍♀️", events_path, class: "btn-custom-not-selected mt-3 mb-4",  data: { turbo_frame: "_top" } %>
+<div class="container justify-content-center pt-4 min-vh-100">
+  <div class="row">
+    <!-- Partie de gauche -->
+    <div class="col-md-3">
+      <!-- Profil info -->
+      <div class="card-profile">
+        <!-- Profil picture -->
+        <div class="position-relative">
+          <% if @user.avatar.attached? %>
+            <%= cl_image_tag(@user.avatar.key,
+              class: 'avatar-my-profil w-100',
+              transformation: [
+                { gravity: 'face', crop: 'thumb', height: 300 }
+              ],
+              style: 'max-height: 300px; object-fit: cover;'
+            ) %>
+          <% else %>
+            <%= image_tag(asset_path('no_image.png'),
+              class: 'avatar-my-profil w-100',
+              style: 'max-height: 300px; object-fit: cover;'
+            ) %>
+          <% end %>
+          <!-- Text overlay pictrue -->
+          <div class="position-absolute text-overlay-profil w-100 fw-bold" style="bottom: 10px; left: 10px; font-size: 1.5rem;">
+            <%= @user.username %> <i class="fa-solid fa-comments"></i>
+          </div>
+        </div>
+        <!-- Achievements -->
+        <div>
+          <!-- Important number, levels, Events, rating -->
+          <div class="container">
+            <div class="row text-center">
+              <!-- Events Count -->
+              <div class="col">
+                <div class="h4 mb-1"><%= @user.events.count + @user.subs.count %></div>
+                <div>Events</div>
+              </div>
+
+              <!-- Rating Count -->
+              <div class="col">
+                <div class="h4 mb-1">
+                  0 <!-- Replace with actual rating count if available -->
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-2"></i>
+                </div>
+                <div>Rating</div>
+              </div>
+
+              <!-- Level Count -->
+              <div class="col">
+                <div class="h4 mb-1"><%= @user.level %></div>
+                <div>Level</div>
+              </div>
+            </div>
+
+            <!-- About Me Section -->
+            <div class="mt-4">
+              <div class="h5">About me</div>
+              <div><%= @user.bio %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-profile">
+        <div class="text-center mb-3">
+          <div class="h5">Achievements</div>
+        </div>
+        <div>
+          <i class="fa-solid fa-award text-warning fs-3 mx-2"></i>
+          <i class="fa-solid fa-award text-warning fs-3 mx-2"></i>
+          <i class="fa-solid fa-award text-warning fs-3 mx-2"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partie de droite -->
+    <div class="col-md-9">
+      <div class="row justify-content-center myevents-menu-spaced">
+        <div class="col-auto">
+          <%= link_to "Participated", list_profile_events_path,
+          class: "mx-4 btn #{request.params[:tab] == 'participated' ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
+        </div>
+        <div class="col-auto">
+          <%= link_to "Organized", list_profile_events_path,
+          class: "mx-4 btn #{request.params[:tab] == 'organized' ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
+        </div>
+      </div>
+      <turbo-frame id="right_content">
+        <%= render partial: 'account/content', locals: { tab: params[:tab] } %>
+      </turbo-frame>
+    </div>
+  </div>
 </div>
