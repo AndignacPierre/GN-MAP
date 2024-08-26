@@ -5,12 +5,12 @@
       <%= image_tag 'Logo_GN.png' %>
     <% end %>
 
-    <div class="container ms-1" style="width:15%">
+    <div class="container ms-1" style="width:20%">
       <%= simple_form_for :search, url: events_path, method: :get do |f| %>
-        <div class="search-form-control form-group" style="border-radius: 30px; overflow: hidden; background-color: rgba(255, 255, 255, 0.8) !important; ">
+        <div class="search-form-control form-group" style="border-radius: 10px; overflow: hidden; background-color: rgba(#FFFFFF, 0.05);">
           <%= f.input :query, label: false, placeholder: "Search ...", wrapper_html: {style: "margin-bottom: 0px !important;"}, input_html: { class: "form-control rounded-pill-input", style: "height: 40px; font-size: 14px;"  } %>
           <button type="submit" class="btn btn-flat pt-2">
-          <i class="fa-solid fa-magnifying-glass fs-4 icon-blue "></i>
+          <i class="fa-solid fa-magnifying-glass fs-7" style="color: $dark-grey;"></i>
           </button>
         </div>
       <% end %>
@@ -23,18 +23,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-         <li class="nav-item cercle-icon me-2" style="background-color: rgba(255, 255, 255, 0.8);" >
-          <%= link_to account_subscriptions_path, class: "avatar text-white" do %>
+         <li class="nav-item cercle-icon" style="background-color: white; margin-right: 15px;" >
+          <%= link_to account_subscriptions_path, class: "avatar text-dark-green" do %>
             <i class="fa-solid fa-bell fs-4" style="opacity:1;"></i>
           <% end %>
          </li>
-         <li class="nav-item cercle-icon me-2" style="background-color: rgba(255, 255, 255, 0.8);">
-          <%= link_to "", class: "avatar text-white" do %>
+         <li class="nav-item cercle-icon" style="background-color: white; margin-right: 15px;">
+          <%= link_to "", class: "avatar text-dark-green" do %>
             <i class="fa-solid fa-comments fs-5" style="opacity:1;"></i>
           <% end %>
          </li>
-         <li class="nav-item cercle-icon me-2" style="background-color: rgba(255, 255, 255, 0.8);">
-          <%= link_to account_subscriptions_path, class: "avatar text-white" do %>
+         <li class="nav-item cercle-icon" style="background-color: white; margin-right: 15px;">
+          <%= link_to account_subscriptions_path, class: "avatar text-dark-green" do %>
             <i class="fa-solid fa-calendar-days fs-5" style="opacity:1;"></i>
           <% end %>
         <% else %>
@@ -51,7 +51,7 @@
         <div class="d-flex align-items-center">
           <li class="nav-item dropdown d-flex align-items-center">
             <%= render 'layouts/set_vava', vava: current_user %>
-            <div class="ms-3 text-white">
+            <div class="ms-2 text-white">
               <div><%= current_user.username %></div>
               <div class="user-level" style="font-size: 0.875rem;"><%= "Points: #{current_user.level}" %></div>
             </div>
