@@ -1,46 +1,50 @@
+#home-title {
+  font-size: 300px; /* Set the title size to 300px */
+  color: white; /* Assuming white text on a dark background */
+  z-index: 2; /* Ensure the title stays above the image */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  line-height: 1; /* Adjust line-height to prevent extra spacing */
+}
 
-/* Video container */
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.home-container {
+  background-color: $primary;
   height: 100vh; /* Full viewport height */
-  overflow: hidden;
-}
-
-/* Video settings */
-.background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover; /* Ensures the video covers the entire background area */
-  z-index: 0; /* Ensure video is behind the content */
-}
-
-/* Overlay content */
-.overlay-content {
-  position: absolute; /* Absolute positioning to overlay on video */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1; /* Ensure content is above the video */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align title near the top */
+  align-items: center;
+  position: relative;
   text-align: center;
-  color: white;
+  overflow: hidden; /* Ensure that any overflow content is hidden */
 }
 
-.overlay-content h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+.title-container {
+  position: relative;
+  margin-top: 5vh; /* Position the title slightly down from the top */
+  z-index: 2; /* Ensure the title stays above the image */
 }
 
-.btn-primary {
-  font-size: 1.5em;
-  padding: 10px 20px;
-  z-index: 2; /* Ensure button is on top */
+.overlay-image {
+  position: absolute;
+  bottom: -140%; /* Position the image at the bottom of the container */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%; /* Adjust the image size to cover the title partially */
+  height: auto;
+  z-index: 1; /* Ensure the image is behind the title */
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 60px; /* Space from the bottom of the screen */
+  right: 60px; /* Space from the right edge of the screen */
+  z-index: 3; /* Ensure the button is above other content */
+}
+
+.btn-container .btn {
+  /* Optional: Style the button to fit your design */
+  font-size: 16px; /* Adjust as needed */
+  padding: 5px 5px; /* Adjust padding as needed */
+  background-color: $black;
 }

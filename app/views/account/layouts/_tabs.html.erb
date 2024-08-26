@@ -1,19 +1,18 @@
 <% content_for(:tabs) do %>
-  <div class="container mt-4" data-controller="button-toggle">
+  <div class="container mt-4">
     <div class="myevents-menu d-flex justify-content-center myevents-menu-spaced">
       <%= link_to "My Bookings", account_subscriptions_path,
-          class: "mx-4 #{'btn-custom-selected' if params[:tab] == 'bookings'} btn-custom-not-selected" %>
+          class: "mx-4 #{request.path == account_subscriptions_path ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
       <%= link_to "My Events", account_events_path,
-          class: "mx-4 #{'btn-custom-selected' if params[:tab] == 'events'} btn-custom-not-selected" %>
-      <%= link_to "My Follows", "#",
-          class: "mx-4 #{'btn-custom-selected' if params[:tab] == 'follows'} btn-custom-not-selected" %>
+          class: "mx-4 #{request.path == account_events_path ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
+      <%= link_to "My Follows", account_follows_path,
+          class: "mx-4 #{request.path == account_follows_path ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
     </div>
 
     <div class="container mt-4">
-    <%= yield %>
+      <%= yield %>
     </div>
   </div>
 <% end %>
 
 <%= render template: "layouts/application" %>
-  

@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "sub_#{@sub.id}" do %>
+  <% if @sub.status == 'Accepted' %>
+    <div class="d-flex align-items-center">
+      <%= render 'layouts/set_vava', vava: @sub.user %>
+      <span class="ms-2"><%= @sub.user.username %></span>
+    </div>
+    <div class="d-flex mt-2">
+      <span class="badge bg-success">Confirmed</span>
+    </div>
+  <% end %>
+<% end %>
