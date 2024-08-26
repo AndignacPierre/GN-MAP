@@ -5,6 +5,10 @@ class EventsController < ApplicationController
   def index
     @events = Event.where('date_event >= ?', Date.today).order(:date_event)
 
+    if params[:category].present? && !params[:category].include?('All')
+      @events = @events.where(category: params[:category])
+    end
+
     if params[:search].present? && params[:search][:query].present?
       @events = @events.search_by_name(params[:search][:query])
     end
