@@ -16,3 +16,7 @@ object-position: center;
   height: 20px;
   margin-right: 8px;
 }
+
+.rotated-left {
+  transform: rotate(90deg);
+}

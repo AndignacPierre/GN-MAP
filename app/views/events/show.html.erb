@@ -30,69 +30,35 @@
             </div>
           </div>
           <br>
+          <!-- Participant List -->
           <div class="mt-2">
             <%= render "participants_show_event", event: @event %>
           </div>
         </div>
       </div>
-
+      <!-- Sticky Card -->
       <div class="card-body col-4">
-        <div class="card border-0 sticky-top-mod" style="width: 90%;">
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h1 class="text-dark-green mb-0"><strong><%= @event.name %></strong></h1>
-              <i class="fa-regular fa-heart fs-1"></i>
-            </div>
-            <div class="d-flex align-items-center mb-3">
-              <i class="fa-solid fa-clock me-2 ms-1 text-dark-green"></i>
-              <p class="card-text mt-0
-                <% if @days_left > 0 %>
-                  <% elsif @days_left == 0 %> text-red
-                  <% else %> text-grey
-                <% end %>">
-                <% if @days_left > 0 %>
-                  <%= pluralize(@days_left, 'day') %> left until the event!
-                <% elsif @days_left == 0 %>
-                  The event closes today, hurry up!
-                <% else %>
-                  Event has passed.
-                <% end %>
-              </p>
-            </div>
-            <div class="d-flex align-items-center mb-3">
-              <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
-              <p class="card-text mt-0"><%= @event.date_event %></p>
-            </div>
-            <div class="align-items-center">
-              <% if current_user.subs.exists?(event: @event) %>
-                <%= link_to "#", class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mt-2 pt-2 px-1 fs-4 text-light disabled" do %>
-                  <i class="fa-solid fa-circle-check me-2"></i>
-                  Booked
-                <% end %>
-              <% else %>
-                <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
-                Join the event (<%= @event.price.to_i %> €)
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        <%= render "sticky_card", event: @event %>
       </div>
     </div>
   </div>
 
+
   <hr>
 
+  <!-- Location container -->
   <div class="container mt-4">
     <div>
       <h5>Where the location will be:</h5>
       <p><%= @event.address %></p>
     </div>
-    <div class="mb-5" style="width: 100%; height: 500px;"
+    <div class="mb-3" style="width: 100%; height: 500px; border-radius: 10px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  <%= link_to "Back to events", events_path, class: "btn-custom-not-selected mt-1 mb-4"%>
+  <%= link_to events_path, class: "mt-1 mb-4 no-underline" do %>
+    <i class="fa-solid fa-turn-down rotated-left"></i> Back to events
+  <% end %>
   </div>
 <div>
