@@ -5,6 +5,17 @@
       <%= image_tag 'Logo_GN.png' %>
     <% end %>
 
+    <div class="container ms-1" style="width:15%">
+      <%= simple_form_for :search, url: events_path, method: :get do |f| %>
+        <div class="search-form-control form-group" style="border-radius: 30px; overflow: hidden; background-color: rgba(255, 255, 255, 0.8) !important; ">
+          <%= f.input :query, label: false, placeholder: "Search ...", wrapper_html: {style: "margin-bottom: 0px !important;"}, input_html: { class: "form-control rounded-pill-input", style: "height: 40px; font-size: 14px;"  } %>
+          <button type="submit" class="btn btn-flat pt-2">
+          <i class="fa-solid fa-magnifying-glass fs-4 icon-blue "></i>
+          </button>
+        </div>
+      <% end %>
+    </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,9 +23,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "My events",  account_subscriptions_path, class: "nav-link text-white my-events-link" %>
-          </li>
+         <li class="nav-item cercle-icon me-2" style="background-color: rgba(255, 255, 255, 0.8);" >
+          <%= link_to account_subscriptions_path, class: "avatar text-white" do %>
+            <i class="fa-solid fa-bell fs-4" style="opacity:1;"></i>
+          <% end %>
+         </li>
+         <li class="nav-item cercle-icon me-2" style="background-color: rgba(255, 255, 255, 0.8);">
+          <%= link_to "", class: "avatar text-white" do %>
+            <i class="fa-solid fa-comments fs-5" style="opacity:1;"></i>
+          <% end %>
+         </li>
+         <li class="nav-item cercle-icon me-2" style="background-color: rgba(255, 255, 255, 0.8);">
+          <%= link_to account_subscriptions_path, class: "avatar text-white" do %>
+            <i class="fa-solid fa-calendar-days fs-5" style="opacity:1;"></i>
+          <% end %>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
