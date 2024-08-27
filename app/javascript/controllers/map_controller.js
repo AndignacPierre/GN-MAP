@@ -21,7 +21,7 @@ export default class extends Controller {
     this.addMarkersToMap() // Appelle la méthode publique
     this.fitMapToMarkers() // Appelle la méthode publique
 
-    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
+    this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
   }
 
   async markersValueChanged() {
