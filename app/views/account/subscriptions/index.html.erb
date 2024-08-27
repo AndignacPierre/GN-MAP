@@ -1,19 +1,29 @@
 <%= turbo_frame_tag :events_frame do %>
   <% if @subscriptions.present? %>
-    <div class="d-flex flex-wrap"> <!-- Ce div contiendra toutes les cartes -->
+
+    <!-- Cards div -->
+    <div class="d-flex flex-wrap">
       <% @subscriptions.each do |sub| %>
-        <div class="card-booking"> <!-- Carte pour chaque abonnement -->
+
+        <!-- Each Card div -->
+        <div class="card-booking">
+
+          <!-- render Card content -->
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
+
+          <!-- Card status -->
           <div class="sub-status w-25 text-center">
             <% if sub.status == "Pending" %>
-              <p class="bg-white border-primary rounded-pill text-warning " style="justify-content: center;"><i class="fa-sharp fa-solid fa-hourglass-start me-1"></i><span class="text-warning text-status"> Pending</span></p> <!-- Affiche le statut de l'abonnement -->
+              <p class="bg-white rounded-pill text-warning " style="justify-content: center;"><i class="fa-sharp fa-solid fa-hourglass-start me-1"></i><span class="text-warning text-status"> Pending</span></p>
             <% elsif sub.status == "Accepted" %>
-              <p class="bg-white border-primary rounded-pill text-green" style="justify-content: center;"><i class="fa-sharp fa-solid fa-check me-1"></i><span class="text-green text-status"> Accepted</span></p> <!-- Affiche le statut de l'abonnement -->
+              <p class="bg-white rounded-pill text-green" style="justify-content: center;"><i class="fa-sharp fa-solid fa-check me-1"></i><span class="text-green text-status"> Accepted</span></p>
              <% elsif sub.status == "Refused" %>
-              <p class="bg-white border-primary rounded-pill text-danger" style="justify-content: center;"><i class="fa-sharp fa-solid fa-xmark me-1"></i><span class="text-danger text-status"> Refused</span></p> <!-- Affiche le statut de l'abonnement -->
+              <p class="bg-white rounded-pill text-danger" style="justify-content: center;"><i class="fa-sharp fa-solid fa-xmark me-1"></i><span class="text-danger text-status"> Refused</span></p>
             <% end %>
           </div>
-          <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à droite -->
+
+          <!-- Trash Icon -->
+          <div class="button-cancel mt-auto">
             <%= button_to event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button' do %>
               <i class="fa-solid fa-trash-can fs-4"></i>
             <% end %>
