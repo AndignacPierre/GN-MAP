@@ -5,20 +5,22 @@ class EventsController < ApplicationController
   def index
     @events = Event.where('date_event >= ?', Date.today).order(:date_event)
 
-    if params[:category].present? && !params[:category].include?('All')
+    if params[:category].present?
       @events = @events.where(category: params[:category])
-    end
-
-    if params[:search].present? && params[:search][:query].present?
-      @events = @events.search_by_name(params[:search][:query])
     end
 
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { event: event })
+        info_window_html: render_to_string(partial: "info_window", locals: { event: event }, formats: [:html])
       }
+    end
+
+    respond_to do |format|
+      format.html # pour le chargement initial de la page
+      # format.text { render partial: "events/index", locals: { events: @events }, formats: [:html] }
+      format.json { render json: { markers: @markers } }
     end
   end
 

@@ -5,7 +5,7 @@
   </div>
 
   <!-- Map -->
-  <div class="container justify-content-center align-items-center" style="height: 500px;"
+  <div id="map" class="container justify-content-center align-items-center" style="height: 500px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -15,33 +15,10 @@
   <div class="container">
     <div id="filters" class="filters">
       <h3>Filtres</h3>
-      <form id="filter-form" action="<%= events_path %>" method="get" data-controller="filter">
-        <div class="form-group">
-          <%= check_box_tag 'category[]', 'Murder', params[:category]&.include?('Murder') %>
-          <%= label_tag 'category[]', 'Murder' %>
-        </div>
-        <div class="form-group">
-          <%= check_box_tag 'category[]', 'Zombie', params[:category]&.include?('Zombie') %>
-          <%= label_tag 'category[]', 'Zombie' %>
-        </div>
-        <div class="form-group">
-          <%= check_box_tag 'category[]', 'Fantasy', params[:category]&.include?('Fantasy') %>
-          <%= label_tag 'category[]', 'Fantasy' %>
-        </div>
-        <div class="form-group">
-          <%= check_box_tag 'category[]', 'SF', params[:category]&.include?('SF') %>
-          <%= label_tag 'category[]', 'SF' %>
-        </div>
-        <div class="form-group">
-          <%= check_box_tag 'category[]', 'Historical', params[:category]&.include?('Historical') %>
-          <%= label_tag 'category[]', 'Historical' %>
-        </div>
-        <div class="form-group">
-          <%= check_box_tag 'category[]', 'Other', params[:category]&.include?('Other') %>
-          <%= label_tag 'category[]', 'Other' %>
-        </div>
-        <%= submit_tag 'Apply Filters', class: 'btn btn-primary' %>
-      </form>
+
+      <%= form_with url: events_path, method: :get, data: { controller: :filter } do |f| %>
+        <%= f.collection_check_boxes :category, [["Murder", "Murder"], ["Zombie", "Zombie"], ["Fantasy", "Fantasy"], ["SF", "SF"], ["Historical",  "Historical"], ["Other", "Other"]], :second, :first, {}, data: { action: "change->filter#update"} %>
+      <% end %>
     </div>
   </div>
 
