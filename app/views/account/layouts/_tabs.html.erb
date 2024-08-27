@@ -1,3 +1,4 @@
+<!-- Tabs buttons (My Bookings | My Events | My Follows) -->
 <% content_for(:tabs) do %>
   <div class="container mt-2">
     <div class="d-flex justify-content-center myevents-menu">
@@ -9,10 +10,19 @@
           class: "mx-4 #{request.path == account_follows_path ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
     </div>
 
+<!-- Selected tab content -->
     <div class="container mt-4">
       <%= yield %>
+
+<!-- Back to events button -->
+      <div class="mt-4">
+        <%= link_to events_path, class: "mb-4 no-underline" do %>
+          <i class="fa-solid fa-turn-down rotated-left"></i> Back to events
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>
 
+<!-- Footer -->
 <%= render template: "layouts/application" %>
