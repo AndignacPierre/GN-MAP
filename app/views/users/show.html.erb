@@ -1,7 +1,7 @@
 <div class="container justify-content-center pt-4 min-vh-100">
   <div class="row">
     <!-- Partie de gauche -->
-    <div class="col-md-3">
+    <div class="col-md-4">
       <!-- Profil info -->
       <div class="card-profile">
         <!-- Profil picture -->
@@ -10,9 +10,9 @@
             <%= cl_image_tag(@user.avatar.key,
               class: 'avatar-my-profil w-100',
               transformation: [
-                { gravity: 'face', crop: 'thumb', height: 300 }
+                { gravity: 'face', crop: 'thumb'}
               ],
-              style: 'max-height: 300px; object-fit: cover;'
+              style: 'max-height: 500px; object-fit: cover;'
             ) %>
           <% else %>
             <%= image_tag(asset_path('no_image.png'),
@@ -32,7 +32,7 @@
             <div class="row text-center">
               <!-- Events Count -->
               <div class="col">
-                <div class="h4 mb-1"><%= @user.events.count + @user.subs.count %></div>
+                <div class="h4 mb-1"><%= @user.events.count + @user.subs.where(status: 'Accepted').count %></div>
                 <div>Events</div>
               </div>
 
@@ -61,6 +61,7 @@
         </div>
       </div>
 
+      <!-- Achievements -->
       <div class="card-profile">
         <div class="text-center mb-3">
           <div class="h5">Achievements</div>
@@ -74,20 +75,49 @@
     </div>
 
     <!-- Partie de droite -->
-    <div class="col-md-9">
-      <div class="row justify-content-center myevents-menu-spaced">
-        <div class="col-auto">
-          <%= link_to "Participated", list_profile_events_path,
-          class: "mx-4 btn #{request.params[:tab] == 'participated' ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
+    <div class="col-md-8">
+      <!-- Name tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="Participated-tab" data-bs-toggle="tab" data-bs-target="#Participated" type="button" role="tab" aria-controls="Participated" aria-selected="true">Participated</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="Organized-tab" data-bs-toggle="tab" data-bs-target="#Organized" type="button" role="tab" aria-controls="Organized" aria-selected="false">Organized</button>
+        </li>
+      </ul>
+      <!-- Content -->
+      <div class="tab-content" id="myTabContent">
+        <!-- Participated list -->
+        <div class="tab-pane fade show active" id="Participated" role="tabpanel" aria-labelledby="Participated-tab">
+          <% if @user.subs.present? %>
+            <% @user.subs.where(status: 'Accepted').each do |sub| %>
+              <div class="card-booking">
+                <%= render partial: "events/index_card", locals: { event: sub.event } %>
+              </div>
+            <% end %>
+          <!-- No events -->
+          <% else %>
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+              <p class="text-center">No events found.</p>
+            </div>
+          <% end %>
         </div>
-        <div class="col-auto">
-          <%= link_to "Organized", list_profile_events_path,
-          class: "mx-4 btn #{request.params[:tab] == 'organized' ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
+        <!-- Organized list -->
+        <div class="tab-pane fade" id="Organized" role="tabpanel" aria-labelledby="Organized-tab">
+          <% if @user.events.present? %>
+            <% @user.events.each do |event| %>
+              <div class="card-booking">
+                <%= render partial: "events/index_card", locals: { event: event } %>
+              </div>
+            <% end %>
+          <!-- No events -->
+          <% else %>
+            <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+              <p class="text-center">No events found.</p>
+            </div>
+          <% end %>
         </div>
       </div>
-      <turbo-frame id="right_content">
-        <%= render partial: 'account/content', locals: { tab: params[:tab] } %>
-      </turbo-frame>
     </div>
-  </div>
+
 </div>
