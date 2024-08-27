@@ -5,8 +5,6 @@ Event.destroy_all
 puts("generating crazy users...")
 
 # Utilisateurs créateurs d'événements avec des niveaux différents
-titouan = User.create(username: "KingTitouan", first_name: "Titouan", last_name: "Kermarec", email: "titouan@hotmail.fr", level: 1, password: "azerty",
-                      bio: "Dev Web, I love manga Naruto, video games, RPG and LARP.")
 
 user1 = User.create(username: "LarpMaster", first_name: "Liam", last_name: "Harrison", email: "liam.harrison@larpworld.com", level: 850, password: "azerty",
                     bio: "I’m a passionate storyteller who loves creating immersive LARP experiences. When I’m not running games, I enjoy studying medieval history and writing my own fantasy novels. Join me for epic adventures full of twists and turns.")
@@ -256,13 +254,6 @@ user36.avatar.attach(
   content_type: 'image/jpg' # use the mime type of the attached file here
 )
 user36.save
-
-titouan.avatar.attach(
-  io: URI.open('https://files.slack.com/files-pri/T02NE0241-F07J4T39TT7/file.jpg'),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-  content_type: 'image/jpg' # use the mime type of the attached file here
-)
-titouan.save
 
 #--------------------------------------------------#
 # Attach image to event
