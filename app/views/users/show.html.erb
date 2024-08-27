@@ -45,9 +45,14 @@
 
               <!-- Rating Count -->
               <div class="col">
-                <div class="h4 mb-1 fs-1">
-                  0 <!-- Replace with actual rating count if available -->
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-1" style="width: 1.5rem; height: 1.5rem;"></i>
+                <div class="h4 mb-1">
+                  <% if @user.events.where(status: 'Past').exists? %>
+                    <%= @user.events.where(status: 'Past').joins(:reviews).average('reviews.rating').round(1) %>
+                    <%= "(" + @user.events.where(status: 'Past').joins(:reviews).count.to_s + ")" %>
+                  <% else %>
+                    0 (0)
+                  <% end %>
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-2"></i>
                 </div>
                 <div>Rating</div>
               </div>
