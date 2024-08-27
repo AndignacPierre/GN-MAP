@@ -13,7 +13,7 @@ export default class extends Controller {
 
     window.map = this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mekanik/cm0cjeby200rc01pl4t5o5n9p"
     })
 
     this.markers = [] // Initialiser un tableau pour stocker les markers
