@@ -24,3 +24,12 @@
   -webkit-line-clamp: 3; /* Number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+.card-body .text-clamp {
+  overflow: hidden;
+  max-height: 100px; /* Adjust as needed */
+  /* You can also use a line-clamp if you prefer */
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}

@@ -6,11 +6,11 @@
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
           <div class="sub-status w-25 text-center">
             <% if sub.status == "Pending" %>
-              <p class="bg-white border-primary rounded-pill text-warning"><i class="fa-sharp fa-solid fa-hourglass-start "></i><span class="text-warning text-status"> Pending</span></p> <!-- Affiche le statut de l'abonnement -->
+              <p class="bg-white border-primary rounded-pill text-warning " style="justify-content: center;"><i class="fa-sharp fa-solid fa-hourglass-start me-1"></i><span class="text-warning text-status"> Pending</span></p> <!-- Affiche le statut de l'abonnement -->
             <% elsif sub.status == "Accepted" %>
-              <p class="bg-white border-primary rounded-pill text-green"><i class="fa-sharp fa-solid fa-check"></i><span class="text-green text-status"> Accepted</span></p> <!-- Affiche le statut de l'abonnement -->
-             <% elsif sub.status == "Rejected" %>
-              <p class="bg-white border-primary rounded-pill text-danger"><i class="fa-sharp fa-solid fa-xmark"></i><span class="text-danger text-status"> Rejected</span></p> <!-- Affiche le statut de l'abonnement -->
+              <p class="bg-white border-primary rounded-pill text-green" style="justify-content: center;"><i class="fa-sharp fa-solid fa-check me-1"></i><span class="text-green text-status"> Accepted</span></p> <!-- Affiche le statut de l'abonnement -->
+             <% elsif sub.status == "Refused" %>
+              <p class="bg-white border-primary rounded-pill text-danger" style="justify-content: center;"><i class="fa-sharp fa-solid fa-xmark me-1"></i><span class="text-danger text-status"> Refused</span></p> <!-- Affiche le statut de l'abonnement -->
             <% end %>
           </div>
           <div class="button-cancel mt-auto"> <!-- Bouton "Cancel" en bas à droite -->

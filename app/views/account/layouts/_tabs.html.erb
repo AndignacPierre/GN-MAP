@@ -1,6 +1,6 @@
 <% content_for(:tabs) do %>
   <div class="container mt-4">
-    <div class="myevents-menu d-flex justify-content-center myevents-menu-spaced">
+    <div class="d-flex justify-content-center myevents-menu">
       <%= link_to "My Bookings", account_subscriptions_path,
           class: "mx-4 #{request.path == account_subscriptions_path ? 'btn-custom-selected' : 'btn-custom-not-selected'}" %>
       <%= link_to "My Events", account_events_path,
