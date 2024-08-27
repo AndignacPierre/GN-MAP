@@ -1,0 +1,31 @@
+<h1 class="mb-4">New Message</h1>
+
+<%= form_with(model: @message, local: true, class: 'needs-validation', novalidate: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content, class: 'form-control', rows: 4, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :receiver_id, class: 'form-label' %>
+    <div data-controller="message-search">
+      <input type="text" data-target="message-search.search" class="form-control" placeholder="Start typing to search users...">
+      <ul class="list-group mt-2" data-target="message-search.options">
+        <% @users.each do |user| %>
+          <li class="list-group-item" data-action="click->message-search#selectOption"><%= user.username %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit 'Create Message', class: 'btn btn-primary' %>
+  </div>
+
+  <%= link_to 'Back to Messages', messages_path, class: 'btn btn-secondary' %>
+<% end %>

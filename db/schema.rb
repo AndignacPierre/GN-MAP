@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_23_105319) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_27_142153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,6 +80,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_23_105319) do
     t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.string "title"
+    t.boolean "read", default: false
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_messages_on_receiver_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
@@ -123,6 +135,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_23_105319) do
   add_foreign_key "events", "users"
   add_foreign_key "follows", "events"
   add_foreign_key "follows", "users"
+  add_foreign_key "messages", "users", column: "receiver_id"
+  add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "reviews", "events"
   add_foreign_key "reviews", "users"
   add_foreign_key "subs", "events"

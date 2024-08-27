@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :events_follow, through: :follow, source: :event
   has_many :events_sub, through: :sub, source: :event
   has_many :events_review, through: :review, source: :event
+  has_many :sent_messages, class_name: 'Message', foreign_key: 'sender_id'
+  has_many :received_messages, class_name: 'Message', foreign_key: 'receiver_id'
 
   #validations
   validates :username, presence: true, uniqueness: true
