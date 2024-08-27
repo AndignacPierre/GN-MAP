@@ -32,7 +32,10 @@
             <hr class="subtle-divider" style="width: 50%">
 
             <!-- Category -->
-            <h5><%= @event.category %><%= render partial: 'category_icons' %></h5>
+            <h5>
+              <span><%= @event.category %></span>
+              <span><%= render partial: 'category_icons' %></span>
+            </h5>
 
             <!-- Description -->
             <div class="card-text" data-controller="text-clamp">
