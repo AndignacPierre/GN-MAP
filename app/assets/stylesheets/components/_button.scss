@@ -1,3 +1,16 @@
+/* Primary button styling */
+.btn-primary {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  z-index: 2; /* Ensure button is on top */
+  border-radius: 10px;
+}
+
+/* Outline primary button styling */
+.btn-outline-primary {
+  border-radius: 10px;
+}
+
 /* Myevents menu button selected */
 .btn-custom-selected {
   font-size: 1.5em;
@@ -33,41 +46,18 @@
 .btn-custom-not-selected:hover,
 .btn-custom-not-selected:focus {
   background-color: white; /* Darker shade for hover */
-  border-color: #31463b; /* Darker border on hover */
   color: $primary;
+  border: none;
 }
 
-.myevents-menu {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 50px;
-  border-radius: 10px;
-}
-
-
+/* Round button styling */
 .round-button {
-  width: 35px; /* Ajustez selon vos besoins */
-  height: 35px; /* Assurez-vous que la hauteur est égale à la largeur */
-  border-radius: 50%; /* Assure une forme ronde */
+  width: 35px; /* Adjust as needed */
+  height: 35px; /* Ensure the height equals the width */
+  border-radius: 50%; /* Ensures a round shape */
   border: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.btn-primary {
-  font-size: 1.5em;
-  padding: 10px 20px;
-  z-index: 2; /* Ensure button is on top */
-  border-radius: 10px;
-}
-
-.btn-outline-primary {
-  border-radius: 10px;
-}
-
-.no-underline {
-  text-decoration: none;
 }

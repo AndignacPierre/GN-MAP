@@ -1,0 +1,30 @@
+/* Custom styles for selected tab button */
+.nav-tabs .nav-link.active {
+  @extend .btn-custom-selected;
+  border: none;
+}
+
+/* Custom styles for unselected tab buttons */
+.nav-tabs .nav-link {
+  @extend .btn-custom-not-selected;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: white; /* Same hover effect as in btn-custom-not-selected */
+    border: none;
+    color: $primary;
+  }
+}
+
+/* Ensures all tabs have the same width and alignment */
+.nav-item {
+  flex-grow: 1; /* Ensure tabs fill the available space evenly */
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between tabs */
+  border: none;
+}
