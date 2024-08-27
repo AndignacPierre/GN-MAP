@@ -1,9 +1,9 @@
 .card {
-  margin: 2rem;
   margin-bottom: 20px;
   background-color: white;
   border-radius: 15px;
 }
+
 
 .img-card {
   img {
@@ -107,6 +107,11 @@
 
 .card-booking .text-status {
   font-size: 14px;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 // Smallest device
