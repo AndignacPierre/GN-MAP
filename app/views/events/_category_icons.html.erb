@@ -1,0 +1,14 @@
+<% case @event.category %>
+  <% when 'Murder' %>
+    <%= image_tag "cat-murder-icon.png", alt: "Murder category", size: "35x35" %>
+  <% when 'Zombie' %>
+    <%= image_tag "cat-zombie-icon.png", alt: "Zombie category", size: "35x35" %>
+  <% when 'Fantasy' %>
+    <%= image_tag "cat-fantasy-icon.png", alt: "Fantasy category", size: "35x35" %>
+  <% when 'SF' %>
+    <%= image_tag "cat-SF-icon.png", alt: "Science-Fiction category", size: "35x35" %>
+  <% when 'History' %>
+    <%= image_tag "cat-historical-icon.png", alt: "Historical category", size: "35x35" %>
+  <% else %>
+    <%= image_tag "cat-default-icon.png", alt: "Other category", size: "35x35" %>
+<% end %>

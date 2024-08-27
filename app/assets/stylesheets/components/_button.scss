@@ -44,8 +44,12 @@
   color: $primary;
 }
 
-.myevents-menu-spaced {
-  margin-top: 50px; /* Adjust this value to increase or decrease space */
+.myevents-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  border-radius: 10px;
 }
 
 
@@ -63,6 +67,10 @@
   font-size: 1.5em;
   padding: 10px 20px;
   z-index: 2; /* Ensure button is on top */
+  border-radius: 10px;
+}
+
+.btn-outline-primary {
   border-radius: 10px;
 }
 
