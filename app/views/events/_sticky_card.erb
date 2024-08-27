@@ -35,6 +35,8 @@
       <% end %>
     </p>
   </div>
+
+  <!-- Button participation -->
   <div class="d-flex align-items-center mb-3">
     <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
     <p class="card-text mt-0"><%= @event.date_event %></p>
@@ -46,8 +48,21 @@
         Booked
       <% end %>
     <% else %>
-      <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
-        Join the event (<%= @event.price.to_i %> €)
+      <!-- Event Open -->
+      <% if @event.status == "Open" %>
+        <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
+          Join the event (<%= @event.price.to_i %> €)
+        <% end %>
+      <!-- Event Closed -->
+      <% elsif @event.status == "Closed" %>
+        <%= link_to '#', class: "btn btn-danger btn-lg w-100 link-underline link-underline-opacity-0" do %>
+          Closed
+        <% end %>
+      <!-- Event Past -->
+      <% elsif @event.status == "Past" %>
+        <%= link_to '#', class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
+          Past
+        <% end %>
       <% end %>
     <% end %>
   </div>

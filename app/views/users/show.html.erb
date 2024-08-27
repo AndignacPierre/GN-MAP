@@ -1,10 +1,11 @@
-<div class="container mt-4 min-vh-100 d-flex justify-content-center">
-  <div class="row justify-content-center align-items-start w-100">
+<div class="container mt-4 min-vh-100">
+  <div class="row justify-content-between">
 
     <!----------------->
     <!-- Left column -->
     <!----------------->
-    <div class="col-md-6">
+
+    <div class="col-md-4">
 
       <!-- Profile info -->
       <div class="card-profile">
@@ -14,7 +15,7 @@
             <%= cl_image_tag(@user.avatar.key,
               class: 'avatar-my-profil w-100',
               transformation: [
-                { gravity: 'face', crop: 'thumb'}
+                { gravity: 'face', crop: 'fill', width: 300, height: 300 } # Ajustez 'y' pour un décalage vertical
               ],
               style: 'max-height: 350px; object-fit: cover;'
             ) %>
@@ -33,9 +34,9 @@
 
         <!-- Achievements -->
         <div>
+          <!-- Important number, levels, Events, rating -->
           <div class="container">
             <div class="row text-center">
-
               <!-- Events Count -->
               <div class="col">
                 <div class="h4 mb-1 fs-1"><%= @user.events.count + @user.subs.where(status: 'Accepted').count %></div>
@@ -44,14 +45,14 @@
 
               <!-- Rating Count -->
               <div class="col">
-                <div class="h4 mb-1 fs-1">
+                <div class="h4 mb-1">
                   <% if @user.events.where(status: 'Past').exists? %>
                     <%= @user.events.where(status: 'Past').joins(:reviews).average('reviews.rating').round(1) %>
                     <%= "(" + @user.events.where(status: 'Past').joins(:reviews).count.to_s + ")" %>
                   <% else %>
                     0 (0)
-                  <% end %> <!-- Replace with actual rating count if available -->
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-1" style="width: 1.5rem; height: 1.5rem; padding-bottom: 5px;"></i>
+                  <% end %>
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-2"></i>
                 </div>
                 <div>Rating</div>
               </div>
@@ -89,20 +90,20 @@
     <!-- Right column -->
     <!------------------>
 
-    <div class="col-md-6">
+    <div class="col-md-6 ml-auto">
 
       <!-- Name tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active w-100 text-center btn-custom-selected" id="Participated-tab" data-bs-toggle="tab" data-bs-target="#Participated" type="button" role="tab" aria-controls="Participated" aria-selected="true">Participated</button>
+          <button class="nav-link active w-100 text-center" id="Participated-tab" data-bs-toggle="tab" data-bs-target="#Participated" type="button" role="tab" aria-controls="Participated" aria-selected="true">Participated</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link w-100 text-center btn-custom-not-selected" data-bs-toggle="tab" data-bs-target="#Organized" type="button" role="tab" aria-controls="Organized" aria-selected="false">Organized <i class="fa-solid fa-crown"></i></button>
+          <button class="nav-link w-100 text-center" id="Organized-tab" data-bs-toggle="tab" data-bs-target="#Organized" type="button" role="tab" aria-controls="Organized" aria-selected="false">Organized</button>
         </li>
       </ul>
 
       <!-- Content -->
-      <div class="tab-content d-flex justify-content-center" id="myTabContent">
+      <div class="tab-content" id="myTabContent">
         <!-- Participated list -->
         <div class="tab-pane fade show active" id="Participated" role="tabpanel" aria-labelledby="Participated-tab">
           <% if @user.subs.present? %>
