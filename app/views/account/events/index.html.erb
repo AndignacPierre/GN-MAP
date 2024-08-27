@@ -86,6 +86,7 @@
 <% end %> <!-- Closing turbo_frame_tag -->
 
 <!-- Event Past -->
+<% if @events.where(status: "Past").present? %>
 <div>
   <h1 class="text-primary">Past Events:</h1>
   <% @events.where(status: "Past").each do |event| %>
@@ -99,7 +100,7 @@
           <% end %>
         </div>
         <div class="col-md-8 d-flex">
-          <div>
+          <div class="border-end me-4" style="width: 500px;">
             <h2 class="text-dark-green me-3"><strong><%= event.name %></strong></h2>
             <div class="d-flex align-items-center">
               <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
@@ -114,8 +115,14 @@
               <p class="card-text text-clamp-address me-2"><%= event.address %></p>
             </div>
           </div>
+            <div class="container">
+              <div data-controller="participants">
+                <%= render "participants_show_event", event: event %>
+              </div>
+             </div>
         </div>
       </div>
     </div>
   <% end %> <!-- Fin de la boucle each -->
-</div> <!-- Fermeture du div principal -->
+</div>
+<% end %> <!-- Fermeture du div principal -->
