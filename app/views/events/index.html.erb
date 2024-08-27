@@ -5,12 +5,24 @@
   </div>
 
   <!-- Map -->
-  <div class="container justify-content-center align-items-center" style="height: 500px;"
+  <div id="map" class="container justify-content-center align-items-center" style="height: 500px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+  <!-- Filtres -->
+  <div class="container">
+    <div id="filters" class="filters">
+      <h3>Filtres</h3>
+
+      <%= form_with url: events_path, method: :get, data: { controller: :filter } do |f| %>
+        <%= f.collection_check_boxes :category, [["Murder", "Murder"], ["Zombie", "Zombie"], ["Fantasy", "Fantasy"], ["SF", "SF"], ["Historical",  "Historical"], ["Other", "Other"]], :second, :first, {}, data: { action: "change->filter#update"} %>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Searchbar -->
   <%= render partial: "layouts/searchbar" %>
 
   <!-- Cards -->
