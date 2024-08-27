@@ -12,56 +12,65 @@
             <%= image_tag(asset_path('no_image.png'), alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
           <% end %>
         </div>
-        <div class="col-md-8">
-          <h2 class="text-dark-green"><strong><%= event.name %></strong></h2>
-          <div class="d-flex align-items-center">
-            <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
-            <p class="card-text mt-0"><%= event.date_event %></p>
-          </div>
-          <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-            <i class="fa-solid fa-circle-user me-2 ms-1 text-dark-green"></i>
-            <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
-          </div>
-          <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-            <i class="fa-solid fa-location-dot me-2 ms-1 text-dark-green"></i>
-            <p class="card-text"><%= event.address %></p>
-          </div>
-
-          <div class="mt-3"> <!-- PARTICIPANT REQUEST -->
+        <div class="col-md-8 d-flex">
+          <div class="border-end me-4">
+            <h2 class="text-dark-green me-3"><strong><%= event.name %></strong></h2>
             <div class="d-flex align-items-center">
-              <h4 class="text-dark-green me-2 mb-0">
-                <strong>Participants request <%= Sub.where(event_id: event.id).count %>/<%= event.participants_max %> : <%= Sub.where(event_id: event.id, status: 'Pending').count %></strong>
-              </h4>
-              <button class="btn btn-info p-1" type="button" data-bs-toggle="collapse" data-bs-target="#followers-<%= event.id %>" aria-expanded="false" aria-controls="followers-<%= event.id %>">
-                <i class="fa-solid fa-chevron-down"></i>
-              </button>
+              <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
+              <p class="card-text mt-0"><%= event.date_event %></p>
             </div>
-            <div class="collapse mt-2" id="followers-<%= event.id %>">
-              <% Sub.where(event_id: event.id).each do |sub| %>
-                <%= turbo_frame_tag "sub_#{sub.id}" do %>
-                  <div class="mb-2">
-                    <%= link_to user_path(sub.user), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>
-                      <div class="d-flex align-items-center">
-                        <%= render 'layouts/set_vava', vava: sub.user %>
-                        <span class="ms-2"><%= sub.user.username %></span>
-                      </div>
-                    <% end %>
-                    <div class="d-flex mt-2">
-                      <% if sub.status == 'Pending' %>
-                        <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2" do %>
-                          Accept
-                        <% end %>
-                        <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded" do %>
-                          Decline
-                        <% end %>
-                      <% elsif sub.status == 'Accepted' %>
-                        <span class="badge bg-success">Confirmed</span>
+            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+              <i class="fa-solid fa-circle-user me-2 ms-1 text-dark-green"></i>
+              <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
+            </div>
+            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+              <i class="fa-solid fa-location-dot me-2 ms-1 text-dark-green"></i>
+              <p class="card-text"><%= event.address %></p>
+            </div>
+          </div>
+          <div>
+            <div> <!-- PARTICIPANT REQUEST -->
+              <div class="align-items-center mx-1">
+                <h4 class="text-dark-green me-2 mb-0">
+                  <strong>Participants:<%= Sub.where(event_id: event.id).count %>/<%= event.participants_max %>
+                </h4>
+              <div>
+                <h4>Request : <%= Sub.where(event_id: event.id, status: 'Pending').count %></strong>
+                  <button class="btn btn-info p-1" type="button" data-bs-toggle="collapse" data-bs-target="#followers-<%= event.id %>" aria-expanded="false" aria-controls="followers-<%= event.id %>">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </h4>
+              </div>
+              <div class="collapse mt-2" id="followers-<%= event.id %>">
+                <% Sub.where(event_id: event.id).each do |sub| %>
+                  <%= turbo_frame_tag "sub_#{sub.id}" do %>
+                    <div class="mb-2">
+                      <%= link_to user_path(sub.user), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>
+                        <div class="d-flex align-items-center">
+                          <%= render 'layouts/set_vava', vava: sub.user %>
+                          <span class="ms-2"><%= sub.user.username %></span>
+                        </div>
                       <% end %>
+                      <div class="d-flex mt-2">
+                        <% if sub.status == 'Pending' %>
+                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2" do %>
+                            Accept
+                          <% end %>
+                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded" do %>
+                            Decline
+                          <% end %>
+                        <% elsif sub.status == 'Accepted' %>
+                          <span class="badge bg-success">Confirmed</span>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
             </div>
+
+              </div>
+
           </div>
         </div>
       </div>
