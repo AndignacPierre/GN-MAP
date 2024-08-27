@@ -17,53 +17,13 @@
   width: 40px;
 }
 
-.navbar-text-center-custom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar-text-center-custom h4 {
-  margin: 0;
-}
-
 .navbar .user-level {
   /* Optional: customize the text color and size for the level */
   color: $yellow; /* Bootstrap's muted text color */
   font-size: 0.875rem; /* Slightly smaller font size */
 }
 
-.logo-container {
-  display: flex;
-  align-items: center; /* Ensures the logo is vertically centered */
-}
-
-/* Adjusting or removing margin from container-fluid */
-.container-fluid {
-  padding-left: 20px; /* Apply padding instead of margin to avoid pushing the video */
-  padding-right: 20px;
-  margin: 0; /* Remove margin to avoid creating gaps */
-}
-
-.welcome-message {
-  display: flex;
-  align-items: center;
-}
-
-.welcome-icon {
-  height: 2em; /* This sets the icon's height to match the font size */
-  margin-left: 0.5em; /* Adds some space between the text and the icon */
-}
-
-.my-events-link {
-  margin-right: 20px; /* Adjust this value as needed */
-}
-
-.cercle-icon{
-  background-color: $info;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  align-content: center;
-  text-align: center;
+/* No underline for links */
+.no-underline {
+  text-decoration: none;
 }

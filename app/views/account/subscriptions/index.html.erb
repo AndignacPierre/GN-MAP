@@ -11,6 +11,11 @@
           <!-- render Card content -->
           <%= render partial: "events/index_card", locals: { event: sub.event } %>
 
+          <!-- Trash Icon -->
+          <%= button_to event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button', style: 'position: absolute; top: 20px; right: 20px;' do %>
+            <i class="fa-solid fa-trash-can fs-4"></i>
+          <% end %>
+
           <!-- Card status -->
           <div class="sub-status w-25 text-center">
             <% if sub.status == "Pending" %>
@@ -22,12 +27,6 @@
             <% end %>
           </div>
 
-          <!-- Trash Icon -->
-          <div class="button-cancel mt-auto">
-            <%= button_to event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button' do %>
-              <i class="fa-solid fa-trash-can fs-4"></i>
-            <% end %>
-          </div>
         </div>
       <% end %>
     </div>

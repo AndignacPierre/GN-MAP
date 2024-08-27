@@ -23,7 +23,12 @@
                   <!-- Organiser : Rating -->
                   <div class="d-flex align-items-center rating-container">
                     <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-1"></i>
-                    <p class="card-text mb-0"><%= 5 %> (<%= rand(1..100) %>)</p>
+                    <% if @event.user.events.where(status: 'Past').exists? %>
+                      <%= @event.user.events.where(status: 'Past').joins(:reviews).average('reviews.rating').round(1) %>
+                      <%= "(" + @event.user.events.where(status: 'Past').joins(:reviews).count.to_s + ")" %>
+                    <% else %>
+                      0 (0)
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -66,6 +71,15 @@
   </div>
 
   <hr class="subtle-divider">
+
+  <!-- Reviews -->
+  <% if @event.status == "Past" %>
+    <div class="container mt-4">
+        <%= render "reviews_part", reviews: @event.reviews %>
+    </div>
+
+    <hr class="subtle-divider">
+  <% end %>
 
   <!-- Location container -->
   <div class="container mt-4">

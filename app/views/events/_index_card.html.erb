@@ -25,8 +25,13 @@
             <%= render 'layouts/set_vava', vava: event.user %>
             <p class="card-text m-2"><%= event.user.username %></p>
             <div class="d-flex align-items-center rating-container">
-              <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-2"></i>
-              <p class="card-text mb-2"><%= 5 %> (<%= rand(1..100) %>)</p>
+              <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-2"></i>
+              <% if event.user.events.where(status: 'Past').exists? %>
+                <%= event.user.events.where(status: 'Past').joins(:reviews).average('reviews.rating').round(1) %>
+                <%= "(" + event.user.events.where(status: 'Past').joins(:reviews).count.to_s + ")" %>
+              <% else %>
+                0 (0)
+              <% end %>
             </div>
           </div>
         </div>
