@@ -11,9 +11,8 @@
 
 #index-title {
   display: inline-block;
-  font-size: 5rem;
-  font-weight: bold;
-  // color: $dark-green;
+  color:darkslategray;
+  font-size: 4rem;
   white-space: pre;
   position: relative;
   z-index: 2;
@@ -23,4 +22,26 @@
   opacity: 0;
   display: inline-block;
   transition: opacity 0.5s ease;
+}
+
+#filters {
+  font-weight: bold;
+  color:darkslategray;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form-grid-checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-grid-checkbox input[type="checkbox"] + label {
+  display: contents;
+}
+
+.form-grid-checkbox label {
+  display: flex;
 }
