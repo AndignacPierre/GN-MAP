@@ -1,16 +1,26 @@
 <%= turbo_frame_tag :events_frame do %>
   <% if @follows.present? %>
+
+    <!-- Cards div -->
     <div class="d-flex flex-wrap">
       <% @follows.each do |follow| %>
+
+         <!-- Each Card div -->
         <div class="card-booking">
+
+          <!-- render Card content -->
           <%= render partial: "events/index_card", locals: { event: follow.event } %>
-          <%= button_to account_follow_path(follow.id), method: :delete, class: "btn position-absolute top-0 end-0" do %>
+
+          <!-- Follow Icon -->
+          <%= button_to account_follow_path(follow.id), method: :delete, class: "btn button-absolute-top-right" do %>
             <i class="fa-solid fa-heart fs-3 p-3"></i>
           <% end %>
         </div>
       <% end %>
     </div>
   <% else %>
+
+    <!-- No favorites message -->
     <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
       <p class="text-center">No favorites found.</p>
     </div>
