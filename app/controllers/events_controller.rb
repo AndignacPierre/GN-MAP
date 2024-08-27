@@ -5,16 +5,22 @@ class EventsController < ApplicationController
   def index
     @events = Event.where('date_event >= ?', Date.today).order(:date_event)
 
-    if params[:search].present? && params[:search][:query].present?
-      @events = @events.search_by_name(params[:search][:query])
+    if params[:category].present?
+      @events = @events.where(category: params[:category])
     end
 
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { event: event })
+        info_window_html: render_to_string(partial: "info_window", locals: { event: event }, formats: [:html])
       }
+    end
+
+    respond_to do |format|
+      format.html # pour le chargement initial de la page
+      # format.text { render partial: "events/index", locals: { events: @events }, formats: [:html] }
+      format.json { render json: { markers: @markers } }
     end
   end
 
@@ -36,7 +42,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    if @event.save!
+    if @event.save
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity
