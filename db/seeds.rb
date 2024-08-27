@@ -127,7 +127,7 @@ event1 = Event.create(user: user1, name: "The Dark Forest Mystery",
                       category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-09-10',date_event: '2024-09-15')
 sleep(2)
 event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
-                      category: "SF", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
+                      category: "Fantasy", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
                       sleep(2)
 event2 = Event.create(user: user2, name: "Cyberpunk City Escape",
                       category: "Murder", theme: "Cyberpunk", address: "5 Place Bellecour, 69002 Lyon", price: 50, participants_min: 20, participants_max: 40, deadline: '2024-08-20', date_event: '2024-08-25', status: "Closed")
@@ -151,10 +151,10 @@ event9 = Event.create(user: user9, name: "Ancient Mythology Quest",
                       category: "Fantasy", theme: "Ancient Mythology", address: "24 Avenue Jean Médecin, 06000 Nice", price: 40, participants_min: 20, participants_max: 60, deadline: '2024-08-29', date_event: '2024-09-06')
                       sleep(2)
 event10 = Event.create(user: user10, name: "Western Showdown",
-                      category: "SF", theme: "Western", address: "22 Place de la Comédie, 34000 Montpellier", price: 35, participants_min: 20, participants_max: 50, deadline: '2024-09-15', date_event: '2024-09-22')
+                      category: "Historical", theme: "Western", address: "22 Place de la Comédie, 34000 Montpellier", price: 35, participants_min: 20, participants_max: 50, deadline: '2024-09-15', date_event: '2024-09-22')
                       sleep(2)
 event16 = Event.create(user: user6, name: "Cyberpunk Heist",
-                      category: "Murder", theme: "Cyberpunk", address: "16 Place Kléber, 67000 Strasbourg", price: 50, participants_min: 15, participants_max: 40, deadline: '2024-09-01', date_event: '2024-09-10')
+                      category: "SF", theme: "Cyberpunk", address: "16 Place Kléber, 67000 Strasbourg", price: 50, participants_min: 15, participants_max: 40, deadline: '2024-09-01', date_event: '2024-09-10')
                       sleep(2)
 event17 = Event.create(user: user7, name: "Arthurian Legends Battle",
                       category: "SF", theme: "Arthurian Legend", address: "50/52 Leicester Square, London WC2H 7LU", price: 45, participants_min: 20, participants_max: 60, deadline: '2024-09-15', date_event: '2024-09-20')
@@ -163,10 +163,10 @@ event18 = Event.create(user: user8, name: "Steampunk Invention Fair",
                       category: "Murder", theme: "Steampunk", address: "12-14 Piccadilly, Manchester M1 1LY", price: 30, participants_min: 10, participants_max: 25, deadline: '2024-09-20', date_event: '2024-09-25')
                       sleep(2)
 event19 = Event.create(user: user9, name: "Medieval Jousting Tournament",
-                      category: "SF", theme: "Medieval", address: "92 High Street, Birmingham B4 7BA", price: 50, participants_min: 15, participants_max: 45, deadline: '2024-08-30', date_event: '2024-09-05')
+                      category: "Fantasy", theme: "Medieval", address: "92 High Street, Birmingham B4 7BA", price: 50, participants_min: 15, participants_max: 45, deadline: '2024-08-30', date_event: '2024-09-05')
                       sleep(2)
 event20 = Event.create(user: user10, name: "Pirate Ship Battle",
-                      category: "SF", theme: "Pirates", address: "137 Princes Street, Edinburgh EH2 4BL", price: 55, participants_min: 20, participants_max: 50, deadline: '2024-08-25', date_event: '2024-09-01')
+                      category: "other", theme: "Pirates", address: "137 Princes Street, Edinburgh EH2 4BL", price: 55, participants_min: 20, participants_max: 50, deadline: '2024-08-25', date_event: '2024-09-01')
                       sleep(2)
 
 # Événements passés
@@ -197,7 +197,7 @@ event23 = Event.create(user: user3, name: "Fantasy Realm Quest",
                       category: "Fantasy", theme: "Fantasy", address: "eil 112-114, 60313 Frankfurt am Main", price: 40, participants_min: 15, participants_max: 35, deadline: '2024-07-20', date_event: '2024-07-30', status: "Closed")
                       sleep(2)
 event24 = Event.create(user: user4, name: "Space Odyssey Challenge",
-                      category: "Murder", theme: "Science Fiction", address: "Reeperbahn 40, 20359 Hamburg", price: 55, participants_min: 10, participants_max: 30, deadline: '2024-07-25', date_event: '2024-08-05', status: "Closed")
+                      category: "SF", theme: "Science Fiction", address: "Reeperbahn 40, 20359 Hamburg", price: 55, participants_min: 10, participants_max: 30, deadline: '2024-07-25', date_event: '2024-08-05', status: "Closed")
                       sleep(2)
 event25 = Event.create(user: user5, name: "Post-Apocalyptic Survival Camp",
                       category: "Zombie", theme: "Post-Apocalyptic", address: "Unter Fettenhennen 5, 50667 Köln", price: 50, participants_min: 25, participants_max: 50, deadline: '2024-08-05', date_event: '2024-08-15', status: "Closed")
