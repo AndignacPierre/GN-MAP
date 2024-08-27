@@ -1,39 +1,32 @@
 /* Myevents menu button selected */
 .btn-custom-selected {
-  font-size: 0.875em; /* Smaller font size, you can adjust this value */
-  width: 200px;
-  border-radius: 10px; /* More rounded corners, adjust as needed */
-  padding: 0.5rem 1rem; /* Adjust padding to maintain good appearance with smaller font */
-  color: $primary; /* Text color */
-  background-color: white; /* Primary background color */
-  border: 1px solid white; /* Match border to background */
+  font-size: 1.5em;
+  width: 300px;
+  border-radius: 0px;
+  padding: 0.5rem;
+  color: $primary;
+  border-bottom: 1px solid $primary;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   user-select: none;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-
-//-------------------------------\\
 
 /* Myevents menu button not selected */
 .btn-custom-not-selected {
-  font-size: 0.875em; /* Smaller font size, you can adjust this value */
-  width: 200px;
-  border-radius: 10px; /* More rounded corners, adjust as needed */
-  padding: 0.5rem 1rem; /* Adjust padding to maintain good appearance with smaller font */
-  color: #fff; /* Text color */
-  background-color: $primary; /* Primary background color */
-  border: 1px solid $primary; /* Match border to background */
+  font-size: 1.5em;
+  width: 300px;
+  border-radius: 0px;
+  padding: 0.5rem;
+  color: #526f6065;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   user-select: none;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 /* Hover and focus states */
