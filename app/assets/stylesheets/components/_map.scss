@@ -34,14 +34,5 @@
   width: 40px !important;
   height: 40px !important;
   background-size: contain !important;
-  animation: pulseOpacity 2s infinite;
-}
-
-@keyframes pulseOpacity {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
+  opacity: 0.8;
 }
