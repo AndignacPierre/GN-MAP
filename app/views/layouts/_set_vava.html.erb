@@ -1,5 +1,22 @@
 <% if vava.avatar.attached? %>
-     <%= cl_image_tag(vava.avatar.key, class: 'avatar dropdown-toggle',data: { bs_toggle: "dropdown" },id: "navbarDropdown", alt: vava.username, 'aria-haspopup': true, 'aria-expanded': false)%>
-   <% else %>
-     <%=image_tag(asset_path('no_image.png'), class: 'avatar dropdown-toggle', data: { bs_toggle: "dropdown" }, id: "navbarDropdown", alt: vava.username, 'aria-haspopup': true, 'aria-expanded': false)%>
-   <% end %>
+  <%= cl_image_tag(vava.avatar.key,
+    class: 'avatar dropdown-toggle',
+    data: { bs_toggle: "dropdown" },
+    id: "navbarDropdown",
+    alt: vava.username,
+    'aria-haspopup': true,
+    'aria-expanded': false,
+    transformation: [
+      { gravity: 'face', crop: 'thumb', width: 200, height: 200 }
+    ]
+  ) %>
+<% else %>
+  <%= image_tag(asset_path('no_image.png'),
+    class: 'avatar dropdown-toggle',
+    data: { bs_toggle: "dropdown" },
+    id: "navbarDropdown",
+    alt: vava.username,
+    'aria-haspopup': true,
+    'aria-expanded': false
+  ) %>
+<% end %>
