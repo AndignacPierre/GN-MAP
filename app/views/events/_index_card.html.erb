@@ -1,31 +1,46 @@
 <%= link_to event_path(event), data: {turbo_frame: "_top"}, class: "card m-2", style: "width: 33rem; text-decoration: none; color: inherit;" do %>
   <div class="d-flex">
     <div class="card-body col-7">
+
+      <!-- Event Name -->
       <h5 class="ps-1 text-clamp mb-1"><%= event.name %></h5>
-      <div class="d-flex align-items-center mt-0 mb-1">
-        <i><%= render 'events/index_category_icons', event: event %></i>
-        <p class="card-text mt-0"><%= event.category %></p>
-      </div>
+
+      <!-- Event Date  -->
       <div class="d-flex align-items-center">
         <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
         <p class="card-text mt-0"><%= event.date_event %></p>
       </div>
+
+      <!-- Event Participation  -->
       <div class="d-flex align-items-center">
         <i class="fa-solid fa-circle-user me-2 ms-1 text-dark-green"></i>
         <p class="card-text"><%= event.participants_min %> to <%= event.participants_max %></p>
       </div>
+
+      <!-- Event Address  -->
       <div class="d-flex align-items-center">
         <i class="fa-solid fa-location-dot me-2 ms-1 text-dark-green"></i>
         <p class="card-text card-text-address"><%= event.address %></p>
       </div>
-      <hr>
-      <div class="d-flex flex-column align-items-start">
+
+      <hr class="subtle-divider">
+
+      <!-- Event Organiser  -->
+     <div class="rounded-3 d-flex flex-column mb-2 align-items-start">
         <div class="d-flex align-items-center">
-          <div class="ms-2 d-flex justify-content-center align-items-end">
+
+          <!-- Organiser : Avatar -->
+          <div class="avatar-container-show", style="width: 30px; height: 30px;">
             <%= render 'layouts/set_vava', vava: event.user %>
-            <p class="card-text m-2"><%= event.user.username %></p>
+          </div>
+
+          <!-- Organiser : Name -->
+          <div class="ms-2 d-flex flex-column justify-content-center">
+            <p class="mb-1"><%= event.user.username %></p>
+
+            <!-- Organiser : Rating -->
             <div class="d-flex align-items-center rating-container">
-              <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-2"></i>
+              <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-1"></i>
               <% if event.user.events.where(status: 'Past').exists? %>
                 <%= event.user.events.where(status: 'Past').joins(:reviews).average('reviews.rating').round(1) %>
                 <%= "(" + event.user.events.where(status: 'Past').joins(:reviews).count.to_s + ")" %>
@@ -37,12 +52,20 @@
         </div>
       </div>
     </div>
+
     <div class="card-body col-5">
+      <!-- Event Photo -->
       <% if event.photos.attached? %>
         <%= cl_image_tag(event.photos.first.key, class: 'card-img-top p-0', alt: event.name) %>
       <% else %>
         <%= image_tag(asset_path('no_image.png'), class: 'card-img-top p-0', alt: event.name) %>
       <% end %>
+
+      <!-- Event Category -->
+      <div class="d-flex align-items-center justify-content-center mt-2 mb-1">
+        <i><%= render 'events/index_category_icons', event: event %></i>
+        <p class="card-text mt-0"><%= event.category %></p>
+      </div>
     </div>
   </div>
 <% end %>
