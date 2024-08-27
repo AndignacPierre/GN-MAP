@@ -13,6 +13,7 @@ class EventsController < ApplicationController
       {
         lat: event.latitude,
         lng: event.longitude,
+        category: event.category, # Transmet la catégorie pour le marker
         info_window_html: render_to_string(partial: "info_window", locals: { event: event }, formats: [:html])
       }
     end

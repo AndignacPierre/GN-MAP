@@ -40,9 +40,30 @@ export default class extends Controller {
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
 
+      let iconUrl;
+      switch (marker.category) {
+        case 'Murder':
+          iconUrl = '/assets/cat-murder-icon.png';
+          break;
+        case 'Zombie':
+          iconUrl = '/assets/cat-zombie-icon.png';
+          break;
+        case 'Fantasy':
+          iconUrl = '/assets/cat-fantasy-icon.png';
+          break;
+        case 'SF':
+          iconUrl = '/assets/cat-SF-icon.png';
+          break;
+        case 'Historical':
+          iconUrl = '/assets/cat-historical-icon.png';
+          break;
+        default:
+          iconUrl = '/assets/cat-default-icon.png';
+      }
+
       const el = document.createElement('div')
       el.className = 'marker'
-      el.style.backgroundImage = 'url(/assets/location-icon.png)'
+      el.style.backgroundImage = `url(${iconUrl})`
       el.style.width = '40px'
       el.style.height = '40px'
       el.style.backgroundSize = 'contain'

@@ -1,24 +1,31 @@
-<div class="container justify-content-center">
+<div class="container p-2 justify-content-center">
   <!-- Title -->
   <div class="container mt-2">
-    <h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2" data-controller="title">Step into the Story, LARP Your Way.</h1>
+    <h1 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2">Explore. Find. Play.</h1>
   </div>
 
+  <div class="position-relative">
   <!-- Map -->
-  <div id="map" class="container justify-content-center align-items-center" style="height: 500px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+    <div id="map" class="container justify-content-center align-items-center" style="height: 500px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
   <!-- Filtres -->
-  <div class="container">
-    <div id="filters" class="filters">
-      <h3>Filtres</h3>
-
-      <%= form_with url: events_path, method: :get, data: { controller: :filter } do |f| %>
-        <%= f.collection_check_boxes :category, [["Murder", "Murder"], ["Zombie", "Zombie"], ["Fantasy", "Fantasy"], ["SF", "SF"], ["Historical",  "Historical"], ["Other", "Other"]], :second, :first, {}, data: { action: "change->filter#update"} %>
-      <% end %>
+    <div id="filters" class="card p-1 mt-5 justify-content-center">
+      <h5 style="text-align: center">Filtres</h3>
+        <%= form_with url: events_path, method: :get, data: { controller: :filter } do |f| %>
+          <div class="form-grid-checkbox">
+            <%= f.collection_check_boxes :category, [["Murder", "Murder"], ["Zombie", "Zombie"], ["Fantasy", "Fantasy"], ["SF", "SF"], ["Historical",  "Historical"], ["Other", "Other"]], :second, :first do |b| %>
+              <div class="checkbox-container p-2">
+                <%= b.check_box data: { action: "change->filter#update" } %>
+                <%= b.label %>
+                <i><%= render 'index_filters_icons', category: b.label %></i>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 
