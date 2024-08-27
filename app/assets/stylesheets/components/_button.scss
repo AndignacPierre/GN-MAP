@@ -47,9 +47,10 @@
 
 
 .round-button {
-  width: 25px; /* Ajustez selon vos besoins */
-  height: 25px; /* Assurez-vous que la hauteur est égale à la largeur */
+  width: 35px; /* Ajustez selon vos besoins */
+  height: 35px; /* Assurez-vous que la hauteur est égale à la largeur */
   border-radius: 50%; /* Assure une forme ronde */
+  border: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
