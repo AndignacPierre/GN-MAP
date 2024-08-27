@@ -1,10 +1,16 @@
 <%= turbo_frame_tag :events_frame do %>
+
+  <!-- 'Add New Event' Button -->
   <div class="mb-4 text-center" style="background-color: white">
     <%= link_to "Add New Event <i class='fa-solid fa-plus'></i>".html_safe, new_event_path, data: { turbo_frame: "_top" }, class: "btn btn-outline-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2", style:"opacity:1;" %>
   </div>
+
+  <!-- Cards Events -->
   <% @events.each do |event| %>
-    <div class="card-event" style="overflow: visible;"> <!-- CARDS MY EVENTS -->
+    <div class="card-event" style="overflow: visible;">
       <div class="row" style="height: 300px;">
+
+        <!-- Card Photo  -->
         <div class="col-md-4 img_myevents_cards_container">
           <% if event.photos.attached? %>
             <%= cl_image_tag(event.photos.first.key, alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
@@ -12,6 +18,7 @@
             <%= image_tag(asset_path('no_image.png'), alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
           <% end %>
         </div>
+
         <div class="col-md-8 d-flex">
           <div class="border-end me-4">
             <h2 class="text-dark-green me-3"><strong><%= event.name %></strong></h2>
@@ -28,18 +35,19 @@
               <p class="card-text"><%= event.address %></p>
             </div>
           </div>
+
           <div>
             <div> <!-- PARTICIPANT REQUEST -->
               <div class="align-items-center mx-1">
                 <h4 class="text-dark-green me-2 mb-0">
-                  <strong>Participants:<%= Sub.where(event_id: event.id).count %>/<%= event.participants_max %>
+                  <strong>Participants:<%= Sub.where(event_id: event.id).count %>/<%= event.participants_max %></strong>
                 </h4>
-              <div>
-                <h4>Request : <%= Sub.where(event_id: event.id, status: 'Pending').count %></strong>
+                <div>
+                  <h4>Request: <%= Sub.where(event_id: event.id, status: 'Pending').count %></h4>
                   <button class="btn btn-info p-1" type="button" data-bs-toggle="collapse" data-bs-target="#followers-<%= event.id %>" aria-expanded="false" aria-controls="followers-<%= event.id %>">
                     <i class="fa-solid fa-chevron-down"></i>
                   </button>
-                </h4>
+                </div>
               </div>
               <div class="collapse mt-2" id="followers-<%= event.id %>">
                 <% Sub.where(event_id: event.id).each do |sub| %>
@@ -55,25 +63,22 @@
                         <% if sub.status == 'Pending' %>
                           <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2" do %>
                             Accept
-                          <% end %>
+                          <% end %> <!-- Closing button_to for Accept -->
                           <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded" do %>
                             Decline
-                          <% end %>
+                          <% end %> <!-- Closing button_to for Decline -->
                         <% elsif sub.status == 'Accepted' %>
                           <span class="badge bg-success">Confirmed</span>
                         <% end %>
                       </div>
                     </div>
-                  <% end %>
-                <% end %>
+                  <% end %> <!-- Closing turbo_frame_tag -->
+                <% end %> <!-- Closing each do loop -->
               </div>
             </div>
-
-              </div>
-
           </div>
         </div>
       </div>
     </div>
-  <% end %>
-<% end %>
+  <% end %> <!-- Closing @events.each do loop -->
+<% end %> <!-- Closing turbo_frame_tag -->
