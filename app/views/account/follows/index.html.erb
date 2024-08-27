@@ -5,9 +5,10 @@
         <div class="card-booking">
           <%= render partial: "events/index_card", locals: { event: follow.event } %>
           <%= button_to account_follow_path(follow.id), method: :delete, class: "btn position-absolute top-0 end-0" do %>
-            <i class="fa-solid fa-heart fs-1"></i>
+            <i class="fa-solid fa-heart fs-3 p-3"></i>
           <% end %>
         </div>
+    </div>
     <% end %>
   <% else %>
     <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
@@ -15,3 +16,8 @@
     </div>
   <% end %>
 <% end %>
+<div class="mt-4">
+  <%= link_to events_path, class: "mb-4 no-underline" do %>
+    <i class="fa-solid fa-turn-down rotated-left"></i> Back to events
+  <% end %>
+</div>
