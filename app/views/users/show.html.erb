@@ -1,10 +1,15 @@
-<div class="container justify-content-center pt-4 min-vh-100">
-  <div class="row">
-    <!-- Partie de gauche -->
+<div class="container mt-4 min-vh-100">
+  <div class="row justify-content-between">
+
+    <!----------------->
+    <!-- Left column -->
+    <!----------------->
+
     <div class="col-md-4">
-      <!-- Profil info -->
+
+      <!-- Profile info -->
       <div class="card-profile">
-        <!-- Profil picture -->
+        <!-- Profile picture -->
         <div class="position-relative">
           <% if @user.avatar.attached? %>
             <%= cl_image_tag(@user.avatar.key,
@@ -12,7 +17,7 @@
               transformation: [
                 { gravity: 'face', crop: 'thumb'}
               ],
-              style: 'max-height: 500px; object-fit: cover;'
+              style: 'max-height: 350px; object-fit: cover;'
             ) %>
           <% else %>
             <%= image_tag(asset_path('no_image.png'),
@@ -20,11 +25,13 @@
               style: 'max-height: 300px; object-fit: cover;'
             ) %>
           <% end %>
-          <!-- Text overlay pictrue -->
+
+          <!-- Text overlay picture -->
           <div class="position-absolute text-overlay-profil w-100 fw-bold" style="bottom: 10px; left: 10px; font-size: 1.5rem;">
             <%= @user.username %> <i class="fa-solid fa-comments"></i>
           </div>
         </div>
+
         <!-- Achievements -->
         <div>
           <!-- Important number, levels, Events, rating -->
@@ -32,22 +39,22 @@
             <div class="row text-center">
               <!-- Events Count -->
               <div class="col">
-                <div class="h4 mb-1"><%= @user.events.count + @user.subs.where(status: 'Accepted').count %></div>
+                <div class="h4 mb-1 fs-1"><%= @user.events.count + @user.subs.where(status: 'Accepted').count %></div>
                 <div>Events</div>
               </div>
 
               <!-- Rating Count -->
               <div class="col">
-                <div class="h4 mb-1">
+                <div class="h4 mb-1 fs-1">
                   0 <!-- Replace with actual rating count if available -->
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-2"></i>
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-1" style="width: 1.5rem; height: 1.5rem;"></i>
                 </div>
                 <div>Rating</div>
               </div>
 
               <!-- Level Count -->
               <div class="col">
-                <div class="h4 mb-1"><%= @user.level %></div>
+                <div class="h4 mb-1 fs-1"><%= @user.level %></div>
                 <div>Level</div>
               </div>
             </div>
@@ -66,7 +73,7 @@
         <div class="text-center mb-3">
           <div class="h5">Achievements</div>
         </div>
-        <div>
+        <div class="mb-2">
           <i class="fa-solid fa-award text-warning fs-3 mx-2"></i>
           <i class="fa-solid fa-award text-warning fs-3 mx-2"></i>
           <i class="fa-solid fa-award text-warning fs-3 mx-2"></i>
@@ -74,17 +81,22 @@
       </div>
     </div>
 
-    <!-- Partie de droite -->
-    <div class="col-md-8">
+    <!------------------>
+    <!-- Right column -->
+    <!------------------>
+
+    <div class="col-md-6 ml-auto">
+
       <!-- Name tabs -->
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="Participated-tab" data-bs-toggle="tab" data-bs-target="#Participated" type="button" role="tab" aria-controls="Participated" aria-selected="true">Participated</button>
+          <button class="nav-link active w-100 text-center" id="Participated-tab" data-bs-toggle="tab" data-bs-target="#Participated" type="button" role="tab" aria-controls="Participated" aria-selected="true">Participated</button>
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="Organized-tab" data-bs-toggle="tab" data-bs-target="#Organized" type="button" role="tab" aria-controls="Organized" aria-selected="false">Organized</button>
+          <button class="nav-link w-100 text-center" id="Organized-tab" data-bs-toggle="tab" data-bs-target="#Organized" type="button" role="tab" aria-controls="Organized" aria-selected="false">Organized</button>
         </li>
       </ul>
+
       <!-- Content -->
       <div class="tab-content" id="myTabContent">
         <!-- Participated list -->
@@ -95,13 +107,13 @@
                 <%= render partial: "events/index_card", locals: { event: sub.event } %>
               </div>
             <% end %>
-          <!-- No events -->
           <% else %>
             <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
               <p class="text-center">No events found.</p>
             </div>
           <% end %>
         </div>
+
         <!-- Organized list -->
         <div class="tab-pane fade" id="Organized" role="tabpanel" aria-labelledby="Organized-tab">
           <% if @user.events.present? %>
@@ -110,7 +122,6 @@
                 <%= render partial: "events/index_card", locals: { event: event } %>
               </div>
             <% end %>
-          <!-- No events -->
           <% else %>
             <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
               <p class="text-center">No events found.</p>
@@ -119,5 +130,5 @@
         </div>
       </div>
     </div>
-
+  </div>
 </div>
