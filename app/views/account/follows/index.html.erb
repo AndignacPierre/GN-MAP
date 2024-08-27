@@ -5,10 +5,11 @@
         <div class="card-booking">
           <%= render partial: "events/index_card", locals: { event: follow.event } %>
           <%= button_to account_follow_path(follow.id), method: :delete, class: "btn position-absolute top-0 end-0" do %>
-            <i class="fa-solid fa-heart fs-1"></i>
+            <i class="fa-solid fa-heart fs-3 p-3"></i>
           <% end %>
         </div>
-    <% end %>
+      <% end %>
+    </div>
   <% else %>
     <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
       <p class="text-center">No favorites found.</p>
