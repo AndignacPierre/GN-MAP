@@ -2,15 +2,15 @@
 
   <!-- 'Add New Event' Button -->
   <div class="mb-4 text-center" style="background-color: white">
-    <%= link_to "Add New Event <i class='fa-solid fa-plus'></i>".html_safe, new_event_path, data: { turbo_frame: "_top" }, class: "btn btn-outline-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2", style:"opacity:1;" %>
+    <%= link_to "Add New Event <i class='cercle-icon-card-event fa-solid fa-plus me-2 ms-1 text-dark-green'></i>".html_safe, new_event_path, data: { turbo_frame: "_top" }, class: "btn btn-outline-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2", style:"opacity:1;" %>
   </div>
 
-  <!-- Cards Events -->
+  <!-- Events Cards -->
   <% @events.where(status: ["Open", "Closed"]).each do |event| %>
     <div class="card-event" style="overflow: visible;">
       <div class="row" style="height: 300px;">
 
-        <!-- Card Photo  -->
+        <!-- Event Photo  -->
         <div class="col-md-4 img_myevents_cards_container">
           <% if event.photos.attached? %>
             <%= cl_image_tag(event.photos.first.key,
@@ -26,22 +26,34 @@
           <% end %>
         </div>
 
+        <!-- Event Infos  -->
         <div class="col-md-8 d-flex" >
           <div class="border-end me-4" style="width: 500px;">
+
+            <!-- Event Name  -->
             <h2 class="text-dark-green me-3"><strong><%= event.name %></strong></h2>
+
+            <!-- Event Date  -->
             <div class="d-flex align-items-center">
               <i class="cercle-icon-card-event fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
               <p class="card-text mt-0"><%= event.date_event %></p>
             </div>
+
+            <!-- Event Participants Capacity  -->
             <div class="d-flex align-items-center">
               <i class="cercle-icon-card-event fa-solid fa-users me-2 ms-1 text-dark-green"></i>
               <p class="card-text mt-0"><%= event.participants_min %> to <%= event.participants_max %></p>
             </div>
+
+            <!-- Event Address  -->
             <div class="d-flex align-items-center">
               <i class="cercle-icon-card-event fa-solid fa-location-dot me-2 ms-1 text-dark-green"></i>
               <p class="card-text text-clamp-address me-2 mt-0"><%= event.address %></p>
             </div>
+
               <hr class="subtle-divider">
+
+            <!-- Event Current Participants  -->
             <div class="d-flex" style="align-items: center;">
               <i class="fa-solid fa-circle-user me-2 ms-1 text-dark-green fs-2" ></i>
               <h4 class="text-dark-green me-2 mb-0">
@@ -56,7 +68,7 @@
               <div class="align-items-center mx-1">
                 <div>
                   <h4 class="text-dark-green me-2 mb-0">
-                    <strong>Request: <%= Sub.where(event_id: event.id, status: 'Pending').count %></strong>
+                    <strong>Requests: <%= Sub.where(event_id: event.id, status: 'Pending').count %></strong>
                   </h4>
                 </div>
               </div>
@@ -72,10 +84,10 @@
                       <% end %>
                       <div class="d-flex mt-2">
                         <% if sub.status == 'Pending' %>
-                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2" do %>
+                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2 text-white" do %>
                             Accept
                           <% end %> <!-- Closing button_to for Accept -->
-                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded" do %>
+                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded text-white" do %>
                             Decline
                           <% end %> <!-- Closing button_to for Decline -->
                         <% elsif sub.status == 'Accepted' %>
