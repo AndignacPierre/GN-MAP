@@ -1,6 +1,6 @@
 <% if @notifications.any? %>
   <% @notifications.each do |notification| %>
-    <a class="dropdown-item <%= 'font-weight-bold' unless notification.read %>" href="<%= account_subscriptions_path %>">
+    <a class="dropdown-item <%= 'font-weight-bold' unless notification.read %>" href="<%= account_subscriptions_path %>" style="white-space: normal; min-width: 20rem;">
       <%= notification.message %>
     </a>
   <% end %>
