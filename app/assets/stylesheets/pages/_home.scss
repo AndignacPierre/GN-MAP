@@ -35,9 +35,9 @@
 .overlay-image {
   position: absolute;
   bottom: 0; /* Position the image at the bottom of the container */
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
-  max-width: 500px; /* Adjust the image size to cover the title partially */
+  max-width: 470px; /* Adjust the image size to cover the title partially */
   height: auto;
   z-index: 1; /* Ensure the image is behind the title */
 }
