@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_notifications
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
@@ -23,7 +24,14 @@ class ApplicationController < ActionController::Base
   # #   redirect_to(root_path)
   # # end
 
-  # private
+  private
+
+  def set_notifications
+    if user_signed_in?
+      @notifications = current_user.notifications.order(created_at: :desc).limit(20)
+      @unread_count = @notifications.where(read: false).count
+    end
+  end
 
   # def skip_pundit?
   #   devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
