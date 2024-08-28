@@ -11,3 +11,12 @@ titouan.avatar.attach(
   content_type: 'image/jpeg' # type MIME de l'image
 )
 titouan.save
+
+#Daenerys sub
+puts("Giving sub to Daenerys for the love of love")
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "MotherOfDragons"),
+  status: 'Accepted'
+)

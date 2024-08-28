@@ -111,8 +111,16 @@ user34 = User.create(username: "MysticDruid", first_name: "Avery", last_name: "F
 user35 = User.create(username: "QuantumRogue", first_name: "Matthew", last_name: "Sullivan", email: "matthew.sullivan@quantumrealm.org", level: 800, password: "azerty",
                     bio: "I bend time and space as a Quantum Rogue in LARP. When I’m not warping realities, I’m a physicist with a love for quantum mechanics and science fiction.")
 
-user36 = User.create(username: "WitchDoctor", first_name: "Scarlett", last_name: "Bennett", email: "scarlett.bennett@voodoomagic.com", level: 790, password: "azerty",
-                    bio: "I harness ancient rituals as a Witch Doctor in LARP. Outside of the game, I’m fascinated by folklore and enjoy collecting rare artifacts from around the world.")
+                    user36 = User.create(
+                      username: "MotherOfDragons",
+                      first_name: "Scarlett",
+                      last_name: "Bennett",
+                      email: "scarlett.bennett@voodoomagic.com",
+                      level: 790,
+                      password: "azerty",
+                      bio: "🐉 <b>MotherOfDragons</b> 🐉<br>
+                            Self-proclaimed queen of cats and dragons. When I'm not busy conquering Westeros in my dreams, I'm probably prepping a D&D campaign where I burn villages for fun. LARPing is my therapy, cats are my advisors, and \"Dracarys\" is my answer to everything. 🐾 Certified geek, GOT fan, and Daenerys Targaryen in a past life (or in an epic role-playing game). If you have cookies, I might just spare you... or not. 🔥"
+                    )
 
 user37 = User.create(username: "DragonKnight", first_name: "Nathan", last_name: "Simmons", email: "nathan.simmons@dragonorder.com", level: 870, password: "azerty",
                     bio: "I fight for honor as a Dragon Knight, defending the realm in every LARP. When I’m not in armor, I enjoy medieval reenactments and reading fantasy epics.")
@@ -780,6 +788,9 @@ event25_content = "
 event25.content = event25_content
 
 event25.save
+
+load Rails.root.join('db', 'reviews_seed.rb') #load la seed reviews automatiquement
+load Rails.root.join('db', 'titouan.rb') #load la seed reviews automatiquement
 
 puts("yahouuuuuuuuu!")
 puts "LA SEED EST OVER ET C'EST VRAIMENT TROP COOL"
