@@ -1,6 +1,6 @@
 <% if vava.avatar.attached? %>
   <%= cl_image_tag(vava.avatar.key,
-    class: 'avatar dropdown-toggle',
+    class: 'avatar dropdown-toggle avatar-hover',
     data: { bs_toggle: "dropdown" },
     id: "navbarDropdown",
     alt: vava.username,
@@ -12,7 +12,7 @@
   ) %>
 <% else %>
   <%= image_tag(asset_path('no_image.png'),
-    class: 'avatar dropdown-toggle',
+    class: 'avatar dropdown-toggle avatar-hover',
     data: { bs_toggle: "dropdown" },
     id: "navbarDropdown",
     alt: vava.username,
