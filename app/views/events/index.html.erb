@@ -44,15 +44,24 @@
 
   <br>
 
-  <!-- Cards -->
-  <div id="cards-view" class="row justify-content-evenly align-items-center m-0 p-0 w-100">
+<!-- Cards -->
+
+<div id="cards-view" class="container">
+  <div class="row g-3">
     <% if @events.present? %>
       <% @events.each do |event| %>
-        <%= render partial: "events/index_card", locals: { event: event } %>
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="card-container mb-3">
+            <%= render partial: "events/index_card", locals: { event: event } %>
+          </div>
+        </div>
       <% end %>
     <% else %>
       <p>No events available.</p>
     <% end %>
   </div>
+</div>
+
+
   <br>
 </div>
