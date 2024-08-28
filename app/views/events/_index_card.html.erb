@@ -54,9 +54,10 @@
     </div>
 
     <div class="card-body col-5">
+
       <!-- Event Photo -->
       <% if event.photos.attached? %>
-<%= cl_image_tag(event.photos.first.key,
+        <%= cl_image_tag(event.photos.first.key,
                  class: 'card-img-top p-0',
                  alt: event.name,
                  transformation: [
@@ -69,8 +70,9 @@
       <!-- Event Category -->
       <div class="d-flex align-items-center justify-content-center mt-2 mb-1">
         <i><%= render 'events/index_category_icons', event: event %></i>
-        <p class="card-text mt-0"><%= event.category %></p>
+        <p style="margin: 6px 0 4px 0;"><%= event.category %></p>
       </div>
+
     </div>
   </div>
 <% end %>
