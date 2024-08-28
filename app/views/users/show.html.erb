@@ -7,7 +7,7 @@
     <div class="col-md-6">
 
       <!-- Profile info -->
-      <div class="card-profile">
+      <div class="card-profile card-shadow ">
         <!-- Profile picture -->
         <div class="position-relative">
           <% if @user.avatar.attached? %>
@@ -51,7 +51,7 @@
                   <% else %>
                     0 (0)
                   <% end %> <!-- Replace with actual rating count if available -->
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-1" style="width: 1.5rem; height: 1.5rem; padding-bottom: 5px;"></i>
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-star-size ms-1" style="width: 1.5rem; height: 1.5rem; padding-bottom: 5px;"></i>
                 </div>
                 <div>Rating</div>
               </div>
