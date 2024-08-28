@@ -67,3 +67,12 @@
   justify-content: center;
   text-align: center;
 }
+
+.round-button i {
+  color: $danger; /* Default color for the icon */
+  transition: color 0.1s ease; /* Smooth transition for icon color */
+}
+
+.round-button:hover i {
+  color: #ffffff;
+}
