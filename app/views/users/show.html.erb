@@ -14,7 +14,7 @@
             <%= cl_image_tag(@user.avatar.key,
               class: 'avatar-my-profil w-100',
               transformation: [
-                { gravity: 'face', crop: 'thumb', height: 500, width: 500}
+                { gravity: 'face', crop: 'thumb', height: 350, width: 500}
               ],
               style: 'max-height: 350px; object-fit: cover;'
             ) %>
@@ -66,7 +66,12 @@
             <!-- About Me Section -->
             <div class="mt-4">
               <div class="h5">About me</div>
-              <div><%= @user.bio %></div>
+              <div class="card-text fs-6" data-controller="text-clamp">
+                <div id="event-content" class="text-clamp" data-text-clamp-target="text">
+                  <%= @user.bio.html_safe %>
+                </div>
+                <a href="javascript:void(0);" id="see-more-link" class="text-primary" data-action="click->text-clamp#seeMore">See more</a>
+              </div>
             </div>
           </div>
         </div>

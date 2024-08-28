@@ -56,7 +56,12 @@
     <div class="card-body col-5">
       <!-- Event Photo -->
       <% if event.photos.attached? %>
-        <%= cl_image_tag(event.photos.first.key, class: 'card-img-top p-0', alt: event.name) %>
+<%= cl_image_tag(event.photos.first.key,
+                 class: 'card-img-top p-0',
+                 alt: event.name,
+                 transformation: [
+                   { gravity: 'auto', crop: 'thumb', width: 1000, height: 1000 }
+                 ]) %>
       <% else %>
         <%= image_tag(asset_path('no_image.png'), class: 'card-img-top p-0', alt: event.name) %>
       <% end %>
