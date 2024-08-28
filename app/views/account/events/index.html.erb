@@ -75,8 +75,8 @@
               <div class="mt-2" id="followers-<%= event.id %>">
                 <% Sub.where(event_id: event.id).each do |sub| %>
                   <%= turbo_frame_tag "sub_#{sub.id}" do %>
-                    <div class="mb-2 d-flex">
-                      <%= link_to user_path(sub.user), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>
+                    <div class="mb-2">
+                      <%= link_to user_path(sub.user), data: { turbo_frame: "_top" }, class: 'text-decoration-none text-dark' do %>
                         <div class="d-flex align-items-center">
                           <%= render 'layouts/set_vava', vava: sub.user %>
                           <span class="ms-2"><%= sub.user.username %></span>
