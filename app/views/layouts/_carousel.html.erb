@@ -7,7 +7,12 @@
         <% else %>
           <div class="carousel-item">
         <% end %>
-          <%= cl_image_tag(photo.key, class:'d-block photo', alt: @event.name) %>
+          <%= cl_image_tag(photo.key,
+                 class: 'd-block photo',
+                 alt: @event.name,
+                 transformation: [
+                   { gravity: 'face', crop: 'fill', width: 1400, height: 900}
+                 ]) %>
           </div>
       <% end %>
     </div>

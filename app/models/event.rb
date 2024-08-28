@@ -33,12 +33,12 @@ class Event < ApplicationRecord
 
   # pg_search
   pg_search_scope :search_by_name,
-    against: [ :name ],
+    against: [:name],
     associated_against: {
-      user: [:username]
+    user: [:username],
+    rich_text_content: [:body]
     },
     using: {
-      tsearch: { prefix: true }
-  }
-
+    tsearch: { prefix: true }
+    }
 end

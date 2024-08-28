@@ -7,14 +7,14 @@
     <div class="col-md-6">
 
       <!-- Profile info -->
-      <div class="card-profile">
+      <div class="card-profile card-shadow ">
         <!-- Profile picture -->
         <div class="position-relative">
           <% if @user.avatar.attached? %>
             <%= cl_image_tag(@user.avatar.key,
               class: 'avatar-my-profil w-100',
               transformation: [
-                { gravity: 'face', crop: 'thumb', height: 500, width: 500}
+                { gravity: 'face', crop: 'thumb', height: 350, width: 500}
               ],
               style: 'max-height: 350px; object-fit: cover;'
             ) %>
@@ -51,7 +51,7 @@
                   <% else %>
                     0 (0)
                   <% end %> <!-- Replace with actual rating count if available -->
-                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size ms-1" style="width: 1.5rem; height: 1.5rem; padding-bottom: 5px;"></i>
+                  <i><img src="/icons/Star.png" alt="Star Icon" class="icon-star-size ms-1" style="width: 1.5rem; height: 1.5rem; padding-bottom: 5px;"></i>
                 </div>
                 <div>Rating</div>
               </div>
@@ -66,7 +66,12 @@
             <!-- About Me Section -->
             <div class="mt-4">
               <div class="h5">About me</div>
-              <div><%= @user.bio %></div>
+              <div class="card-text fs-6" data-controller="text-clamp">
+                <div id="event-content" class="text-clamp" data-text-clamp-target="text">
+                  <%= @user.bio.html_safe %>
+                </div>
+                <a href="javascript:void(0);" id="see-more-link" class="text-primary" data-action="click->text-clamp#seeMore">See more</a>
+              </div>
             </div>
           </div>
         </div>

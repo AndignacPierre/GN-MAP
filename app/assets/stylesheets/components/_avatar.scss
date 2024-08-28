@@ -47,3 +47,17 @@
   object-fit: cover; /* Maintain aspect ratio, cover the container */
   border-radius: 50%; /* Make the avatar circular */
 }
+
+.avatar-hover {
+  display: inline-block;
+  transition: box-shadow 0.1s ease-in-out; // Smooth transition for shadow
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); // Light, almost white shadow
+    border-radius: 50%; // Ensure the shadow follows the shape of the avatar
+  }
+
+  img {
+    border-radius: 50%; // Maintain rounded corners for circular avatars
+  }
+}

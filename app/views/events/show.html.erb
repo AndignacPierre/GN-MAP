@@ -22,7 +22,7 @@
 
                   <!-- Organiser : Rating -->
                   <div class="d-flex align-items-center rating-container">
-                    <i><img src="/icons/Star.png" alt="Star Icon" class="icon-size me-1"></i>
+                    <i><img src="/icons/Star.png" alt="Star Icon" class="icon-star-size me-1"></i>
                     <% if @event.user.events.where(status: 'Past').exists? %>
                       <%= @event.user.events.where(status: 'Past').joins(:reviews).average('reviews.rating').round(1) %>
                       <%= "(" + @event.user.events.where(status: 'Past').joins(:reviews).count.to_s + ")" %>
@@ -39,11 +39,12 @@
             <!-- Theme -->
             <div class="d-flex justify-content-between">
               <h5>Theme:</h5>
+
+              <!-- Category -->
               <span><%= render partial: 'category_icons' %><%= @event.category %></span>
             </div>
             <div class="card-text" data-controller="text-clamp">
               <div id="event-content" class="text-clamp" data-text-clamp-target="text" >
-                <!-- Category -->
 
                 <!-- Description -->
                 <%= @event.content %>

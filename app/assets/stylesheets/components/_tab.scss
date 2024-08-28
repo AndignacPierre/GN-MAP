@@ -28,3 +28,15 @@
   gap: 20px; /* Adjust the gap between tabs */
   border: none;
 }
+
+/* My profile tabs */
+
+/* Ensure the default icon color is applied */
+.nav-link i.fa-crown {
+  color: inherit;
+}
+
+/* Change the icon color when the tab is active */
+.nav-link.active i.fa-crown {
+  color: $yellow;
+}
