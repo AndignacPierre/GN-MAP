@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
   devise_for :users
   root to: "pages#home"
 
@@ -15,6 +16,12 @@ Rails.application.routes.draw do
     resources :subs, only: [:create, :destroy]
     resources :reviews, only: :create
     resources :follows, only: [:create, :destroy]
+  end
+
+  resources :notifications, only: [] do
+    collection do
+      post 'mark_all_as_read'
+    end
   end
 
   namespace :account do

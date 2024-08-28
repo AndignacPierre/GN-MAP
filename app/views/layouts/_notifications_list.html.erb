@@ -1,0 +1,9 @@
+<% if @notifications.any? %>
+  <% @notifications.each do |notification| %>
+    <a class="dropdown-item <%= 'font-weight-bold' unless notification.read %>" href="<%= account_subscriptions_path %>">
+      <%= notification.message %>
+    </a>
+  <% end %>
+<% else %>
+  <span class="dropdown-item">Aucune notification</span>
+<% end %>
