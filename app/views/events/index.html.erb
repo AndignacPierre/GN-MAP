@@ -31,11 +31,21 @@
     </div>
   </div>
 
+  <br>
+  <br>
+
+  <!-- Title -->
+  <div class="container mt-2">
+    <h2 id="index-title" class="d-flex justify-content-center align-items-center text-center m-2">Check our lastest events!</h2>
+  </div>
+
   <!-- Searchbar -->
   <%= render partial: "layouts/searchbar" %>
 
+  <br>
+
   <!-- Cards -->
-  <div id="cards-view" class="row justify-content-space-between align-items-center m-0 p-0 w-100">
+  <div id="cards-view" class="row justify-content-evenly align-items-center m-0 p-0 w-100">
     <% if @events.present? %>
       <% @events.each do |event| %>
         <%= render partial: "events/index_card", locals: { event: event } %>
