@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container p-0">
   <%= simple_form_for :search, url: events_path, method: :get do |f| %>
     <div class="search-form-control form-group">
-      <%= f.input :query, label: false, placeholder: "Search...", input_html: { value: params[:search] && params[:search][:query] } %>
-      <button type="submit" class="btn btn-flat ">
+      <%= f.input :query, label: false, placeholder: "Search...", input_html: { value: params[:search] && params[:search][:query], class: "form-control rounded-pill-input", style: "border-radius: 10px;" } %>
+      <button type="submit" class="btn btn-flat">
         <i class="fa-solid fa-magnifying-glass fs-3 text-dark-green"></i>
       </button>
     </div>

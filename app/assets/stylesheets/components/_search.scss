@@ -30,12 +30,7 @@
   border: 1px solid #ccc;
 }
 
-.btn-flat {
-  background-color: transparent;
-  border: none;
-  padding: 10px;
-}
-
 .rounded-pill-input:focus {
   border-style: none !important;
+  border-radius: 10px;
 }
