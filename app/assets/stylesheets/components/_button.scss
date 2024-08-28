@@ -76,3 +76,20 @@
 .round-button:hover i {
   color: #ffffff;
 }
+
+.button-absolute-top-right {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.button-absolute-top-left {
+  position: absolute;
+  top: 7%;
+  left: 62%;
+}
+
+.no-border-no-background {
+  border: none;
+  background: none;
+}

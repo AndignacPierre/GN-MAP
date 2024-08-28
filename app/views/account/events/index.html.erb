@@ -82,16 +82,16 @@
                           <span class="ms-2"><%= sub.user.username %></span>
                         </div>
                       <% end %>
-                      <div class="d-flex mt-2">
+                      <div class="d-flex ms-2 text-align-center">
                         <% if sub.status == 'Pending' %>
-                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2 text-white" do %>
-                            Accept
-                          <% end %> <!-- Closing button_to for Accept -->
-                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded text-white" do %>
-                            Decline
-                          <% end %> <!-- Closing button_to for Decline -->
+                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "fs-3 text-dark-green no-border-no-background" do %>
+                            <i class="fa-solid fa-circle-check"></i>
+                          <% end %>
+                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "fs-3 text-red no-border-no-background" do %>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                          <% end %>
                         <% elsif sub.status == 'Accepted' %>
-                          <span class="badge bg-success">Confirmed</span>
+                          <span class="badge bg-primary" style="height: 20px; margin-top: 10px;">Confirmed</span>
                         <% end %>
                       </div>
                     </div>
