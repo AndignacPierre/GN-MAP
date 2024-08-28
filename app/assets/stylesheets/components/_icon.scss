@@ -19,3 +19,38 @@
   align-content: center;
   text-align: center;
 }
+
+
+.cercle-icon-past {
+  background-color: $primary;
+  color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  align-content: center;
+  text-align: center;
+  border: none;
+}
+
+.cercle-icon-card-event {
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  align-content: center;
+  text-align: center;
+  border: none;
+}
+
+
+.cercle-icon-past-event {
+  background-color: $primary;
+  font-size: 80%;
+  color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  align-content: center;
+  text-align: center;
+  border: none;
+}
