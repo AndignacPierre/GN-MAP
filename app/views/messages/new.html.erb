@@ -3,18 +3,19 @@
     <%# Title and Category %>
     <div class="">
       <div class="">
-        <h4 class="text-primary"><strong>Title</strong></h4>
-        <%= f.input :title, label: false, placeholder: "Title..." %>
+        <h4 class="text-primary"><strong>Object</strong></h4>
+        <%= f.input :title, label: false, placeholder: "Object..." %>
       </div>
 
-      <div class="">
-        <h4 class="text-primary"><strong>To</strong></h4>
-        <%= f.collection_select :receiver_id, User.all, :id, :username %>
-      </div>
+<div class="">
+  <h4 class="text-primary"><strong>To</strong></h4>
+  <%= f.input :receiver_id, collection: User.all, label_method: :username, value_method: :id, label: false, prompt: 'Select a username', input_html: { class: 'form-control' } %>
+</div>
 
       <div class="">
         <h4 class="text-primary"><strong>Message</strong></h4>
-        <%= f.text_field :content, label: false, placeholder: "Message..." %>
+        <%= f.input :content, as: :text, label: false, placeholder: "Message..." %>
+
       </div>
     </div>
     <br>
