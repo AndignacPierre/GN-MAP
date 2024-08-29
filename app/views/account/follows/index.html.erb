@@ -11,20 +11,6 @@
               <!-- render Card content -->
               <%= render partial: "events/index_card", locals: { event: follow.event } %>
 
-<<<<<<< HEAD
-         <!-- Each Card div -->
-        <div class="card-booking">
-
-          <!-- render Card content -->
-          <%= render partial: "events/index_card", locals: { event: follow.event } %>
-
-          <!-- Follow Icon -->
-          <%= button_to account_follow_path(follow.id), method: :delete, class: "btn button-absolute-top-right heart-button" do %>
-            <i class="fa-solid fa-heart fs-3"></i>
-          <% end %>
-        </div>
-      <% end %>
-=======
               <!-- Follow Icon -->
               <%= button_to account_follow_path(follow.id), method: :delete, class: "btn button-absolute-top-right heart-button" do %>
                 <i class="fa-solid fa-heart fs-3 p-3"></i>
@@ -33,7 +19,6 @@
           </div>
         <% end %>
       </div>
->>>>>>> 65c53f6b3ce5bc9828f36c4605a3b3a60790b7ea
     </div>
 
   <% else %>
