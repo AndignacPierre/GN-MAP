@@ -269,12 +269,6 @@ Sub.create(
 
 Sub.create(
   event: Event.find_by(name: "Kingslanding Barbecue"),
-  user: User.find_by(username: "MotherOfDragons"),
-  status: 'Accepted'
-)
-
-Sub.create(
-  event: Event.find_by(name: "Kingslanding Barbecue"),
   user: User.find_by(username: "PaladinProtector"),
   status: 'Accepted'
 )
