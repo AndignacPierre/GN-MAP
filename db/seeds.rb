@@ -132,25 +132,25 @@ user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_nam
 puts("creating some awesome events...")
 
 event1 = Event.create(user: user1, name: "The Dark Forest Mystery",
-                      category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-09-10',date_event: '2024-09-15')
+                      category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-10-10',date_event: '2024-11-15')
 sleep(2)
 event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
                       category: "Fantasy", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
 sleep(2)
 event4 = Event.create(user: user4, name: "Steampunk Airship Voyage",
-                      category: "SF", theme: "Steampunk", address: "50 Allées Jean Jaurès, 31000 Toulouse", price: 60, participants_min: 10, participants_max: 30, deadline: '2024-10-03', date_event: '2024-10-07')
+                      category: "SF", theme: "Steampunk", address: "50 Allées Jean Jaurès, 31000 Toulouse", price: 60, participants_min: 10, participants_max: 30, deadline: '2024-09-03', date_event: '2024-09-15')
 sleep(2)
 event5 = Event.create(user: user5, name: "Zombie Apocalypse Survival",
                       category: "Zombie", theme: "Zombies", address: "13 Place des Quinconces, 33000 Bordeaux", price: 40, participants_min: 25, participants_max: 50, deadline: '2024-09-01', date_event: '2024-09-08')
 sleep(2)
 event6 = Event.create(user: user6, name: "Vampire Masquerade Ball",
-                      category: "Historical", theme: "Vampires", address: "12 Masquerade Place, Paris, France", price: 70, participants_min: 20, participants_max: 60, deadline: '2024-10-25', date_event: '2024-11-05')
+                      category: "Historical", theme: "Vampires", address: "12 Masquerade Place, Paris, France", price: 70, participants_min: 20, participants_max: 60, deadline: '2024-09-05', date_event: '2024-09-09')
 sleep(2)
 event7 = Event.create(user: user7, name: "Pirate Treasure Hunt",
                       category: "Fantasy", theme: "Pirates", address: "18 Place Charles de Gaulle, 59000 Lille", price: 45, participants_min: 10, participants_max: 35, deadline: '2024-10-10', date_event: '2024-10-15')
 sleep(2)
 event8 = Event.create(user: user8, name: "Space Station Escape",
-                      category: "Murder", theme: "Science Fiction", address: "2 Place du Commerce, 44000 Nantes", price: 55, participants_min: 15, participants_max: 45, deadline: '2024-09-28', date_event: '2024-10-04')
+                      category: "Murder", theme: "Science Fiction", address: "2 Place du Commerce, 44000 Nantes", price: 55, participants_min: 15, participants_max: 45, deadline: '2024-09-02', date_event: '2024-09-03')
 sleep(2)
 event9 = Event.create(user: user9, name: "Ancient Mythology Quest",
                       category: "Fantasy", theme: "Ancient Mythology", address: "24 Avenue Jean Médecin, 06000 Nice", price: 40, participants_min: 20, participants_max: 60, deadline: '2024-12-29', date_event: '2024-12-06')
@@ -324,7 +324,7 @@ event1.save
 end
 event2.save
 
-['https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Castle-Black.jpeg', 'https://pbs.twimg.com/media/Eq3gybhXIAUfbEx.jpg', 'https://cdnb.artstation.com/p/assets/images/images/017/600/735/4k/patrick-jensen-telltale-gameofthrones-patrickjensen-castleblack.jpg'].each do |url|
+['https://www.digitaltrends.com/wp-content/uploads/2019/04/battle-of-the-bastards.jpg?fit=1500%2C844&p=1', 'https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Castle-Black.jpeg', 'https://pbs.twimg.com/media/Eq3gybhXIAUfbEx.jpg', 'https://cdnb.artstation.com/p/assets/images/images/017/600/735/4k/patrick-jensen-telltale-gameofthrones-patrickjensen-castleblack.jpg'].each do |url|
   event3.photos.attach(
     io: URI.open(url),
     filename: 'anyname.jpg',
