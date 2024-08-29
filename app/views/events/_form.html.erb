@@ -1,4 +1,4 @@
-<div class="container form-card-style">
+<div class="container form-card-style" data-controller="sound">
   <%= simple_form_for event do |f| %>
     <%# Title and Category %>
     <div class="row">
@@ -61,6 +61,7 @@
     <br>
 
     <%# Submit %>
-    <%= f.submit "Create Event", class: 'btn btn-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2' %>
+    <%= f.submit "Create Event", class: 'btn btn-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2', data: { action: 'click->sound#playsoundNewEvent' }
+ %>
   <% end %>
 </div>
