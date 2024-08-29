@@ -56,23 +56,37 @@
   border: none;
 }
 
-/* Round button styling */
-.round-button {
-  width: 35px; /* Adjust as needed */
-  height: 35px; /* Ensure the height equals the width */
-  border-radius: 50%; /* Ensures a round shape */
+// Trash & Follow Icons
+
+@mixin round-button-style($size: 35px, $icon-color: $danger) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
   border: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  i {
+    color: $icon-color;
+    transition: color 0.0s ease;
+  }
 }
 
-.round-button i {
-  color: $danger; /* Default color for the icon */
-  transition: color 0.1s ease; /* Smooth transition for icon color */
+// Apply the mixin to both classes
+.round-button {
+  @include round-button-style();
+
+  &:hover i {
+    color: #ffffff;
+  }
 }
 
-.round-button:hover i {
-  color: #ffffff;
+.heart-button {
+  @include round-button-style();
+
+  &:hover i {
+    color: $danger;
+  }
 }
