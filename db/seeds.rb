@@ -2,7 +2,7 @@ User.destroy_all
 Event.destroy_all
 
 #Users
-puts("generating crazy users...")
+puts("Generating crazy users...")
 
 # Utilisateurs créateurs d'événements avec des niveaux différents
 
@@ -129,7 +129,7 @@ user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_nam
                     bio: "I command the stars as a Celestial Wizard in LARP. Outside the game, I’m an astrology enthusiast and love charting celestial events.")
 
 # Événements ouverts
-puts("creating some awesome events...")
+puts("Creating some awesome events...")
 
 event1 = Event.create(user: user1, name: "The Dark Forest Mystery",
                       category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-10-10',date_event: '2024-11-15')
@@ -245,7 +245,7 @@ event2 = Event.create(user: user2, name: "Cyberpunk City Escape",
                       category: "Murder", theme: "Cyberpunk", address: "5 Place Bellecour, 69002 Lyon", price: 50, participants_min: 20, participants_max: 40, deadline: '2024-08-20', date_event: '2024-08-25', status: "Closed")
 
 #attach image to user
-puts("putting some images... FOR THE STYLE BABY")
+puts("Putting some images on avatars... FOR THE STYLE BABY")
 
 user1.avatar.attach(
   io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
@@ -1115,10 +1115,10 @@ event35_content = "
 event35.content = event35_content
 event35.save
 
-puts("loading reviews_seed and titouan.rb")
+puts("Loading reviews_seed and titouan.rb...")
 
 load Rails.root.join('db', 'reviews_seed.rb') #load la seed reviews automatiquement
 load Rails.root.join('db', 'titouan.rb') #load la seed reviews automatiquement
 
-puts("yahouuuuuuuuu!")
+puts("Yahouuuuuuuuu!")
 puts "LA SEED EST OVER ET C'EST VRAIMENT TROP COOL"
