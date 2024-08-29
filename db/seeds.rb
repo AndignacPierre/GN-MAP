@@ -2,7 +2,7 @@ User.destroy_all
 Event.destroy_all
 
 #Users
-puts("generating crazy users...")
+puts("Generating crazy users...")
 
 # Utilisateurs créateurs d'événements avec des niveaux différents
 
@@ -57,7 +57,7 @@ user16 = User.create(username: "ShadowAssassin", first_name: "Harper", last_name
 user17 = User.create(username: "VikingWarrior", first_name: "Alexander", last_name: "White", email: "alexander.white@vikingrpg.com", level: 760, password: "azerty",
                     bio: "As a Viking Warrior, I live for the thrill of battle in LARP. When I’m not raiding, I’m exploring Norse mythology and participating in reenactments.")
 
-user18 = User.create(username: "SpellCaster", first_name: "Amelia", last_name: "Harris", email: "amelia.harris@wizardingworld.com", level: 830, password: "azerty",
+user18 = User.create(username: "CrazyWagoner", first_name: "Baptiste", last_name: "Dauphin", email: "bapt.dauphinois@wizardingworld.com", level: 830, password: "azerty",
                     bio: "I weave spells with precision in every LARP scenario. Outside of the game, I’m an avid reader of fantasy novels and practice various forms of divination.")
 
 user19 = User.create(username: "SamuraiSword", first_name: "Logan", last_name: "Young", email: "logan.young@feudaljapan.org", level: 690, password: "azerty",
@@ -122,14 +122,8 @@ user35 = User.create(username: "QuantumRogue", first_name: "Matthew", last_name:
                             Self-proclaimed queen of cats and dragons. When I'm not busy conquering Westeros in my dreams, I'm probably prepping a D&D campaign where I burn villages for fun. LARPing is my therapy, cats are my advisors, and \"Dracarys\" is my answer to everything. 🐾 Certified geek, GOT fan, and Daenerys Targaryen in a past life (or in an epic role-playing game). If you have cookies, I might just spare you... or not. 🔥"
                     )
 
-user37 = User.create(username: "DragonKnight", first_name: "Nathan", last_name: "Simmons", email: "nathan.simmons@dragonorder.com", level: 870, password: "azerty",
-                    bio: "I fight for honor as a Dragon Knight, defending the realm in every LARP. When I’m not in armor, I enjoy medieval reenactments and reading fantasy epics.")
-
-user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_name: "Rogers", email: "aubrey.rogers@celestialorder.net", level: 920, password: "azerty",
-                    bio: "I command the stars as a Celestial Wizard in LARP. Outside the game, I’m an astrology enthusiast and love charting celestial events.")
-
 # Événements ouverts
-puts("creating some awesome events...")
+puts("Creating some awesome events...")
 
 event1 = Event.create(user: user1, name: "The Dark Forest Mystery",
                       category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-10-10',date_event: '2024-11-15')
@@ -245,44 +239,245 @@ event2 = Event.create(user: user2, name: "Cyberpunk City Escape",
                       category: "Murder", theme: "Cyberpunk", address: "5 Place Bellecour, 69002 Lyon", price: 50, participants_min: 20, participants_max: 40, deadline: '2024-08-20', date_event: '2024-08-25', status: "Closed")
 
 #attach image to user
-puts("putting some images... FOR THE STYLE BABY")
+puts("Putting some images on avatars... FOR THE STYLE BABY")
 
-[user1, user2, user3, user4, user5, user6, user7, user8].each do |user|
-  user.avatar.attach(
-    io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
-    filename: 'anyname.jpg',
-    content_type: 'image/jpg'
-  )
-  user.save
-end
+user1.avatar.attach(
+  io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user1.save
 
-[user9, user10, user11, user12, user13, user14, user15, user16].each do |user|
-  user.avatar.attach(
-    io: URI.open('https://i.pinimg.com/564x/bf/75/b5/bf75b5aa60095f44c3a9c6880b2b3085.jpg'),
-    filename: 'anyname.jpg',
-    content_type: 'image/jpg'
-  )
-  user.save
-end
+user2.avatar.attach(
+  io: URI.open('https://static1.srcdn.com/wordpress/wp-content/uploads/2017/07/Sir-Ian-McKellen-as-Gandalf-The-Grey-The-Shire-Lord-of-the-Rings-Peter-Jackson.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user2.save
 
-[user17, user18, user19, user20, user21, user22, user23, user24].each do |user|
-  user.avatar.attach(
-    io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
-    filename: 'anyname.jpg',
-    content_type: 'image/jpg'
-  )
-  user.save
-end
+user3.avatar.attach(
+  io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user3.save
 
-[user25, user26, user27, user28, user29, user30, user31, user32].each do |user|
-  user.avatar.attach(
-    io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
-    filename: 'anyname.jpg',
-    content_type: 'image/jpg'
-  )
-  user.save
-end
+user4.avatar.attach(
+  io: URI.open('https://static0.gamerantimages.com/wordpress/wp-content/uploads/2019/10/Witcher-Ciri-3.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user4.save
 
+user5.avatar.attach(
+  io: URI.open('https://static1.srcdn.com/wordpress/wp-content/uploads/2021/03/Ratchet-Clank-Rift-Apart.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user5.save
+
+user6.avatar.attach(
+  io: URI.open('https://media.wired.com/photos/5ba036249c21992d8a957128/master/pass/PresDonaldTrump_18260700973102.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user6.save
+
+user7.avatar.attach(
+  io: URI.open('https://sm.ign.com/t/ign_fr/articlepage/b/boba-fett-/boba-fett-origin-tale-is-reportedly-the-second-sta_2cyp.1280.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user7.save
+
+user8.avatar.attach(
+  io: URI.open('https://ocdn.eu/pulscms-transforms/1/QZ6k9kpTURBXy85OTYyOTQyZDE4YzI4N2U5MmUzMDk1YzA0OThkNWUxNy5qcGeTlQMAEM0FAM0C0JUCzQSwAMPDkwmmMzE0OGI5Bt4AAaEwAQ/jim-carrey.jpeg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpeg'
+)
+user8.save
+
+user9.avatar.attach(
+  io: URI.open('https://i.pinimg.com/564x/bf/75/b5/bf75b5aa60095f44c3a9c6880b2b3085.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user9.save
+
+user10.avatar.attach(
+  io: URI.open('https://static01.nyt.com/images/2016/01/12/arts/music/20160112_BOWIE_HP-slide-DMXR/20160112_BOWIE_HP-slide-DMXR-superJumbo.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user10.save
+
+user11.avatar.attach(
+  io: URI.open('https://img.lemde.fr/2017/12/07/0.5/0.5/3499/2332/1440/960/60/0/3892f92_PJ401_FILM-STARWARS-ALIENLIFE_1207_11.JPG'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user11.save
+
+user12.avatar.attach(
+  io: URI.open('https://korii.slate.fr/uploads/store/story_266123/large_landscape_266123.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user12.save
+
+user13.avatar.attach(
+  io: URI.open('https://nationaltoday.com/wp-content/uploads/2022/05/107-Johnny-Depp-1200x834.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user13.save
+
+user14.avatar.attach(
+  io: URI.open('https://ichef.bbci.co.uk/news/2048/cpsprodpb/4a24/live/d900ec90-4f27-11ef-9e75-ad2a41d12bcb.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user14.save
+
+user15.avatar.attach(
+  io: URI.open('https://www.pcgamesn.com/wp-content/sites/pcgamesn/2023/08/world-of-warcraft-2-wow-why-we-need.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user15.save
+
+user16.avatar.attach(
+  io: URI.open('https://lafranceinsoumise.fr/wp-content/uploads/2020/09/Jean_Luc_MELENCHON_in_the_European_Parliament_in_Strasbourg_2016_cropped-scaled-e1599038504130.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user16.save
+
+user17.avatar.attach(
+  io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user17.save
+
+user18.avatar.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'baptiste.jpeg')), # chemin relatif à l'image
+  filename: 'nom_du_fichier.jpeg',
+  content_type: 'image/jpeg'
+)
+user18.save
+
+user19.avatar.attach(
+  io: URI.open('https://lesminis.fr/blog/wp-content/uploads/2024/05/dragon-chinois-1.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user19.save
+
+user20.avatar.attach(
+  io: URI.open('https://www.zooplus.fr/magazine/wp-content/uploads/2018/04/fotolia_66749097.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user20.save
+
+user21.avatar.attach(
+  io: URI.open('https://ew.com/thmb/aMY9J3zdCYEZYk5yqdbqYIAdlIg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/hermione-2000-f5b405b1ffc842789d9db05f5b609111.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user21.save
+
+user22.avatar.attach(
+  io: URI.open('https://i.ebayimg.com/images/g/XowAAOSwX6Rb5bm1/s-l1200.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user22.save
+
+user23.avatar.attach(
+  io: URI.open('https://www.fredzone.org/wp-content/uploads/2021/01/Tomb-Raider-2018.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user23.save
+
+user24.avatar.attach(
+  io: URI.open('https://static01.nyt.com/images/2021/05/17/business/14altGates-print/14Gates--top-mediumSquareAt3X.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user24.save
+
+user25.avatar.attach(
+  io: URI.open('https://www.lequipe.fr/_medias/img-photo-jpg/teddy-riner-samedi-a-paris-s-mantey-l-equipe/1500000002024368/724:149,1616:1264-828-1035-75/a1498.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user25.save
+
+user26.avatar.attach(
+  io: URI.open('https://images2.wikia.nocookie.net/__cb20080318220810/lotr/images/4/43/Gimli.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user26.save
+
+user27.avatar.attach(
+  io: URI.open('https://www.d20radio.com/main/wp-content/uploads/2017/02/darth-vader.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user27.save
+
+user28.avatar.attach(
+  io: URI.open('https://people.com/thmb/Qe5MGwbDVqXQrg7K7CSj6LC3i20=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(1059x734:1061x736)/kim-jong-un-85aa021e6d4745f4ba591417d699fdfa.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user28.save
+
+user29.avatar.attach(
+  io: URI.open('https://cdn.mos.cms.futurecdn.net/EXR5bm2Skv6LGnuPGZXMKg.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user29.save
+
+user30.avatar.attach(
+  io: URI.open('https://blog.napoleon-cologne.fr/wp-content/uploads/2021/04/bicentenaire-napoleon-bonaparte-mort.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user30.save
+
+user31.avatar.attach(
+  io: URI.open('https://upload.wikimedia.org/wikipedia/commons/7/7c/Zidane_Zizu.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user31.save
+
+user32.avatar.attach(
+  io: URI.open('https://resize.programme-television.org/original/var/premiere/storage/images/news/cinema/films-dramatiques/les-revelations-de-francois-damiens-sur-le-retour-des-cameras-cachees-de-francois-l-embrouille-c-est-en-projet-4723571/102702522-1-fre-FR/Les-revelations-de-Francois-Damiens-sur-le-retour-des-cameras-cachees-de-Francois-l-embrouille-C-est-en-projet.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user32.save
+
+user33.avatar.attach(
+  io: URI.open('https://hips.hearstapps.com/hmg-prod/images/studio-portrait-of-actor-and-model-brigitte-bardot-wearing-news-photo-1701188851.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user33.save
+
+user34.avatar.attach(
+  io: URI.open('https://pyxis.nymag.com/v1/imgs/921/a6c/02701db80f6372550a9bb07317d1987cd2-season-1.2x.rhorizontal.w700.jpg'),
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
+)
+user34.save
 
 user35.avatar.attach(
   io: URI.open('https://i.pinimg.com/474x/48/bc/05/48bc05d7e019da8784b3df3233620fe8.jpg'),
@@ -299,7 +494,7 @@ user36.avatar.attach(
 user36.save
 
 #attach image to user - update
-puts("34 users done... ")
+puts("36 users done... ")
 
 #--------------------------------------------------#
 
@@ -914,8 +1109,10 @@ event35_content = "
 event35.content = event35_content
 event35.save
 
+puts("Loading reviews_seed and titouan.rb...")
+
 load Rails.root.join('db', 'reviews_seed.rb') #load la seed reviews automatiquement
 load Rails.root.join('db', 'titouan.rb') #load la seed reviews automatiquement
 
-puts("yahouuuuuuuuu!")
-puts "LA SEED EST OVER ET C'EST VRAIMENT TROP COOL"
+puts("Yahouuuuuuuuu!")
+puts("LA SEED EST OVER ET C'EST VRAIMENT TROP COOL")
