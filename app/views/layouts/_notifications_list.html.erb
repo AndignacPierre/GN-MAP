@@ -1,9 +1,19 @@
-<% if @notifications.any? %>
-  <% @notifications.each do |notification| %>
-    <a class="dropdown-item <%= 'font-weight-bold' unless notification.read %>" href="<%= account_subscriptions_path %>" style="white-space: normal; min-width: 20rem;">
-      <%= notification.message %>
-    </a>
+<%= turbo_frame_tag :notifications_list, class: "display: block" do %>
+  <% if @notifications.any? %>
+    <% @notifications.each do |notification| %>
+      <%= render partial: "layouts/notification_item", locals: { notification: notification } %>
+    <% end %>
+  <% else %>
+    <span class="dropdown-item notification-empty-state">Aucune notification</span>
   <% end %>
-<% else %>
-  <span class="dropdown-item">Aucune notification</span>
 <% end %>
+
+<style>
+  .notification-empty-state {
+    display: none;
+  }
+
+  .notification-empty-state:only-child {
+    display: block;
+  }
+</style>

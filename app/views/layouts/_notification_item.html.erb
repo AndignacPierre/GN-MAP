@@ -1,0 +1,1 @@
+<%= button_to notification.message, mark_as_read_notification_path(notification), method: :patch, data: { turbo: false }, class: "dropdown-item #{'fw-bold' unless notification.read}", style: "white-space: normal; min-width: 20rem;", form: { style: "display: inline;" } %>

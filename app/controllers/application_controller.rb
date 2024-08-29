@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def set_notifications
     if user_signed_in?
-      @notifications = current_user.notifications.order(created_at: :desc).limit(20)
+      @notifications = current_user.notifications.order(created_at: :desc).limit(5)
       @unread_count = @notifications.where(read: false).count
     end
   end

@@ -18,9 +18,12 @@ Rails.application.routes.draw do
     resources :follows, only: [:create, :destroy]
   end
 
-  resources :notifications, only: [] do
+  resources :notifications, only: [:index] do
     collection do
-      post 'mark_all_as_read'
+      patch :mark_all_as_read
+    end
+    member do
+      patch :mark_as_read
     end
   end
 

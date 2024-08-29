@@ -16,10 +16,10 @@ export default class extends Controller {
       style: "mapbox://styles/mekanik/cm0cjeby200rc01pl4t5o5n9p"
     })
 
-    this.markers = [] // Initialiser un tableau pour stocker les markers
+    this.markers = []
 
-    this.addMarkersToMap() // Appelle la méthode publique
-    this.fitMapToMarkers() // Appelle la méthode publique
+    this.addMarkersToMap()
+    this.fitMapToMarkers()
 
     this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
   }
@@ -35,7 +35,7 @@ export default class extends Controller {
   }
 
   addMarkersToMap() {
-    this.clearMarkers() // Supprime les markers existants avant d'en ajouter de nouveaux
+    this.clearMarkers()
 
     this.markersValue.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)

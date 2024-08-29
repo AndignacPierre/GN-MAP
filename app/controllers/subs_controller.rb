@@ -8,6 +8,7 @@ class SubsController < ApplicationController
     @sub.user = @user
     @sub.event = @event
     if @sub.save
+      Notification.create!(user: @sub.event.user, read: false, url: account_events_path, entity: @sub, message: "Vous avez reçu une demande de participation pour #{@sub.event.name}.")
       redirect_to account_subscriptions_path, notice: "Votre demande de réservation a été envoyée."
     else
       # redirect_to events_path(@event), status: :unprocessable_entity

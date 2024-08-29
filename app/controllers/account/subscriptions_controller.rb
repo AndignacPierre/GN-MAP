@@ -8,7 +8,7 @@ module Account
 
     def accept
       @sub.update(status: 'Accepted')
-      Notification.create!(user: @sub.user, read: false, entity: @sub, message: "Vous avez été accepté dans l'évènement #{@sub.event.name}.")
+      Notification.create!(user: @sub.user, read: false, url: account_subscriptions_path, entity: @sub, message: "Vous avez été accepté dans l'évènement #{@sub.event.name}.")
       respond_to do |format|
         format.html { redirect_to request.referer || account_events_path }
         format.turbo_stream
@@ -17,7 +17,7 @@ module Account
 
     def reject
       @sub.update(status: 'Refused')
-      Notification.create!(user: @sub.user, read: false, entity: @sub, message: "Votre demande de participation à l'évènement #{@sub.event.name} a été refusée.")
+      Notification.create!(user: @sub.user, read: false, url: account_subscriptions_path, entity: @sub, message: "Votre demande de participation à l'évènement #{@sub.event.name} a été refusée.")
       respond_to do |format|
         format.html { redirect_to request.referer || account_events_path }
         format.turbo_stream
