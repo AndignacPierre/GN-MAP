@@ -262,7 +262,7 @@ user2.avatar.attach(
 user2.save
 
 user3.avatar.attach(
-  io: URI.open('https://media.wired.com/photos/5ba036249c21992d8a957128/master/pass/PresDonaldTrump_18260700973102.jpg'),
+  io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
   filename: 'anyname.jpg',
   content_type: 'image/jpg'
 )
@@ -283,7 +283,7 @@ user5.avatar.attach(
 user5.save
 
 user6.avatar.attach(
-  io: URI.open('https://static1.srcdn.com/wordpress/wp-content/uploads/2023/03/frodo-smiling-at-the-end-of-return-of-the-king.jpg'),
+  io: URI.open('https://media.wired.com/photos/5ba036249c21992d8a957128/master/pass/PresDonaldTrump_18260700973102.jpg'),
   filename: 'anyname.jpg',
   content_type: 'image/jpg'
 )
