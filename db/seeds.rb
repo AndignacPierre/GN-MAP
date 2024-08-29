@@ -137,9 +137,6 @@ sleep(2)
 event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
                       category: "Fantasy", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
                       sleep(2)
-event2 = Event.create(user: user2, name: "Cyberpunk City Escape",
-                      category: "Murder", theme: "Cyberpunk", address: "5 Place Bellecour, 69002 Lyon", price: 50, participants_min: 20, participants_max: 40, deadline: '2024-08-20', date_event: '2024-08-25', status: "Closed")
-                      sleep(2)
 event4 = Event.create(user: user4, name: "Steampunk Airship Voyage",
                       category: "Fantasy", theme: "Steampunk", address: "50 Allées Jean Jaurès, 31000 Toulouse", price: 60, participants_min: 10, participants_max: 30, deadline: '2024-08-30', date_event: '2024-09-07')
                       sleep(2)
@@ -193,6 +190,36 @@ event14 = Event.create(user: user4, name: "Fantasy Quest Adventure",
 event15 = Event.create(user: user5, name: "Victorian Era Ball",
                       category: "Historical", theme: "Victorian Era", address: "1-3 Briggate, Leeds LS1 6HD", price: 80, participants_min: 20, participants_max: 50, deadline: '2024-05-15', date_event: '2024-06-01', status: "Past")
                       sleep(2)
+event26 = Event.create(user: user6, name: "Haunted Mansion Murder Mystery",
+                      category: "Murder", theme: "Gothic Horror", address: "500 Great Western Road, Glasgow G12 8HL", price: 30, participants_min: 20, participants_max: 50, deadline: '2024-06-10', date_event: '2024-06-20', status: "Past")
+                      sleep(2)
+event27 = Event.create(user: user7, name: "Time Travelers' Convention",
+                      category: "SF", theme: "Time Travel", address: "601 London Road, Glasgow G40 1NE", price: 40, participants_min: 30, participants_max: 75, deadline: '2024-05-01', date_event: '2024-05-15', status: "Past")
+                      sleep(2)
+event28 = Event.create(user: user8, name: "Castle Siege Reenactment",
+                      category: "Historical", theme: "Medieval Warfare", address: "152 Trongate, Glasgow G1 5ES", price: 25, participants_min: 40, participants_max: 80, deadline: '2024-04-10', date_event: '2024-04-25', status: "Past")
+                      sleep(2)
+event29 = Event.create(user: user9, name: "Dragons and Dungeons Fair",
+                      category: "Fantasy", theme: "Medieval Fantasy", address: "201 Byres Road, Glasgow G12 8TN", price: 35, participants_min: 50, participants_max: 100, deadline: '2024-03-15', date_event: '2024-03-30', status: "Past")
+                      sleep(2)
+event30 = Event.create(user: user6, name: "Post-Apocalyptic Survival Challenge",
+                      category: "Zombie", theme: "Survival Horror", address: "425 Union Street, Aberdeen AB11 6DA", price: 20, participants_min: 10, participants_max: 40, deadline: '2024-02-01', date_event: '2024-02-15', status: "Past")
+                      sleep(2)
+event31 = Event.create(user: user7, name: "The Lost City Exploration",
+                      category: "Historical", theme: "Ancient Civilizations", address: "137 Sauchiehall Street, Glasgow G2 3EW", price: 50, participants_min: 15, participants_max: 60, deadline: '2024-01-10', date_event: '2024-01-20', status: "Past")
+                      sleep(2)
+event32 = Event.create(user: user8, name: "Galactic Space Opera",
+                      category: "SF", theme: "Intergalactic War", address: "12 Annfield Road, Dundee DD1 5JH", price: 45, participants_min: 25, participants_max: 75, deadline: '2023-12-15', date_event: '2023-12-30', status: "Past")
+                      sleep(2)
+event33 = Event.create(user: user9, name: "Zombie Apocalypse Training Camp",
+                      category: "Zombie", theme: "Zombie Outbreak", address: "350 Victoria Road, Glasgow G42 7SA", price: 30, participants_min: 20, participants_max: 50, deadline: '2023-11-10', date_event: '2023-11-20', status: "Past")
+                      sleep(2)
+event34 = Event.create(user: user2, name: "Enchanted Forest Adventure",
+                      category: "Fantasy", theme: "Magical Creatures", address: "253 Castle Street, Edinburgh EH1 2PH", price: 35, participants_min: 30, participants_max: 70, deadline: '2023-10-01', date_event: '2023-10-15', status: "Past")
+                      sleep(2)
+event35 = Event.create(user: user4, name: "Victorian Era Murder Mystery",
+                      category: "Murder", theme: "Victorian London", address: "75 Sauchiehall Street, Glasgow G2 3AA", price: 40, participants_min: 15, participants_max: 40, deadline: '2023-09-15', date_event: '2023-09-30', status: "Past")
+                      sleep(2)
 
 # Événements fermés (plus de places disponibles)
 event21 = Event.create(user: user1, name: "Victorian Era Mystery",
@@ -210,6 +237,8 @@ event24 = Event.create(user: user4, name: "Space Odyssey Challenge",
 event25 = Event.create(user: user5, name: "Post-Apocalyptic Survival Camp",
                       category: "Zombie", theme: "Post-Apocalyptic", address: "Unter Fettenhennen 5, 50667 Köln", price: 50, participants_min: 25, participants_max: 50, deadline: '2024-08-05', date_event: '2024-08-15', status: "Closed")
                       sleep(2)
+event2 = Event.create(user: user2, name: "Cyberpunk City Escape",
+                      category: "Murder", theme: "Cyberpunk", address: "5 Place Bellecour, 69002 Lyon", price: 50, participants_min: 20, participants_max: 40, deadline: '2024-08-20', date_event: '2024-08-25', status: "Closed")
 
 #attach image to user
 puts("putting some images... FOR THE STYLE BABY")
@@ -471,6 +500,24 @@ event22.save
   )
 end
 event23.save
+
+['https://i.pinimg.com/736x/f3/d5/f4/f3d5f44756f16a8e2bcd63912574e5d6.jpg', 'https://i.pinimg.com/736x/c9/3a/bb/c93abb764cdc0c49ee6f33d39c017617.jpg', 'https://i.pinimg.com/236x/64/66/cb/6466cbb8f021a65e803bb518f8d4f108.jpg'].each do |url|
+  event26.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event26.save
+
+['https://i.pinimg.com/736x/d5/ae/ea/d5aeea9566f3ddc41d0a095459a181db.jpg'].each do |url|
+  event27.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+    content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+end
+event27.save
 
 puts "HARDCORE DESCRIPTIONS... ONLY THE BEST WILL SURVIVE"
 # Event 1
@@ -788,6 +835,66 @@ event25_content = "
 event25.content = event25_content
 
 event25.save
+
+event26_content = "
+  <p>Step into the eerie halls of a Gothic mansion at 500 Great Western Road, Glasgow. On June 20, 2024, join fellow detectives in unraveling the chilling secrets hidden within. With a thrilling murder to solve and only your wits to rely on, this event is perfect for fans of Gothic Horror. Limited spots are available, with a participation range of 20 to 50 guests. Secure your place by June 10, 2024, for just £30. Dare to uncover the truth... or become part of the mansion’s ghostly legends?</p>
+"
+event26.content = event26_content
+event26.save
+
+event27_content = "
+  <p>Embark on a journey through time at the Time Travelers' Convention! On May 15, 2024, gather with fellow enthusiasts at 601 London Road, Glasgow, for a day of time-bending adventures. Whether you're from the past, present, or future, this event offers a unique chance to explore the wonders and paradoxes of time travel. Tickets are £40, with a minimum of 30 and a maximum of 75 participants. Be sure to secure your spot before May 1, 2024. Let’s rewrite history together!</p>
+"
+event27.content = event27_content
+event27.save
+
+event28_content = "
+  <p>Prepare for battle! On April 25, 2024, join the ranks of warriors at 152 Trongate, Glasgow, as you take part in an epic Castle Siege Reenactment. Experience the thrill of medieval warfare, complete with armor, strategy, and the clashing of swords. With room for 40 to 80 participants, this historical adventure is priced at £25. Don’t miss the chance to relive the past in this immersive experience! The enlistment deadline is April 10, 2024. Ready your shields!</p>
+"
+event28.content = event28_content
+event28.save
+
+event29_content = "
+  <p>Step into a world where dragons soar and heroes are made! The Dragons and Dungeons Fair is happening on March 30, 2024, at 201 Byres Road, Glasgow. This medieval fantasy event invites 50 to 100 brave souls to explore enchanted realms filled with magic and adventure. At just £35, you’ll find yourself in a day of mythical quests and legendary battles. Secure your place by March 15, 2024, and prepare to make history in a land of fantasy!</p>
+"
+event29.content = event29_content
+event29.save
+
+event30_content = "
+  <p>Test your survival skills in a world gone mad! The Post-Apocalyptic Survival Challenge is set for February 15, 2024, at 425 Union Street, Aberdeen. Navigate a landscape filled with danger and despair as you fight to survive in a survival horror scenario. With space for 10 to 40 participants, this intense experience is available for £20. The deadline to join is February 1, 2024. Do you have what it takes to outlast the apocalypse?</p>
+"
+event30.content = event30_content
+event30.save
+
+event31_content = "
+  <p>Embark on a journey to uncover the mysteries of ancient civilizations! On January 20, 2024, adventurers will gather at 137 Sauchiehall Street, Glasgow, to explore the ruins of a lost city. This historical adventure invites 15 to 60 participants to delve into the secrets of the past. Tickets are £50, with the deadline to secure your spot on January 10, 2024. Don’t miss out on this thrilling expedition into the unknown!</p>
+"
+event31.content = event31_content
+event31.save
+
+event32_content = "
+  <p>Prepare for intergalactic warfare in the Galactic Space Opera! On December 30, 2023, at 12 Annfield Road, Dundee, join the epic struggle for the fate of the galaxy. This sci-fi event, with room for 25 to 75 participants, offers a chance to become part of a space-faring saga. Tickets are £45, with the last date to join on December 15, 2023. Suit up, and may the stars guide you to victory!</p>
+"
+event32.content = event32_content
+event32.save
+
+event33_content = "
+  <p>Sharpen your survival instincts at the Zombie Apocalypse Training Camp! On November 20, 2023, at 350 Victoria Road, Glasgow, train alongside 20 to 50 other survivors in preparation for the inevitable zombie outbreak. This intense and thrilling experience is available for £30. Make sure you’re ready by signing up before November 10, 2023. The undead are coming—are you prepared?</p>
+"
+event33.content = event33_content
+event33.save
+
+event34_content = "
+  <p>Step into a world of magical creatures and ancient enchantments! The Enchanted Forest Adventure takes place on October 15, 2023, at 253 Castle Street, Edinburgh. With a participant range of 30 to 70, this fantasy event offers an unforgettable journey into a forest where every path leads to mystery. Tickets are £35, with a signup deadline of October 1, 2023. Embrace the magic and discover the secrets hidden within the trees!</p>
+"
+event34.content = event34_content
+event34.save
+
+event35_content = "
+  <p>Travel back to Victorian London for a night of intrigue and mystery! The Victorian Era Murder Mystery unfolds on September 30, 2023, at 75 Sauchiehall Street, Glasgow. With only 15 to 40 spots available, this immersive experience challenges you to solve a murder most foul, all within the gaslit streets of the 19th century. Tickets are £40, with the deadline on September 15, 2023. Can you crack the case before the killer strikes again?</p>
+"
+event35.content = event35_content
+event35.save
 
 load Rails.root.join('db', 'reviews_seed.rb') #load la seed reviews automatiquement
 load Rails.root.join('db', 'titouan.rb') #load la seed reviews automatiquement

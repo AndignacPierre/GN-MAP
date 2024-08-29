@@ -1,35 +1,48 @@
 <%= turbo_frame_tag :events_frame do %>
   <% if @subscriptions.present? %>
 
-    <!-- Cards div -->
-    <div class="d-flex flex-wrap justify-content-start">
-      <% @subscriptions.each do |sub| %>
+    <!-- Cards grid with two columns and gap -->
+    <div class="container">
+      <div class="row g-3">
+        <% @subscriptions.each do |sub| %>
+          <div class="col-md-6 d-flex justify-content-center">
+            <!-- Each Card div -->
+            <div class="card-booking position-relative">
+              <!-- render Card content -->
+              <%= render partial: "events/index_card", locals: { event: sub.event } %>
 
-        <!-- Each Card div -->
-        <div class="card-booking">
+              <!-- Trash Icon -->
+              <%= button_to event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button position-absolute top-0 end-0 m-3' do %>
+                <i class="fa-solid fa-trash-can fs-4"></i>
+              <% end %>
 
-          <!-- render Card content -->
-          <%= render partial: "events/index_card", locals: { event: sub.event } %>
+              <!-- Card status -->
+              <div class="sub-status w-25 text-center position-absolute">
+                <% if sub.status == "Pending" %>
+                  <p class="bg-white rounded-pill text-warning d-flex align-items-center justify-content-center">
+                    <i class="fa-sharp fa-solid fa-hourglass-start me-1"></i>
+                    <span class="text-warning text-status"> Pending</span>
+                  </p>
+                <% elsif sub.status == "Accepted" %>
+                  <p class="bg-white rounded-pill text-green d-flex align-items-center justify-content-center">
+                    <i class="fa-sharp fa-solid fa-check me-1"></i>
+                    <span class="text-green text-status"> Accepted</span>
+                  </p>
+                <% elsif sub.status == "Refused" %>
+                  <p class="bg-white rounded-pill text-danger d-flex align-items-center justify-content-center">
+                    <i class="fa-sharp fa-solid fa-xmark me-1"></i>
+                    <span class="text-danger text-status"> Refused</span>
+                  </p>
+                <% end %>
+              </div>
 
-          <!-- Trash Icon -->
-          <%= button_to event_sub_path(sub.event, sub), method: :delete, data: { turbo_confirm: 'Are you sure to cancel your booking?' }, class: 'btn btn-outline-danger round-button', style: 'position: absolute; top: 20px; right: 20px;' do %>
-            <i class="fa-solid fa-trash-can fs-4"></i>
-          <% end %>
-
-          <!-- Card status -->
-          <div class="sub-status w-25 text-center">
-            <% if sub.status == "Pending" %>
-              <p class="bg-white rounded-pill text-warning " style="justify-content: center;"><i class="fa-sharp fa-solid fa-hourglass-start me-1"></i><span class="text-warning text-status"> Pending</span></p>
-            <% elsif sub.status == "Accepted" %>
-              <p class="bg-white rounded-pill text-green" style="justify-content: center;"><i class="fa-sharp fa-solid fa-check me-1"></i><span class="text-green text-status"> Accepted</span></p>
-             <% elsif sub.status == "Refused" %>
-              <p class="bg-white rounded-pill text-danger" style="justify-content: center;"><i class="fa-sharp fa-solid fa-xmark me-1"></i><span class="text-danger text-status"> Refused</span></p>
-            <% end %>
+            </div>
           </div>
-
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+
   <% else %>
+    <!-- Optional: Add a message or empty state here if needed -->
   <% end %>
 <% end %>

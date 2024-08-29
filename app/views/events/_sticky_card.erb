@@ -7,11 +7,11 @@
     <div class="d-flex align-items-center">
       <div>
         <% if Follow.exists?(event_id: @event.id, user: current_user) %>
-          <%= button_to event_follow_path(@event), method: :delete, class: "btn ps-1 d-flex align-items-center" do %>
+          <%= button_to event_follow_path(@event), method: :delete, class: "btn p-0 d-flex align-items-center round-button" do %>
             <i class="fa-solid fa-heart fs-3 text-danger"></i>
           <% end %>
         <% else %>
-          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center" do %>
+          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center round-button" do %>
             <i class="fa-regular fa-heart fs-3 text-danger"></i>
           <% end %>
         <% end %>
