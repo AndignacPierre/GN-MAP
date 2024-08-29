@@ -322,7 +322,7 @@ event4.save
 end
 event5.save
 
-['https://i.pinimg.com/564x/24/c1/b2/24c1b279ceeca842d74f8a0e2fe529ae.jpg', 'https://i.pinimg.com/564x/59/97/be/5997be68efeb7da223b71dff22a64123.jpg', 'https://i.pinimg.com/564x/0a/e6/93/0ae693acb8507a862e239cbc585b99a3.jpg'].each do |url|
+['https://i.ytimg.com/vi/zM4DvYtycms/maxresdefault.jpg', 'https://images.alphacoders.com/994/994818.jpg', 'https://i.pinimg.com/564x/0a/e6/93/0ae693acb8507a862e239cbc585b99a3.jpg'].each do |url|
   event6.photos.attach(
     io: URI.open(url),
     filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
@@ -340,7 +340,7 @@ event6.save
 end
 event7.save
 
-['https://i.pinimg.com/564x/e1/5e/08/e15e0878c6efb1fcced215fba4f4ecf6.jpg', 'https://i.pinimg.com/564x/7a/0c/42/7a0c422553144c3b6aed55f24fb96b8a.jpg', 'https://i.pinimg.com/564x/ba/6e/ab/ba6eab7e3e3d85fc0d6d6d9dd8e27785.jpg'].each do |url|
+['https://images.squarespace-cdn.com/content/v1/535d77eee4b06295cb12d4ef/1556589631298-2836TA22GHW55L8C43CY/animal+shelter+12.jpg', 'https://static.vecteezy.com/system/resources/previews/042/196/159/non_2x/ai-generated-role-playing-rpg-game-background-free-photo.jpg', 'https://static.independent.co.uk/2023/07/04/16/FB_IMG_1687878234081.jpg'].each do |url|
   event8.photos.attach(
     io: URI.open(url),
     filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
