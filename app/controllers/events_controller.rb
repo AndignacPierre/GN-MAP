@@ -47,6 +47,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
+      current_user.update(level: current_user.level + 100)
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity

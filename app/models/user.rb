@@ -25,4 +25,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  def transform_level
+    ((level / 100.0) + 1).floor
+  end
+
 end
