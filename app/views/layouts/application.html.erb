@@ -24,7 +24,7 @@
 
   <body>
     <% unless current_page?(root_path) %>
-      <%= turbo_stream_from "notifications_#{current_user.id}" %>
+      <%= turbo_stream_from "notifications_#{current_user.id}" if user_signed_in? %>
       <%= render 'layouts/navbar' %>
     <% end %>
     <div style="min-height: 90vh;">
