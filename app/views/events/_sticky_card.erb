@@ -1,23 +1,26 @@
-<div class="card card-shadow sticky-top-mod" style="width: 90%; ; margin: 0px 50px; padding: 10px;">
-<div>
+<div class="card card-shadow sticky-top-mod" style="width: 90%; margin: 0px 50px; padding: 10px;" data-controller="sound">
   <div class="d-flex justify-content-between align-items-center mb-3">
 
     <!-- Event Name -->
     <h1 class="text-dark-green mb-0"><strong><%= @event.name %></strong></h1>
     <div class="d-flex align-items-center">
       <div>
+
+        <!-- Follow icon -->
         <% if Follow.exists?(event_id: @event.id, user: current_user) %>
           <%= button_to event_follow_path(@event), method: :delete, class: "btn p-0 d-flex align-items-center round-button" do %>
             <i class="fa-solid fa-heart fs-3 text-danger"></i>
           <% end %>
         <% else %>
-          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center round-button" do %>
+          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center round-button", data: { action: 'click->sound#playsoundFollow' } do %>
             <i class="fa-regular fa-heart fs-3 text-danger"></i>
           <% end %>
         <% end %>
       </div>
     </div>
   </div>
+
+  <!-- Event Deadline -->
   <div class="d-flex align-items-center mb-3">
     <i class="fa-solid fa-clock me-2 ms-1 text-dark-green"></i>
     <p class="card-text mt-0
@@ -35,11 +38,13 @@
     </p>
   </div>
 
-  <!-- Button participation -->
+  <!-- Event Date -->
   <div class="d-flex align-items-center mb-3">
     <i class="fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
     <p class="card-text mt-0"><%= @event.date_event %></p>
   </div>
+
+  <!-- Button participation -->
   <div class="align-items-center">
     <% if current_user.subs.exists?(event: @event) %>
       <%= link_to event_path(@event), class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mt-2 pt-2 px-1 fs-4 text-light disabled", notice: "Event followed" do %>
@@ -55,7 +60,7 @@
             Owner
           <% end %>
         <% else %>
-          <%= link_to event_subs_path(@event), data: { turbo_method: "POST" , turbo_confirm: 'Do you really want to join this event?' }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
+          <%= link_to event_subs_path(@event), data: { turbo_method: "POST" , turbo_confirm: 'Do you really want to join this event?' , action: 'click->sound#playsoundBooking' }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
             Join the event (<%= @event.price.to_i %> €)
           <% end %>
         <% end %>
@@ -72,5 +77,4 @@
       <% end %>
     <% end %>
   </div>
-</div>
 </div>
