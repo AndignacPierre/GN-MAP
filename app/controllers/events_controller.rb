@@ -34,6 +34,7 @@ class EventsController < ApplicationController
     @markers = [{
       lat: @event.latitude,
       lng: @event.longitude,
+      category: @event.category,
       info_window_html: render_to_string(partial: "info_window", locals: { event: @event })
     }]
     @days_left = (@event.date_event.to_date - Date.today).to_i
