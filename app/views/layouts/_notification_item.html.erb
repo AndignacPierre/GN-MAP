@@ -1,1 +1,1 @@
-<%= link_to notification.message, mark_as_read_notification_path(notification), data: { turbo_method: :patch, turbo_frame: :_top }, class: "dropdown-item #{'fw-bold' unless notification.read}", style: "white-space: normal; min-width: 20rem;", form: { style: "display: inline;" } %>
+<%= link_to notification.message, mark_as_read_notification_path(notification), data: { turbo_method: :patch }, class: "dropdown-item #{'fw-bold' unless notification.read}", style: "white-space: normal; min-width: 20rem;", form: { style: "display: inline;" } %>

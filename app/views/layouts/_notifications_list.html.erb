@@ -1,4 +1,4 @@
-<%= turbo_frame_tag :notifications_list, class: "display: block" do %>
+<div id="notifications_list">
   <% if @notifications.any? %>
     <% @notifications.each do |notification| %>
       <%= render partial: "layouts/notification_item", locals: { notification: notification } %>
@@ -6,7 +6,7 @@
   <% else %>
     <span class="dropdown-item notification-empty-state">Aucune notification</span>
   <% end %>
-<% end %>
+</div>
 
 <style>
   .notification-empty-state {
