@@ -122,12 +122,6 @@ user35 = User.create(username: "QuantumRogue", first_name: "Matthew", last_name:
                             Self-proclaimed queen of cats and dragons. When I'm not busy conquering Westeros in my dreams, I'm probably prepping a D&D campaign where I burn villages for fun. LARPing is my therapy, cats are my advisors, and \"Dracarys\" is my answer to everything. 🐾 Certified geek, GOT fan, and Daenerys Targaryen in a past life (or in an epic role-playing game). If you have cookies, I might just spare you... or not. 🔥"
                     )
 
-user37 = User.create(username: "DragonKnight", first_name: "Nathan", last_name: "Simmons", email: "nathan.simmons@dragonorder.com", level: 870, password: "azerty",
-                    bio: "I fight for honor as a Dragon Knight, defending the realm in every LARP. When I’m not in armor, I enjoy medieval reenactments and reading fantasy epics.")
-
-user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_name: "Rogers", email: "aubrey.rogers@celestialorder.net", level: 920, password: "azerty",
-                    bio: "I command the stars as a Celestial Wizard in LARP. Outside the game, I’m an astrology enthusiast and love charting celestial events.")
-
 # Événements ouverts
 puts("Creating some awesome events...")
 
@@ -1121,4 +1115,4 @@ load Rails.root.join('db', 'reviews_seed.rb') #load la seed reviews automatiquem
 load Rails.root.join('db', 'titouan.rb') #load la seed reviews automatiquement
 
 puts("Yahouuuuuuuuu!")
-puts "LA SEED EST OVER ET C'EST VRAIMENT TROP COOL"
+puts("LA SEED EST OVER ET C'EST VRAIMENT TROP COOL")
