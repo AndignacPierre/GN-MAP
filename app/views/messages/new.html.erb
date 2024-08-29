@@ -1,22 +1,24 @@
-<h1>New Message</h1>
+<div class="container form-card-style mt-3">
+  <%= simple_form_for @message do |f| %>
+    <%# Title and Category %>
+    <div class="">
+      <div class="">
+        <h4 class="text-primary"><strong>Title</strong></h4>
+        <%= f.input :title, label: false, placeholder: "Title..." %>
+      </div>
 
-<%= form_with model: @message, local: true do |f| %>
-  <div>
-    <%= f.label :title, 'Title' %>
-    <%= f.text_field :title %>
-  </div>
+      <div class="">
+        <h4 class="text-primary"><strong>To</strong></h4>
+        <%= f.collection_select :receiver_id, User.all, :id, :username %>
+      </div>
 
-  <div>
-    <%= f.label :receiver_id, 'To' %>
-    <%= f.collection_select :receiver_id, User.all, :id, :username %>
-  </div>
+      <div class="">
+        <h4 class="text-primary"><strong>Message</strong></h4>
+        <%= f.text_field :content, label: false, placeholder: "Message..." %>
+      </div>
+    </div>
+    <br>
 
-  <div>
-    <%= f.label :content, 'Message' %>
-    <%= f.text_area :content %>
-  </div>
-
-  <div>
-    <%= f.submit 'Send Message' %>
-  </div>
-<% end %>
+    <%= f.submit "Send Message", class: 'btn btn-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2' %>
+  <% end %>
+</div>

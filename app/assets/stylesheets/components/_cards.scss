@@ -114,6 +114,25 @@
   padding-right: 0;
 }
 
+.card-message{
+  background-color: white;
+  border-radius: 10px;
+  transition: border-color 0.1s ease-in-out;// Smooth transition
+  padding: 1% 1%;
+  width: 100%;
+  margin-left: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-message h1 {
+  color: $primary;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
