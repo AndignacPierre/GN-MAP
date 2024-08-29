@@ -24,19 +24,19 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
 
-          <li class="nav-item cercle-icon" style="background-color: white; margin-right: 15px;" >
-          <%= link_to '#', class: "avatar text-dark-green", id: "navbarDropdown", role: "button", data: {bs_toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} do %>
-            <i class="fa-solid fa-bell fs-4" style="opacity:1;"></i>
-            <% if @unread_count.to_i > 0 %>
-              <span class="notification-badge badge badge-danger" style="position: absolute; top: 0; right: 0; background-color: red; color: white; border-radius: 50%; font-size: 0.75em;"><%= @unread_count %></span>
+          <li class="nav-item cercle-icon" style="background-color: white; margin-right: 15px; position: relative;" >
+            <%= link_to '#', class: "avatar text-dark-green", id: "navbarDropdown", role: "button", data: {bs_toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} do %>
+              <i class="fa-solid fa-bell fs-4" style="opacity:1;"></i>
+              <%= turbo_frame_tag "notification_badge" do %>
+                <%= render 'layouts/notification_badge', unread_count: @unread_count %>
+              <% end %>
             <% end %>
-          <% end %>
 
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="left: 0; right: auto;">
-            <%= render 'layouts/notifications_list' %>
-            <div class="dropdown-divider"></div>
-            <%= button_to "Mark all as read", mark_all_as_read_notifications_path, method: :post, class: "dropdown-item" %>
-          </div>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="left: 0; right: auto;">
+              <%= render 'layouts/notifications_list' %>
+              <div class="dropdown-divider"></div>
+              <%= button_to "Mark all as read", mark_all_as_read_notifications_path, method: :patch, class: "dropdown-item" %>
+            </div>
           </li>
 
           <li class="nav-item cercle-icon" style="background-color: white; margin-right: 15px;">

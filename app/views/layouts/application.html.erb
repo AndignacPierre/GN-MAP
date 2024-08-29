@@ -20,6 +20,7 @@
 
   <body>
     <% unless current_page?(root_path) %>
+      <%= turbo_stream_from "notifications_#{current_user.id}" %>
       <%= render 'layouts/navbar' %>
     <% end %>
     <div style="min-height: 90vh;">
