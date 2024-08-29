@@ -3,7 +3,7 @@
 Review.destroy_all
 Sub.destroy_all
 
-puts ("Creating the subs")
+puts("Creating the subs")
 
 # Souscriptions pour l'événement "Medieval Siege of Castle Black"
 Sub.create(
