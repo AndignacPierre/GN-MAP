@@ -129,90 +129,95 @@ user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_nam
                     bio: "I command the stars as a Celestial Wizard in LARP. Outside the game, I’m an astrology enthusiast and love charting celestial events.")
 
 # Événements ouverts
-puts("creating some awesomes events...")
+puts("creating some awesome events...")
 
 event1 = Event.create(user: user1, name: "The Dark Forest Mystery",
                       category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-09-10',date_event: '2024-09-15')
-sleep(2)
-event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
-                      category: "Fantasy", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
-                      sleep(2)
+
 event2 = Event.create(user: user2, name: "Cyberpunk City Escape",
                       category: "Murder", theme: "Cyberpunk", address: "5 Place Bellecour, 69002 Lyon", price: 50, participants_min: 20, participants_max: 40, deadline: '2024-08-20', date_event: '2024-08-25', status: "Closed")
-                      sleep(2)
+
+event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
+                      category: "Fantasy", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
+
 event4 = Event.create(user: user4, name: "Steampunk Airship Voyage",
                       category: "Fantasy", theme: "Steampunk", address: "50 Allées Jean Jaurès, 31000 Toulouse", price: 60, participants_min: 10, participants_max: 30, deadline: '2024-08-30', date_event: '2024-09-07')
-                      sleep(2)
+
 event5 = Event.create(user: user5, name: "Zombie Apocalypse Survival",
                       category: "Zombie", theme: "Zombies", address: "13 Place des Quinconces, 33000 Bordeaux", price: 40, participants_min: 25, participants_max: 50, deadline: '2024-09-01', date_event: '2024-09-08')
-                      sleep(2)
+
 event6 = Event.create(user: user6, name: "Vampire Masquerade Ball",
                       category: "Historical", theme: "Vampires", address: "12 Masquerade Place, Paris, France", price: 70, participants_min: 20, participants_max: 60, deadline: '2024-08-25', date_event: '2024-09-05')
-                      sleep(2)
+
 event7 = Event.create(user: user7, name: "Pirate Treasure Hunt",
                       category: "Fantasy", theme: "Pirates", address: "18 Place Charles de Gaulle, 59000 Lille", price: 45, participants_min: 10, participants_max: 35, deadline: '2024-09-10', date_event: '2024-09-15')
-                      sleep(2)
+
 event8 = Event.create(user: user8, name: "Space Station Escape",
                       category: "Murder", theme: "Science Fiction", address: "2 Place du Commerce, 44000 Nantes", price: 55, participants_min: 15, participants_max: 45, deadline: '2024-08-28', date_event: '2024-09-04')
-                      sleep(2)
+
 event9 = Event.create(user: user9, name: "Ancient Mythology Quest",
                       category: "Fantasy", theme: "Ancient Mythology", address: "24 Avenue Jean Médecin, 06000 Nice", price: 40, participants_min: 20, participants_max: 60, deadline: '2024-08-29', date_event: '2024-09-06')
-                      sleep(2)
+
 event10 = Event.create(user: user10, name: "Western Showdown",
                       category: "Historical", theme: "Western", address: "22 Place de la Comédie, 34000 Montpellier", price: 35, participants_min: 20, participants_max: 50, deadline: '2024-09-15', date_event: '2024-09-22')
-                      sleep(2)
+
 event16 = Event.create(user: user6, name: "Cyberpunk Heist",
                       category: "SF", theme: "Cyberpunk", address: "16 Place Kléber, 67000 Strasbourg", price: 50, participants_min: 15, participants_max: 40, deadline: '2024-09-01', date_event: '2024-09-10')
-                      sleep(2)
+
 event17 = Event.create(user: user7, name: "Arthurian Legends Battle",
                       category: "SF", theme: "Arthurian Legend", address: "50/52 Leicester Square, London WC2H 7LU", price: 45, participants_min: 20, participants_max: 60, deadline: '2024-09-15', date_event: '2024-09-20')
-                      sleep(2)
+
 event18 = Event.create(user: user8, name: "Steampunk Invention Fair",
                       category: "Murder", theme: "Steampunk", address: "12-14 Piccadilly, Manchester M1 1LY", price: 30, participants_min: 10, participants_max: 25, deadline: '2024-09-20', date_event: '2024-09-25')
-                      sleep(2)
+
 event19 = Event.create(user: user9, name: "Medieval Jousting Tournament",
                       category: "Fantasy", theme: "Medieval", address: "92 High Street, Birmingham B4 7BA", price: 50, participants_min: 15, participants_max: 45, deadline: '2024-08-30', date_event: '2024-09-05')
-                      sleep(2)
+
 event20 = Event.create(user: user10, name: "Pirate Ship Battle",
                       category: "other", theme: "Pirates", address: "137 Princes Street, Edinburgh EH2 4BL", price: 55, participants_min: 20, participants_max: 50, deadline: '2024-08-25', date_event: '2024-09-01')
-                      sleep(2)
+
 
 # Événements passés
+puts("Past events, never forget them!...")
+
 event11 = Event.create(user: user1, name: "Medieval Festival",
                       category: "Historical", theme: "Medieval", address: "200 Argyle Street, Glasgow G2 8HA", price: 25, participants_min: 50, participants_max: 100, deadline: '2024-07-15', date_event: '2024-08-01', status: "Past")
-                      sleep(2)
+
 event12 = Event.create(user: user2, name: "Zombie Invasion",
                       category: "Zombie", theme: "Zombies", address: "59-61 Church Street, Liverpool L1 1DE", price: 40, participants_min: 30, participants_max: 60, deadline: '2024-06-15', date_event: '2024-07-01', status: "Past")
-                      sleep(2)
+
 event13 = Event.create(user: user3, name: "Steampunk Mystery Dinner",
                       category: "Historical", theme: "Steampunk", address: "78 Broadmead, Bristol BS1 3DS", price: 70, participants_min: 15, participants_max: 30, deadline: '2024-07-10', date_event: '2024-07-20', status: "Past")
-                      sleep(2)
+
 event14 = Event.create(user: user4, name: "Fantasy Quest Adventure",
                       category: "Fantasy", theme: "Fantasy", address: "90-94 Queen Street, Cardiff CF10 2GR", price: 40, participants_min: 20, participants_max: 50, deadline: '2024-06-01', date_event: '2024-06-15', status: "Past")
-                      sleep(2)
+
 event15 = Event.create(user: user5, name: "Victorian Era Ball",
                       category: "Historical", theme: "Victorian Era", address: "1-3 Briggate, Leeds LS1 6HD", price: 80, participants_min: 20, participants_max: 50, deadline: '2024-05-15', date_event: '2024-06-01', status: "Past")
-                      sleep(2)
+
 
 # Événements fermés (plus de places disponibles)
+puts("Closed ones, because they got too popular...")
+
 event21 = Event.create(user: user1, name: "Victorian Era Mystery",
                       category: "Historical", theme: "Victorian Era", address: "Alexanderplatz 3, 10178 Berlin", price: 70, participants_min: 10, participants_max: 30, deadline: '2024-08-01', date_event: '2024-08-15', status: "Closed")
-                      sleep(2)
+
 event22 = Event.create(user: user2, name: "Zombie Apocalypse Training",
                       category: "Zombie", theme: "Zombies", address: "Kaufingerstraße 9, 80331 München", price: 45, participants_min: 20, participants_max: 40, deadline: '2024-08-10', date_event: '2024-08-20', status: "Closed")
-                      sleep(2)
+
 event23 = Event.create(user: user3, name: "Fantasy Realm Quest",
                       category: "Fantasy", theme: "Fantasy", address: "eil 112-114, 60313 Frankfurt am Main", price: 40, participants_min: 15, participants_max: 35, deadline: '2024-07-20', date_event: '2024-07-30', status: "Closed")
-                      sleep(2)
+
 event24 = Event.create(user: user4, name: "Space Odyssey Challenge",
                       category: "SF", theme: "Science Fiction", address: "Reeperbahn 40, 20359 Hamburg", price: 55, participants_min: 10, participants_max: 30, deadline: '2024-07-25', date_event: '2024-08-05', status: "Closed")
-                      sleep(2)
+
 event25 = Event.create(user: user5, name: "Post-Apocalyptic Survival Camp",
                       category: "Zombie", theme: "Post-Apocalyptic", address: "Unter Fettenhennen 5, 50667 Köln", price: 50, participants_min: 25, participants_max: 50, deadline: '2024-08-05', date_event: '2024-08-15', status: "Closed")
-                      sleep(2)
+
 
 #attach image to user
 puts("putting some images... FOR THE STYLE BABY")
+
 [user1, user2, user3, user4, user5, user6, user7, user8].each do |user|
   user.avatar.attach(
     io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
@@ -249,6 +254,7 @@ end
   user.save
 end
 
+
 user35.avatar.attach(
   io: URI.open('https://i.pinimg.com/474x/48/bc/05/48bc05d7e019da8784b3df3233620fe8.jpg'),
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
@@ -263,8 +269,14 @@ user36.avatar.attach(
 )
 user36.save
 
+#attach image to user - update
+puts("34 users done... ")
+
 #--------------------------------------------------#
+
 # Attach image to event
+puts("Now we attach images to events, go grab some coffee... ")
+
 ['https://i.pinimg.com/564x/ba/e2/7d/bae27de3f31616110bcfc8c06f728df9.jpg', 'https://i.pinimg.com/564x/34/eb/1d/34eb1d4f946edf9399d9e3247bb096da.jpg', 'https://i.pinimg.com/736x/01/f3/6e/01f36eb0410e3866bb085d565aa94371.jpg'].each do |url|
   event1.photos.attach(
     io: URI.open(url),
@@ -283,7 +295,7 @@ event1.save
 end
 event2.save
 
-['https://i.pinimg.com/564x/40/e4/12/40e412bd1c81fe0dca7e20ad8a46f38d.jpg', 'https://i.pinimg.com/564x/88/cc/16/88cc1658d8cba1701ad9aa74886a522b.jpg', 'https://i.pinimg.com/564x/64/53/0a/64530a1bbe76599303ccaa3d119047aa.jpg'].each do |url|
+['https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Castle-Black.jpeg', 'https://pbs.twimg.com/media/Eq3gybhXIAUfbEx.jpg', 'https://cdnb.artstation.com/p/assets/images/images/017/600/735/4k/patrick-jensen-telltale-gameofthrones-patrickjensen-castleblack.jpg'].each do |url|
   event3.photos.attach(
     io: URI.open(url),
     filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
@@ -418,6 +430,10 @@ event16.save
 end
 event17.save
 
+# Attach image to event - update
+puts "17 done already, wait for it.. wait for it..."
+
+
 ['https://i.pinimg.com/474x/7e/8b/a7/7e8ba7b5c6125e9ba568881936e61282.jpg', 'https://i.pinimg.com/474x/16/42/6c/16426cd5b43afb2624f467a80eea8e6b.jpg', 'https://i.pinimg.com/474x/eb/cd/e4/ebcde483f05014fadaf07786f136776f.jpg'].each do |url|
   event18.photos.attach(
     io: URI.open(url),
@@ -472,7 +488,9 @@ event22.save
 end
 event23.save
 
-puts "HARDCORE DESCRIPTIONS... ONLY THE BEST WILL SURVIVE"
+puts "Images done"
+puts "Now, putting HARDCORE DESCRIPTIONS... ONLY THE BEST WILL SURVIVE"
+
 # Event 1
 event1_content = "
   <p>Welcome to \"The Dark Forest Mystery,\" an immersive <strong>Adventure</strong> LARP experience set in a magical <strong>Fantasy</strong> world. Located in the enchanting Edwinstowe, Mansfield, this event promises an unforgettable journey through a mystical forest where secrets and legends await.</p>
