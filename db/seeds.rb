@@ -132,28 +132,28 @@ user38 = User.create(username: "CelestialWizard", first_name: "Aubrey", last_nam
 puts("creating some awesome events...")
 
 event1 = Event.create(user: user1, name: "The Dark Forest Mystery",
-                      category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-09-10',date_event: '2024-09-15')
+                      category: "Fantasy", theme: "Fantasy",address: "Edwinstowe, Mansfield NG21 9QB, Royaume-Uni",price: 35,participants_min: 15,participants_max: 50,deadline: '2024-10-10',date_event: '2024-11-15')
 sleep(2)
 event3 = Event.create(user: user3, name: "Medieval Siege of Castle Black",
                       category: "Fantasy", theme: "Medieval", address: "2 Boulevard Bourdet, 13001 Marseille", price: 45, participants_min: 30, participants_max: 70, deadline: '2024-09-05', date_event: '2024-09-12')
 sleep(2)
 event4 = Event.create(user: user4, name: "Steampunk Airship Voyage",
-                      category: "Fantasy", theme: "Steampunk", address: "50 Allées Jean Jaurès, 31000 Toulouse", price: 60, participants_min: 10, participants_max: 30, deadline: '2024-08-30', date_event: '2024-09-07')
+                      category: "SF", theme: "Steampunk", address: "50 Allées Jean Jaurès, 31000 Toulouse", price: 60, participants_min: 10, participants_max: 30, deadline: '2024-09-03', date_event: '2024-09-15')
 sleep(2)
 event5 = Event.create(user: user5, name: "Zombie Apocalypse Survival",
                       category: "Zombie", theme: "Zombies", address: "13 Place des Quinconces, 33000 Bordeaux", price: 40, participants_min: 25, participants_max: 50, deadline: '2024-09-01', date_event: '2024-09-08')
 sleep(2)
 event6 = Event.create(user: user6, name: "Vampire Masquerade Ball",
-                      category: "Historical", theme: "Vampires", address: "12 Masquerade Place, Paris, France", price: 70, participants_min: 20, participants_max: 60, deadline: '2024-08-25', date_event: '2024-09-05')
+                      category: "Historical", theme: "Vampires", address: "12 Masquerade Place, Paris, France", price: 70, participants_min: 20, participants_max: 60, deadline: '2024-09-05', date_event: '2024-09-09')
 sleep(2)
 event7 = Event.create(user: user7, name: "Pirate Treasure Hunt",
-                      category: "Fantasy", theme: "Pirates", address: "18 Place Charles de Gaulle, 59000 Lille", price: 45, participants_min: 10, participants_max: 35, deadline: '2024-09-10', date_event: '2024-09-15')
+                      category: "Fantasy", theme: "Pirates", address: "18 Place Charles de Gaulle, 59000 Lille", price: 45, participants_min: 10, participants_max: 35, deadline: '2024-10-10', date_event: '2024-10-15')
 sleep(2)
 event8 = Event.create(user: user8, name: "Space Station Escape",
-                      category: "Murder", theme: "Science Fiction", address: "2 Place du Commerce, 44000 Nantes", price: 55, participants_min: 15, participants_max: 45, deadline: '2024-08-28', date_event: '2024-09-04')
+                      category: "Murder", theme: "Science Fiction", address: "2 Place du Commerce, 44000 Nantes", price: 55, participants_min: 15, participants_max: 45, deadline: '2024-09-02', date_event: '2024-09-03')
 sleep(2)
 event9 = Event.create(user: user9, name: "Ancient Mythology Quest",
-                      category: "Fantasy", theme: "Ancient Mythology", address: "24 Avenue Jean Médecin, 06000 Nice", price: 40, participants_min: 20, participants_max: 60, deadline: '2024-08-29', date_event: '2024-09-06')
+                      category: "Fantasy", theme: "Ancient Mythology", address: "24 Avenue Jean Médecin, 06000 Nice", price: 40, participants_min: 20, participants_max: 60, deadline: '2024-12-29', date_event: '2024-12-06')
 sleep(2)
 event10 = Event.create(user: user10, name: "Western Showdown",
                       category: "Historical", theme: "Western", address: "22 Place de la Comédie, 34000 Montpellier", price: 35, participants_min: 20, participants_max: 50, deadline: '2024-09-15', date_event: '2024-09-22')
@@ -250,8 +250,8 @@ puts("putting some images... FOR THE STYLE BABY")
 [user1, user2, user3, user4, user5, user6, user7, user8].each do |user|
   user.avatar.attach(
     io: URI.open('https://i.pinimg.com/474x/8b/69/46/8b6946d37c325d3411380d38b68ed447.jpg'),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
   user.save
 end
@@ -259,8 +259,8 @@ end
 [user9, user10, user11, user12, user13, user14, user15, user16].each do |user|
   user.avatar.attach(
     io: URI.open('https://i.pinimg.com/564x/bf/75/b5/bf75b5aa60095f44c3a9c6880b2b3085.jpg'),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
   user.save
 end
@@ -268,8 +268,8 @@ end
 [user17, user18, user19, user20, user21, user22, user23, user24].each do |user|
   user.avatar.attach(
     io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
   user.save
 end
@@ -277,8 +277,8 @@ end
 [user25, user26, user27, user28, user29, user30, user31, user32].each do |user|
   user.avatar.attach(
     io: URI.open('https://i.pinimg.com/564x/e6/be/0b/e6be0bf32da4d3ebb6f143d63a57aa1a.jpg'),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
   user.save
 end
@@ -286,15 +286,15 @@ end
 
 user35.avatar.attach(
   io: URI.open('https://i.pinimg.com/474x/48/bc/05/48bc05d7e019da8784b3df3233620fe8.jpg'),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-  content_type: 'image/jpg' # use the mime type of the attached file here
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
 )
 user35.save
 
 user36.avatar.attach(
   io: URI.open('https://i.pinimg.com/564x/7c/df/f6/7cdff6354df92986ebae200e96aa2bc6.jpg'),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-  content_type: 'image/jpg' # use the mime type of the attached file here
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
 )
 user36.save
 
@@ -309,8 +309,8 @@ puts("Now we attach images to events, go grab some coffee... ")
 ['https://i.pinimg.com/564x/ba/e2/7d/bae27de3f31616110bcfc8c06f728df9.jpg', 'https://i.pinimg.com/564x/34/eb/1d/34eb1d4f946edf9399d9e3247bb096da.jpg', 'https://i.pinimg.com/736x/01/f3/6e/01f36eb0410e3866bb085d565aa94371.jpg'].each do |url|
   event1.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event1.save
@@ -318,35 +318,35 @@ event1.save
 ['https://i.pinimg.com/736x/6d/ab/87/6dab87844e2ff129d39ff034c7dbda61.jpg', 'https://i.pinimg.com/736x/84/b6/1a/84b61aebceebce98b471b16ca19e809c.jpg', 'https://i.pinimg.com/736x/65/4c/14/654c14d200513c82be1f74a3823927fb.jpg'].each do |url|
   event2.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event2.save
 
-['https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Castle-Black.jpeg', 'https://pbs.twimg.com/media/Eq3gybhXIAUfbEx.jpg', 'https://cdnb.artstation.com/p/assets/images/images/017/600/735/4k/patrick-jensen-telltale-gameofthrones-patrickjensen-castleblack.jpg'].each do |url|
+['https://www.digitaltrends.com/wp-content/uploads/2019/04/battle-of-the-bastards.jpg?fit=1500%2C844&p=1', 'https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Castle-Black.jpeg', 'https://pbs.twimg.com/media/Eq3gybhXIAUfbEx.jpg', 'https://cdnb.artstation.com/p/assets/images/images/017/600/735/4k/patrick-jensen-telltale-gameofthrones-patrickjensen-castleblack.jpg'].each do |url|
   event3.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event3.save
 
-['https://i.pinimg.com/564x/a5/44/b7/a544b7fa40c18729c3951440fac88f4e.jpg', 'https://i.pinimg.com/474x/50/40/be/5040befda0d2ef64464da554ebc110a4.jpg', 'https://i.pinimg.com/474x/27/1e/34/271e343815d4b9aab9ad5da09e53abc5.jpg'].each do |url|
+['https://www.mesbonnescopines.com/wp-content/uploads/2022/06/style-steampunk.jpg', 'https://www.threadandneedles.fr/wp-content/uploads/2021/09/shutterstock_1928265938.jpg', 'https://www.threadandneedles.fr/wp-content/uploads/2021/09/shutterstock_1892710606.jpg'].each do |url|
   event4.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event4.save
 
-['https://i.pinimg.com/474x/26/64/45/266445c2d88168b9e391fddaa48e36f4.jpg', 'https://i.pinimg.com/474x/7a/33/8c/7a338c70b7ffa3e4115a20d43b8507cb.jpg', 'https://i.pinimg.com/474x/d7/8a/53/d78a5346ed7049d8aec092cf4af694cd.jpg'].each do |url|
+['https://d.newsweek.com/en/full/2094006/zombie-woman-office-space.jpg', 'https://cdn-prod.medicalnewstoday.com/content/images/articles/326/326871/are-there-any-real-cases-of-zombification-we-investigate.jpg', 'https://assets.editorial.aetnd.com/uploads/2017/09/zombies-gettyimages-487115288.jpg'].each do |url|
   event5.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event5.save
@@ -354,8 +354,8 @@ event5.save
 ['https://i.ytimg.com/vi/zM4DvYtycms/maxresdefault.jpg', 'https://images.alphacoders.com/994/994818.jpg', 'https://i.pinimg.com/564x/0a/e6/93/0ae693acb8507a862e239cbc585b99a3.jpg'].each do |url|
   event6.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event6.save
@@ -363,8 +363,8 @@ event6.save
 ['https://i.pinimg.com/564x/ee/ec/3f/eeec3fe407623f108b8473812c65b5c8.jpg', 'https://i.pinimg.com/564x/55/71/d6/5571d61be43d515249e4fa99154a6fc5.jpg', 'https://i.pinimg.com/564x/0b/5e/f8/0b5ef85628c372e1bcef6b4904476c36.jpg'].each do |url|
   event7.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event7.save
@@ -372,8 +372,8 @@ event7.save
 ['https://images.squarespace-cdn.com/content/v1/535d77eee4b06295cb12d4ef/1556589631298-2836TA22GHW55L8C43CY/animal+shelter+12.jpg', 'https://static.vecteezy.com/system/resources/previews/042/196/159/non_2x/ai-generated-role-playing-rpg-game-background-free-photo.jpg', 'https://static.independent.co.uk/2023/07/04/16/FB_IMG_1687878234081.jpg'].each do |url|
   event8.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event8.save
@@ -381,8 +381,8 @@ event8.save
 ['https://i.pinimg.com/736x/96/88/7a/96887a7faa850c4dbf0e8cc21e7ebec5.jpg', 'https://i.pinimg.com/564x/fb/c1/0d/fbc10dfefbf762c78e4476150059a751.jpg'].each do |url|
 event9.photos.attach(
   io: URI.open(url),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-  content_type: 'image/jpg' # use the mime type of the attached file here
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
   )
 end
 event9.save
@@ -390,8 +390,8 @@ event9.save
 ['https://i.pinimg.com/564x/5d/e8/6c/5de86cfe8490477d15229444ab1b02ea.jpg', 'https://i.pinimg.com/736x/7e/4b/a6/7e4ba6aa72a93347e197f2a7e6c7832a.jpg'].each do |url|
 event10.photos.attach(
   io: URI.open(url),
-  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-  content_type: 'image/jpg' # use the mime type of the attached file here
+  filename: 'anyname.jpg',
+  content_type: 'image/jpg'
   )
 end
 event10.save
@@ -399,8 +399,8 @@ event10.save
 ['https://i.pinimg.com/474x/0e/33/56/0e335652c95891e2c5684e76d425a566.jpg', 'https://i.pinimg.com/474x/0e/56/63/0e5663c4e0b0b3db68efb4c8ab1306ce.jpg', 'https://i.pinimg.com/474x/fd/07/73/fd07733886964d0cf15099c5c55b98d3.jpg'].each do |url|
   event11.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event11.save
@@ -408,8 +408,8 @@ event11.save
 ['https://i.pinimg.com/564x/fe/83/a5/fe83a560562c80b41a5cc2a378118259.jpg', 'https://i.pinimg.com/564x/11/18/eb/1118eb067208e0d69483f9deaa2351dd.jpg', 'https://i.pinimg.com/564x/f3/67/7a/f3677a2277fe9a9ba5c017e767d4f4fe.jpg'].each do |url|
   event12.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event12.save
@@ -417,8 +417,8 @@ event12.save
 ['https://i.pinimg.com/564x/d6/a3/87/d6a3878dac7993577091952fff51110f.jpg', 'https://i.pinimg.com/564x/5c/46/09/5c46090b9328bc94d7b69f4f564c8cad.jpg', 'https://i.pinimg.com/736x/ee/ae/98/eeae9890188aa2e12586efd4e293cb2a.jpg'].each do |url|
   event13.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event13.save
@@ -426,8 +426,8 @@ event13.save
 ['https://i.pinimg.com/564x/93/59/ea/9359eaf60f94295beee047fb20855a2e.jpg', 'https://i.pinimg.com/564x/df/b8/bb/dfb8bb4d5bc849d1c34164cee5c55f47.jpg', 'https://i.pinimg.com/564x/f2/a6/95/f2a695edf5b838b5abe6a586196c24a1.jpg'].each do |url|
   event14.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event14.save
@@ -435,8 +435,8 @@ event14.save
 ['https://i.pinimg.com/474x/5c/4c/79/5c4c7942f02143d3f3d0d58cbb7951c5.jpg', 'https://i.pinimg.com/474x/3e/76/ce/3e76cee41f3d498206e846576a7e9181.jpg', 'https://i.pinimg.com/474x/e4/e4/83/e4e483996aa2ca893c422113de65a8c9.jpg'].each do |url|
   event15.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event15.save
@@ -444,8 +444,8 @@ event15.save
 ['https://i.pinimg.com/474x/2c/3c/2c/2c3c2c5227b1d807cd77da0fc0ec8254.jpg', 'https://i.pinimg.com/474x/4a/47/1f/4a471fee187e333b64a9d1fa0053f953.jpg', 'https://i.pinimg.com/474x/ca/72/00/ca7200fc3b0a368d6c7188e9294e49de.jpg'].each do |url|
   event16.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event16.save
@@ -453,8 +453,8 @@ event16.save
 ['https://i.pinimg.com/474x/0b/7f/6c/0b7f6c0815a5ebe2564a9d65948bfc03.jpg', 'https://i.pinimg.com/474x/fa/98/5c/fa985c5c2e938bf3ccea1f7dcf4f4b74.jpg', 'https://i.pinimg.com/474x/30/8e/9d/308e9df9a2f039c56f84dd74fd525bf1.jpg'].each do |url|
   event17.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event17.save
@@ -466,17 +466,17 @@ puts "17 done already, wait for it.. wait for it..."
 ['https://i.pinimg.com/474x/7e/8b/a7/7e8ba7b5c6125e9ba568881936e61282.jpg', 'https://i.pinimg.com/474x/16/42/6c/16426cd5b43afb2624f467a80eea8e6b.jpg', 'https://i.pinimg.com/474x/eb/cd/e4/ebcde483f05014fadaf07786f136776f.jpg'].each do |url|
   event18.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event18.save
 
-['https://i.pinimg.com/564x/89/bf/e5/89bfe50ca19432aa4660370c3f225bcd.jpg', 'https://i.pinimg.com/474x/50/e4/66/50e4663284cb92fcf6232b6ec5d8b2ec.jpg', 'https://i.pinimg.com/474x/1c/3d/e9/1c3de93526f6212d5a3dbdc06074fb2e.jpg'].each do |url|
+['https://i.pinimg.com/564x/89/bf/e5/89bfe50ca19432aa4660370c3f225bcd.jpg', 'https://i.pinimg.com/564x/a5/44/b7/a544b7fa40c18729c3951440fac88f4e.jpg', 'https://ops.programme-tv.net/vikings/images/optimized/wide/widescreen/I-Invasions.jpg', 'https://i.pinimg.com/474x/d7/8a/53/d78a5346ed7049d8aec092cf4af694cd.jpg'].each do |url|
   event19.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event19.save
@@ -484,8 +484,8 @@ event19.save
 ['https://i.pinimg.com/474x/36/7e/5d/367e5de976b3ecfba2b433348dd54e5c.jpg', 'https://i.pinimg.com/474x/0c/7e/5b/0c7e5bec64fc1c3131b1ec7818972d5a.jpg', 'https://i.pinimg.com/474x/45/a2/f8/45a2f892c668b865139c98a34db11318.jpg'].each do |url|
   event20.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event20.save
@@ -493,8 +493,8 @@ event20.save
 ['https://i.pinimg.com/564x/1f/b4/76/1fb476d2476071c5542deb5caf7a6e69.jpg', 'https://i.pinimg.com/474x/d2/30/4b/d2304b8d7a868d57df1d0a4c27c63199.jpg', 'https://i.pinimg.com/474x/9e/be/e3/9ebee394474a3d26b4b714a35fbe6a28.jpg'].each do |url|
   event21.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event21.save
@@ -502,8 +502,8 @@ event21.save
 ['https://i.pinimg.com/474x/44/f8/67/44f867a419fdd7f8a676cea0365a3175.jpg', 'https://i.pinimg.com/474x/a5/c0/55/a5c055e4d43b0df172f591e69c3a91fd.jpg', 'https://i.pinimg.com/474x/2b/c0/24/2bc024638686eafbc714dfb5188e6da9.jpg'].each do |url|
   event22.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
     )
 end
 event22.save
@@ -511,8 +511,8 @@ event22.save
 ['https://i.pinimg.com/564x/ff/e5/cd/ffe5cd9b82b064a0c7df541ecb83725c.jpg', 'https://i.pinimg.com/736x/f7/e7/18/f7e7181ff54b9394952f4f20df75e578.jpg'].each do |url|
   event23.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event23.save
@@ -520,8 +520,8 @@ event23.save
 ['https://i.pinimg.com/736x/f3/d5/f4/f3d5f44756f16a8e2bcd63912574e5d6.jpg', 'https://i.pinimg.com/736x/c9/3a/bb/c93abb764cdc0c49ee6f33d39c017617.jpg', 'https://i.pinimg.com/236x/64/66/cb/6466cbb8f021a65e803bb518f8d4f108.jpg'].each do |url|
   event26.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event26.save
@@ -529,8 +529,8 @@ event26.save
 ['https://i.pinimg.com/736x/d5/ae/ea/d5aeea9566f3ddc41d0a095459a181db.jpg'].each do |url|
   event27.photos.attach(
     io: URI.open(url),
-    filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
-    content_type: 'image/jpg' # use the mime type of the attached file here
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
   )
 end
 event27.save
