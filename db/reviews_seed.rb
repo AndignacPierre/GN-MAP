@@ -54,7 +54,7 @@ Sub.create(
 
 Sub.create(
   event: Event.find_by(name: "Medieval Siege of Castle Black"),
-  user: User.find_by(username: "CelestialWizard"),
+  user: User.find_by(username: "CrazyWagoner"),
   status: 'Accepted'
 )
 
@@ -79,12 +79,6 @@ Sub.create(
 Sub.create(
   event: Event.find_by(name: "Medieval Siege of Castle Black"),
   user: User.find_by(username: "MotherOfDragons"),
-  status: 'Accepted'
-)
-
-Sub.create(
-  event: Event.find_by(name: "Medieval Siege of Castle Black"),
-  user: User.find_by(username: "ElvenArcher"),
   status: 'Accepted'
 )
 
