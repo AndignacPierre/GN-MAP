@@ -12,7 +12,7 @@
           <%= render partial: "events/index_card", locals: { event: follow.event } %>
 
           <!-- Follow Icon -->
-          <%= button_to account_follow_path(follow.id), method: :delete, class: "btn button-absolute-top-right" do %>
+          <%= button_to account_follow_path(follow.id), method: :delete, class: "btn button-absolute-top-right heart-button" do %>
             <i class="fa-solid fa-heart fs-3 p-3"></i>
           <% end %>
         </div>
