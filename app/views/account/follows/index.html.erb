@@ -6,8 +6,10 @@
       <div class="row g-3">
         <% @follows.each do |follow| %>
           <div class="col-md-6 d-flex justify-content-center">
+
             <!-- Each Card div -->
             <div class="card-booking">
+
               <!-- render Card content -->
               <%= render partial: "events/index_card", locals: { event: follow.event } %>
 

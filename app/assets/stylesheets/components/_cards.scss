@@ -99,6 +99,12 @@
   position: relative; /* S'assure que la carte prend toute la hauteur disponible */
 }
 
+.button-absolute-top-right {
+  position: absolute;
+  top: 6%;
+  right: 3%;
+}
+
 .card-booking .sub-status {
   position: absolute;
   bottom: 30%;

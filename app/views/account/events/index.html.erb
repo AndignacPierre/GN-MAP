@@ -104,7 +104,7 @@
       </div>
 
       <!-- Trash Icon -->
-      <%= button_to event_path(event), method: :delete, data: { turbo_confirm: 'WARNING! Are you sure you want to cancel your event?' }, class: 'btn btn-outline-danger round-button', style: 'position: absolute; top: 10px; right: 10px;' do %>
+      <%= button_to event_path(event), method: :delete, data: { turbo_confirm: 'WARNING! Are you sure you want to cancel your event?' }, class: 'btn btn-outline-danger round-button', style: 'position: absolute; top: 20px; right: 20px;' do %>
         <i class="fa-solid fa-trash-can fs-4"></i>
       <% end %>
     </div>

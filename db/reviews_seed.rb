@@ -3,7 +3,199 @@
 Review.destroy_all
 Sub.destroy_all
 
-puts ("Creating the subs")
+puts("Creating the subs")
+
+# Souscriptions pour l'événement "Medieval Siege of Castle Black"
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "StealthNinja"),
+  status: 'Accepted'
+)
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "DragonKnight"),
+  status: 'Accepted'
+)
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "DemonHunter"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "VampireSlayer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "NecroLord"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "ArcaneScholar"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "QuantumRogue"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "TechnoWizard"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "CrazyWagoner"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "DragonKnight"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "WitchHunter"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "SamuraiRonin"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "MotherOfDragons"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "PaladinProtector"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "WastelandNomad"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "StealthNinja"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "SpaceMarine"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "VikingWarrior"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "DwarfEngineer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "RangerScout"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "CosmicSorcerer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "GalacticRanger"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "StarshipCaptain"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "CyberSamurai"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "VampireSlayer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "DemonHunter"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "SpellCaster"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "MoonlightSorceress"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "DarkElfAssassin"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "CyberMage"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "MechPilot"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Medieval Siege of Castle Black"),
+  user: User.find_by(username: "ShadowAssassin"),
+  status: 'Accepted'
+)
+
 
 # Souscriptions pour l'événement "Medieval Festival"
 Sub.create(

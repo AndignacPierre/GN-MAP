@@ -65,7 +65,7 @@
             <%= render 'layouts/set_vava', vava: current_user %>
             <div class="ms-2 text-white">
               <div><%= current_user.username %></div>
-              <div class="user-level" style="font-size: 0.875rem;"><%= "Points: #{current_user.level}" %></div>
+              <div class="user-level" style="font-size: 0.875rem;"><%= "Level #{current_user.transform_level}" %></div>
             </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My profile", user_path(current_user), class: "dropdown-item" %>

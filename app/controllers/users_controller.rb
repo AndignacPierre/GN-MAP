@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @events_count = @user.events.count
-    @level = @user.level
+    @level = @user.transform_level
     @subs = @user.subs.includes(:event) || [] # Set @subs to an empty array if nil
   end
 
