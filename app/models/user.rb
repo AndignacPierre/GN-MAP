@@ -28,5 +28,4 @@ class User < ApplicationRecord
   def transform_level
     ((level / 100.0) + 1).floor
   end
-
 end
