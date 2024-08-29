@@ -1,18 +1,17 @@
 <div class="card card-shadow sticky-top-mod" style="width: 90%; ; margin: 0px 50px; padding: 10px;">
 <div>
   <div class="d-flex justify-content-between align-items-center mb-3">
+
+    <!-- Event Name -->
     <h1 class="text-dark-green mb-0"><strong><%= @event.name %></strong></h1>
     <div class="d-flex align-items-center">
-      <span class="me-2">
-        <%= Follow.where(event_id: @event.id).count %>
-      </span>
       <div>
         <% if Follow.exists?(event_id: @event.id, user: current_user) %>
-          <%= button_to event_follow_path(@event), method: :delete, class: "btn ps-1 d-flex align-items-center" do %>
+          <%= button_to event_follow_path(@event), method: :delete, class: "btn p-0 d-flex align-items-center round-button" do %>
             <i class="fa-solid fa-heart fs-3 text-danger"></i>
           <% end %>
         <% else %>
-          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center" do %>
+          <%= button_to event_follows_path(@event), method: :post, class: "btn p-0 d-flex align-items-center round-button" do %>
             <i class="fa-regular fa-heart fs-3 text-danger"></i>
           <% end %>
         <% end %>
@@ -52,11 +51,11 @@
       <% if @event.status == "Open" %>
         <!-- Event owner-->
         <% if @event.user == current_user %>
-          <%= link_to '#', class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
+          <%= link_to '#', class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0 mt-2 pt-2 px-1 fs-4 text-light disabled" do %>
             Owner
           <% end %>
         <% else %>
-          <%= link_to event_subs_path(@event), data: { turbo_method: "POST" }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
+          <%= link_to event_subs_path(@event), data: { turbo_method: "POST" , turbo_confirm: 'Do you really want to join this event?' }, class: "btn btn-primary btn-lg w-100 link-underline link-underline-opacity-0" do %>
             Join the event (<%= @event.price.to_i %> €)
           <% end %>
         <% end %>

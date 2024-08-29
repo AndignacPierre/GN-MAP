@@ -34,6 +34,7 @@ class EventsController < ApplicationController
     @markers = [{
       lat: @event.latitude,
       lng: @event.longitude,
+      category: @event.category,
       info_window_html: render_to_string(partial: "info_window", locals: { event: @event })
     }]
     @days_left = (@event.date_event.to_date - Date.today).to_i
@@ -47,6 +48,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
+      current_user.update(level: current_user.level + 100)
       redirect_to event_path(@event)
     else
       render :new, status: :unprocessable_entity

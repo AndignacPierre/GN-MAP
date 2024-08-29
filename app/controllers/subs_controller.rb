@@ -27,6 +27,7 @@ class SubsController < ApplicationController
   def accept
     @sub.update(status: 'Accepted')
     respond_to do |format|
+      @sub.user.update(level: @sub.user.level + 25)
       format.html { redirect_to request.referer || account_events_path }
       format.turbo_stream
     end

@@ -76,22 +76,22 @@
                 <% Sub.where(event_id: event.id).each do |sub| %>
                   <%= turbo_frame_tag "sub_#{sub.id}" do %>
                     <div class="mb-2">
-                      <%= link_to user_path(sub.user), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>
+                      <%= link_to user_path(sub.user), data: { turbo_frame: "_top" }, class: 'text-decoration-none text-dark' do %>
                         <div class="d-flex align-items-center">
                           <%= render 'layouts/set_vava', vava: sub.user %>
                           <span class="ms-2"><%= sub.user.username %></span>
                         </div>
                       <% end %>
-                      <div class="d-flex mt-2">
+                      <div class="d-flex ms-2 text-align-center">
                         <% if sub.status == 'Pending' %>
-                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "btn btn-success btn-sm rounded me-2 text-white" do %>
-                            Accept
-                          <% end %> <!-- Closing button_to for Accept -->
-                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "btn btn-danger btn-sm rounded text-white" do %>
-                            Decline
-                          <% end %> <!-- Closing button_to for Decline -->
+                          <%= button_to accept_account_subscription_path(sub), method: :patch, class: "fs-3 text-dark-green no-border-no-background" do %>
+                            <i class="fa-solid fa-circle-check"></i>
+                          <% end %>
+                          <%= button_to reject_account_subscription_path(sub), method: :patch, class: "fs-3 text-red no-border-no-background" do %>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                          <% end %>
                         <% elsif sub.status == 'Accepted' %>
-                          <span class="badge bg-success">Confirmed</span>
+                          <span class="badge bg-primary" style="height: 20px; margin-top: 10px;">Confirmed</span>
                         <% end %>
                       </div>
                     </div>
@@ -104,7 +104,7 @@
       </div>
 
       <!-- Trash Icon -->
-      <%= button_to event_path(event), method: :delete, data: { turbo_confirm: 'WARNING! Are you sure you want to cancel your event?' }, class: 'btn btn-outline-danger round-button', style: 'position: absolute; top: 10px; right: 10px;' do %>
+      <%= button_to event_path(event), method: :delete, data: { turbo_confirm: 'WARNING! Are you sure you want to cancel your event?' }, class: 'btn btn-outline-danger round-button', style: 'position: absolute; top: 20px; right: 20px;' do %>
         <i class="fa-solid fa-trash-can fs-4"></i>
       <% end %>
     </div>
@@ -112,46 +112,45 @@
 <% end %> <!-- Closing turbo_frame_tag -->
 <br>
 <hr class="subtle-divider">
-<br>
 
 <!-- Event Past -->
 <% if @events.where(status: "Past").present? %>
-<div>
-  <h1 class="text-primary">Past Events:</h1>
-  <% @events.where(status: "Past").each do |event| %>
-    <div class="card-event" style="overflow: visible;">
-      <div class="row" style="height: 300px;">
-        <div class="col-md-4 img_myevents_cards_container">
-          <% if event.photos.attached? %>
-            <%= cl_image_tag(event.photos.first.key, alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
-          <% else %>
-            <%= image_tag(asset_path('no_image.png'), alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
-          <% end %>
-        </div>
-        <div class="col-md-8 d-flex">
-          <div class="border-end me-4" style="width: 500px;">
-            <h2 class="text-dark-green me-3"><strong><%= event.name %></strong></h2>
-            <div class="d-flex align-items-center">
-              <i class="cercle-icon-card-event fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
-              <p class="card-text mt-0"><%= event.date_event %></p>
-            </div>
-            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-              <i class="cercle-icon-card-event fa-solid fa-circle-user me-2 ms-1 text-dark-green"></i>
-              <p class="card-text mt-0"><%= event.participants_min %> to <%= event.participants_max %></p>
-            </div>
-            <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
-              <i class="cercle-icon-card-event fa-solid fa-location-dot me-2 ms-1 text-dark-green"></i>
-              <p class="card-text text-clamp-address me-2 mt-0"><%= event.address %></p>
-            </div>
+  <div>
+    <h1 class="text-primary">Past Events:</h1>
+    <% @events.where(status: "Past").each do |event| %>
+      <div class="card-event" style="overflow: visible;">
+        <div class="row" style="height: 300px;">
+          <div class="col-md-4 img_myevents_cards_container">
+            <% if event.photos.attached? %>
+              <%= cl_image_tag(event.photos.first.key, alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
+            <% else %>
+              <%= image_tag(asset_path('no_image.png'), alt: event.name, class: "img_myevents_cards", style:"border-radius: 10px") %>
+            <% end %>
           </div>
-            <div>
-              <div data-controller="participants" class="container" style=" width: 100%; height: 250px; overflow: scroll;">
-                <%= render "participants_show_event", event: event %>
+          <div class="col-md-8 d-flex">
+            <div class="border-end me-4" style="width: 500px;">
+              <h2 class="text-dark-green me-3"><strong><%= event.name %></strong></h2>
+              <div class="d-flex align-items-center">
+                <i class="cercle-icon-card-event fa-solid fa-calendar-check me-2 ms-1 text-dark-green"></i>
+                <p class="card-text mt-0"><%= event.date_event %></p>
               </div>
-             </div>
+              <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+                <i class="cercle-icon-card-event fa-solid fa-circle-user me-2 ms-1 text-dark-green"></i>
+                <p class="card-text mt-0"><%= event.participants_min %> to <%= event.participants_max %></p>
+              </div>
+              <div class="d-flex modal-dialog modal-dialog-centered fw-medium">
+                <i class="cercle-icon-card-event fa-solid fa-location-dot me-2 ms-1 text-dark-green"></i>
+                <p class="card-text text-clamp-address me-2 mt-0"><%= event.address %></p>
+              </div>
+            </div>
+              <div>
+                <div data-controller="participants" class="container" style=" width: 100%; height: 250px; overflow: scroll;">
+                  <%= render "participants_show_event", event: event %>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %> <!-- Fin de la boucle each -->
-</div>
+    <% end %> <!-- Fin de la boucle each -->
+  </div>
 <% end %> <!-- Fermeture du div principal -->
