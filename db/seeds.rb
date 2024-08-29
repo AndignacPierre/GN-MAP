@@ -367,8 +367,8 @@ user17.avatar.attach(
 user17.save
 
 user18.avatar.attach(
-  io: File.open(Rails.root.join('app', 'assets', 'images', 'baptiste.jpg')), # chemin relatif à l'image
-  filename: 'nom_du_fichier.jpg',
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'baptiste.jpeg')), # chemin relatif à l'image
+  filename: 'nom_du_fichier.jpeg',
   content_type: 'image/jpeg'
 )
 user18.save
