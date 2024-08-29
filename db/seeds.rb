@@ -111,16 +111,8 @@ user34 = User.create(username: "MysticDruid", first_name: "Avery", last_name: "F
 user35 = User.create(username: "QuantumRogue", first_name: "Matthew", last_name: "Sullivan", email: "matthew.sullivan@quantumrealm.org", level: 800, password: "azerty",
                     bio: "I bend time and space as a Quantum Rogue in LARP. When I’m not warping realities, I’m a physicist with a love for quantum mechanics and science fiction.")
 
-                    user36 = User.create(
-                      username: "MotherOfDragons",
-                      first_name: "Scarlett",
-                      last_name: "Bennett",
-                      email: "scarlett.bennett@voodoomagic.com",
-                      level: 790,
-                      password: "azerty",
-                      bio: "🐉 <b>MotherOfDragons</b> 🐉<br>
-                            Self-proclaimed queen of cats and dragons. When I'm not busy conquering Westeros in my dreams, I'm probably prepping a D&D campaign where I burn villages for fun. LARPing is my therapy, cats are my advisors, and \"Dracarys\" is my answer to everything. 🐾 Certified geek, GOT fan, and Daenerys Targaryen in a past life (or in an epic role-playing game). If you have cookies, I might just spare you... or not. 🔥"
-                    )
+user36 = User.create(username: "MotherOfDragons", first_name: "Scarlett", last_name: "Bennett", email: "scarlett.bennett@voodoomagic.com", level: 790, password: "azerty",
+                    bio: "🐉 <b>MotherOfDragons</b> 🐉<br>Self-proclaimed queen of cats and dragons. When I'm not busy conquering Westeros in my dreams, I'm probably prepping a D&D campaign where I burn villages for fun. LARPing is my therapy, cats are my advisors, and \"Dracarys\" is my answer to everything. 🐾 Certified geek, GOT fan, and Daenerys Targaryen in a past life (or in an epic role-playing game). If you have cookies, I might just spare you... or not. 🔥")
 
 # Événements ouverts
 puts("Creating some awesome events...")
@@ -215,6 +207,9 @@ event34 = Event.create(user: user2, name: "Enchanted Forest Adventure",
 sleep(2)
 event35 = Event.create(user: user4, name: "Victorian Era Murder Mystery",
                       category: "Murder", theme: "Victorian London", address: "75 Sauchiehall Street, Glasgow G2 3AA", price: 40, participants_min: 15, participants_max: 40, deadline: '2023-09-15', date_event: '2023-09-30', status: "Past")
+sleep(2)
+event36 = Event.create(user: user36, name: "Kingslanding Barbecue",
+                      category: "Murder", theme: "Victorian London", address: "Ul. od Tabakarije 29, 20000, Dubrovnik, Croatia", price: 90, participants_min: 100, participants_max: 900, deadline: '2023-07-15', date_event: '2023-08-20', status: "Past")
 sleep(2)
 
 # Événements fermés (plus de places disponibles)
@@ -730,6 +725,15 @@ event26.save
 end
 event27.save
 
+['https://www.thedigitalfix.com/wp-content/sites/thedigitalfix/2023/07/game-of-thrones-daenerys-explained.jpg', "https://assets.vogue.com/photos/598dacb5f0b0e21484d342ba/master/w_2560%2Cc_limit/00-lede-a-game-of-thrones-guide-to-dubrovnik-croatia.jpg", "https://media.cntraveler.com/photos/571848d845342aa9548fb797/16:9/w_1280,c_limit/game-of-thrones-red-keep-cr-hbo.jpg"].each do |url|
+  event36.photos.attach(
+    io: URI.open(url),
+    filename: 'anyname.jpg',
+    content_type: 'image/jpg'
+  )
+end
+event36.save
+
 puts "Images done"
 puts "HARDCORE DESCRIPTIONS... ONLY THE BEST WILL SURVIVE"
 
@@ -1108,6 +1112,12 @@ event35_content = "
 "
 event35.content = event35_content
 event35.save
+
+event36_content = "
+  <p>Let's all meet for a giant barbecue at King's Landing! Rap Battles and romantic kisses will be in the agenda. Don't panic if you see my enormous dragon, Drogo. He's super sweet and loves cuddles. If you pet him, don't look at him or you might be eaten.. but otherwise let's party!</p>
+"
+event36.content = event36_content
+event36.save
 
 puts("Loading reviews_seed and titouan.rb...")
 

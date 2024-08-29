@@ -196,6 +196,197 @@ Sub.create(
   status: 'Accepted'
 )
 
+# Souscriptions pour l'événement "Kingslanding Barbecue"
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "StealthNinja"),
+  status: 'Accepted'
+)
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "DragonKnight"),
+  status: 'Accepted'
+)
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "DemonHunter"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "VampireSlayer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "NecroLord"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "ArcaneScholar"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "QuantumRogue"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "TechnoWizard"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "CrazyWagoner"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "DragonKnight"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "WitchHunter"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "SamuraiRonin"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "MotherOfDragons"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "PaladinProtector"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "WastelandNomad"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "StealthNinja"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "SpaceMarine"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "VikingWarrior"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "DwarfEngineer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "RangerScout"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "CosmicSorcerer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "GalacticRanger"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "StarshipCaptain"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "CyberSamurai"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "VampireSlayer"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "DemonHunter"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "SpellCaster"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "MoonlightSorceress"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "DarkElfAssassin"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "CyberMage"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "MechPilot"),
+  status: 'Accepted'
+)
+
+Sub.create(
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  user: User.find_by(username: "ShadowAssassin"),
+  status: 'Accepted'
+)
+
 
 # Souscriptions pour l'événement "Medieval Festival"
 Sub.create(
@@ -772,4 +963,24 @@ Review.create(
   event: Event.find_by(name: "Victorian Era Murder Mystery"),
   comment: "Unraveling the mystery was a shadowy delight! The atmosphere was gripping, though I would have enjoyed more shadowy plots and less daylight.",
   rating: 4
+)
+
+# Critiques pour l'événement "Kingslanding Barbecue"
+Review.create(
+  user: User.find_by(username: "ShadowAssassin"),
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  comment: "A fantastic event! Thank you Dani",
+  rating: 5
+)
+Review.create(
+  user: User.find_by(username: "MoonlightSorceress"),
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  comment: "I lost one sheep, but otherwise it was amazing.",
+  rating: 4
+)
+Review.create(
+  user: User.find_by(username: "NecroLord"),
+  event: Event.find_by(name: "Kingslanding Barbecue"),
+  comment: "John Snow is beautiful, you are so lucky to have him <3",
+  rating: 5
 )
