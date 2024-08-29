@@ -67,10 +67,8 @@
         <%= image_tag(asset_path('no_image.png'), class: 'card-img-top p-0', alt: event.name) %>
       <% end %>
 
-      <!-- Event Category -->
-      <div class="d-flex align-items-center justify-content-center mt-2 mb-1">
+      <div class="nav-item button-absolute-top-left" style="background-color: white; margin-right: 15px; border-radius: 50%;">
         <i><%= render 'events/index_category_icons', event: event %></i>
-        <p style="margin: 6px 0 4px 0;"><%= event.category %></p>
       </div>
 
     </div>

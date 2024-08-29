@@ -8,7 +8,7 @@
       <div class="col-12">
         <div class="card mb-3 shadow-sm position-relative w-100">
           <div class="card-body">
-            <%= link_to user_path(review.user), data: { turbo_frame: "_top" }, target: '_blank', class: 'text-decoration-none text-dark' do %>
+            <%= link_to user_path(review.user), data: { turbo_frame: "_top" }, class: 'text-decoration-none text-dark' do %>
               <div class="d-flex align-items-center mb-2">
                 <%= render 'layouts/set_vava', vava: review.user, class: 'rounded-circle', style: 'width: 40px; height: 40px;' %>
                 <span class="fw-bold" style="margin-left: 10px;"><%= review.user.username %></span>
