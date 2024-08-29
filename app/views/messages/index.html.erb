@@ -1,0 +1,17 @@
+<div class="mb-4 text-center" style="background-color: white">
+  <%= link_to "New Message <i class='cercle-icon-card-event fa-solid fa-plus me-2 ms-1 text-dark-green'></i>".html_safe, new_message_path, data: { turbo_frame: "_top" }, class: "btn btn-outline-primary btn-lg link-underline link-underline-opacity-0 mb-3 mt-2", style:"opacity:1;" %>
+</div>
+
+<h1>Inbox</h1>
+<ul>
+  <% @received_messages.each do |message| %>
+    <li><%= message.content %> from <%= message.sender.username %></li>
+  <% end %>
+</ul>
+
+<h1>Sent Messages</h1>
+<ul>
+  <% @sent_messages.each do |message| %>
+    <li><%= message.content %> to <%= message.receiver.username %></li>
+  <% end %>
+</ul>
