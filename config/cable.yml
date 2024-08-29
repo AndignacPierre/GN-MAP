@@ -1,8 +1,8 @@
 development:
-  adapter: async
+  adapter: enhanced_postgresql
 
 test:
   adapter: test
 
 production:
-  adapter: redis
+  adapter: enhanced_postgresql
